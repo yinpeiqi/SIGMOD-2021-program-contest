@@ -16,7 +16,9 @@ if __name__ == '__main__':
         RXdata.rename({col: 'right_' + col}, axis='columns', inplace=True)
     data = pd.merge(Ydata, LXdata, left_on=['left_instance_id'], right_on=['left_instance_id'], how='left')
     data = pd.merge(data, RXdata, left_on=['right_instance_id'], right_on=['right_instance_id'], how='left')
-    data.drop(['right_instance_id', 'left_instance_id'], axis=1)
+    data = data.drop(['right_instance_id', 'left_instance_id'], axis=1)
+    data = data.fillna('')
+    # print(pd.isnull(data).sum())
 
     train_data = data.sample(frac=0.9, axis=0)
     test_data = data[~data.index.isin(train_data.index)]

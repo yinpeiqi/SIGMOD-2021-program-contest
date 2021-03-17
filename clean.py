@@ -2,8 +2,17 @@ import pandas as pd
 import re
 
 brands = {'dell', 'lenovo', 'hp', 'acer', 'asus'}
+
 cpu_brands = {'intel', 'amd'}
+
 cores = {' i3', ' i5', ' i7'}
+
+colors = {'red',
+          'steel gray', 'grey',
+          'cool steel', 'steel',
+          'black',
+          'iron silver', 'cool silver', 'platinum silver', 'silver aluminum', 'silver',
+          'indigo blue',}
 
 if __name__ == '__main__':
     Xdata = pd.read_csv('./data/X2.csv')
@@ -18,7 +27,7 @@ if __name__ == '__main__':
     result = []
     for row in range(len(instance_ids)):
         information[row].sort(key=lambda i: len(i), reverse=True)
-        rowinfo = ''
+        rowinfo = titles[row][0]
         for mess in information[row]:
             if mess not in rowinfo:
                 rowinfo = rowinfo + ' - ' + mess
@@ -33,6 +42,15 @@ if __name__ == '__main__':
 
         item = rowinfo
         lower_item = item.lower()
+
+        rest_info = re.split(r'\s[:\\/-]\s', titles[row][0].lower())
+        name_info = rest_info[0]
+        if 'amazon' in rest_info[0]:
+            name_info = rest_info[1]
+        name_info = re.split(r'(\swith)|(,\s)|(windows)', name_info)[0]
+        # for color in colors:
+        #     name_info = name_info.replace(color, '')
+        # name_info = name_info.replace('()', '')
 
         for b in brands:
             if b in lower_item:
@@ -49,7 +67,7 @@ if __name__ == '__main__':
                 cpu_core = b
                 break
 
-        result_model = re.search(r'[\- ][0-9]{4}[A-Z]', item)
+        result_model = re.search(r'[\- ][0-9]{3}[0-9L][MmUu]', item)
         if result_model is not None:
             cpu_model = result_model.group()[1:].lower()
         if cpu_brand == 'amd':
@@ -67,32 +85,43 @@ if __name__ == '__main__':
             result_frequency = result_frequency
             cpu_frequency = result_frequency
 
-        result_ram_capacity = re.search(r'[1-9][\s]?[Gg][Bb][\s]?((S[Dd][Rr][Aa][Mm])|(D[Dd][Rr]3)|([Rr][Aa][Mm])|(Memory))', item)
+        result_ram_capacity = re.search(
+            r'[1-9][\s]?[Gg][Bb][\s]?((S[Dd][Rr][Aa][Mm])|(D[Dd][Rr]3)|([Rr][Aa][Mm])|(Memory))', item)
         if result_ram_capacity is not None:
             ram_capacity = result_ram_capacity.group()[:1]
 
-        result_display_size = re.search(r'[1](([0-9])|([0-9].[0-9]))(([\-\s][Ii]nch)|([\"]))', item)
+        result_display_size = re.search(r'[1](([0-9])|([0-9].[0-9]))(([\s]?[\-\s][\s]?[Ii]nch[^e])|([\"]))', item)
         if result_display_size is not None:
-            display_size = re.split(r'([\-\s][Ii]nch|[\"])', result_display_size.group())[0]
+            display_size = re.split(r'([\s]?[\-\s][\s]?[Ii]nch|[\"])', result_display_size.group())[0]
         else:
-            result_display_size = re.search(r'\s[1](([0-9])|([0-9].[0-9]))\s', item)
+            result_display_size = re.search(r'\s[1](([0-9])|([0-9].[0-9]))\s[^Ii]', item)
             if result_display_size is not None:
-                display_size = result_display_size.group().strip()
+                display_size = result_display_size.group()[:-1].strip()
 
-        result.append(
-            [instance_ids[row][0], brand, cpu_brand, cpu_core, cpu_model, cpu_frequency, ram_capacity, display_size,
-             titles[row][0].lower()])
-
+        result.append([
+            instance_ids[row][0],
+            brand,
+            cpu_brand,
+            cpu_core,
+            cpu_model,
+            cpu_frequency,
+            ram_capacity,
+            display_size,
+            name_info
+            # titles[row][0].lower()
+        ])
 
     result = pd.DataFrame(result)
+    result = result.fillna('')
     result.rename({0: 'instance_id',
-                 1: 'brand',
-                 2: 'cpu_brand',
-                 3: 'cpu_core',
-                 4: 'cpu_model',
-                 5: 'cpu_frequency',
-                 6: 'ram_capacity',
-                 7: 'display_size',
-                 8: 'information'
-            }, inplace=True, axis=1)
-    result.to_csv("./test/cleanX2.csv", sep=',')
+                   1: 'brand',
+                   2: 'cpu_brand',
+                   3: 'cpu_core',
+                   4: 'cpu_model',
+                   5: 'cpu_frequency',
+                   6: 'ram_capacity',
+                   7: 'display_size',
+                   8: 'pc_name'
+                   }, inplace=True, axis=1)
+
+    result.to_csv("./test/cleanX2.csv", sep=',', index=False)
