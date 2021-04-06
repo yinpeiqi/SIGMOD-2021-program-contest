@@ -1,21 +1,21 @@
 import pandas as pd
 import re
 
-brands = {'dell', 'lenovo', 'hp', 'acer', 'asus'}
+brands = ['dell', 'lenovo', 'hp', 'acer', 'asus']
 
-cpu_brands = {'intel', 'amd'}
+cpu_brands = ['intel', 'amd']
 
-cores = {' i3', ' i5', ' i7'}
+cores = [' i3', ' i5', ' i7']
 
-colors = {'red',
-          'steel gray', 'grey',
+colors = ['steel gray', 'grey',
           'cool steel', 'steel',
-          'black',
+          'clarinet black', 'black',
           'iron silver', 'cool silver', 'platinum silver', 'silver aluminum', 'silver',
-          'indigo blue',}
+          'indigo blue',]
 
 if __name__ == '__main__':
-    Xdata = pd.read_csv('./data/X2.csv')
+    file_name = 'X2.csv'
+    Xdata = pd.read_csv('./data/'+file_name)
     instance_ids = Xdata.filter(items=['instance_id'], axis=1)
     titles = Xdata.filter(items=['title'], axis=1)
     information = Xdata.drop(['instance_id'], axis=1)
@@ -47,10 +47,12 @@ if __name__ == '__main__':
         name_info = rest_info[0]
         if 'amazon' in rest_info[0]:
             name_info = rest_info[1]
-        name_info = re.split(r'(\swith)|(,\s)|(windows)', name_info)[0]
-        # for color in colors:
-        #     name_info = name_info.replace(color, '')
-        # name_info = name_info.replace('()', '')
+        # name_info = re.split(r'(\swith)|(,\s)|(windows)', name_info)[0]
+        for color in colors:
+            if color in name_info:
+                name_info = name_info.replace(color, '')
+        name_info = name_info.replace('()', '')
+        name_info = name_info.replace(' / ', '')
 
         for b in brands:
             if b in lower_item:
@@ -64,7 +66,8 @@ if __name__ == '__main__':
 
         for b in cores:
             if b in lower_item:
-                cpu_core = b
+                cpu_core = b.strip()
+                cpu_brand = 'intel'
                 break
 
         result_model = re.search(r'[\- ][0-9]{3}[0-9L][MmUu]', item)
@@ -123,5 +126,4 @@ if __name__ == '__main__':
                    7: 'display_size',
                    8: 'pc_name'
                    }, inplace=True, axis=1)
-
-    result.to_csv("./test/cleanX2.csv", sep=',', index=False)
+    result.to_csv("./test/clean"+file_name, sep=',', index=False)
