@@ -1,3 +1,4 @@
+from joblib import load
 import pandas as pd
 import re
 
@@ -16,9 +17,9 @@ colors = ['steel gray', 'grey',
           'iron silver', 'cool silver', 'platinum silver', 'silver aluminum', 'silver',
           'indigo blue',]
 
-if __name__ == '__main__':
+def clean():
     file_name = 'X2.csv'
-    Xdata = pd.read_csv('./data/'+file_name)
+    Xdata = pd.read_csv(file_name)
     instance_ids = Xdata.filter(items=['instance_id'], axis=1)
     titles = Xdata.filter(items=['title'], axis=1)
     information = Xdata.drop(['instance_id'], axis=1)
@@ -139,4 +140,60 @@ if __name__ == '__main__':
                    7: 'display_size',
                    8: 'pc_name'
                    }, inplace=True, axis=1)
-    result.to_csv("./test/clean"+file_name, sep=',', index=False)
+    return result
+
+
+
+website2id = {}
+id2webstie = {}
+def transform(Xdata):
+    array = Xdata.values.tolist()
+    columns = Xdata.columns.tolist()
+
+    tot_id = 0
+    for line in array:
+        tot_id += 1
+        website2id[line[0]] = tot_id
+        id2webstie[tot_id] = line[0]
+
+    result = []
+    length = len(array)
+    for i in range(length):
+        for j in range(i+1, length):
+            temp = []
+            temp.append(website2id[array[i][0]])
+            temp.append(website2id[array[j][0]])
+            for t in range(1, len(array[i])):
+                temp.append(array[i][t])
+                temp.append(array[j][t])
+            result.append(temp)
+
+    df = pd.DataFrame(result)
+    col_len = len(columns)
+    for i in range(col_len):
+        df.rename(columns={(i*2): 'left_'+columns[i], (i*2+1): 'right_'+columns[i]}, inplace=True)
+    df.index.name = 'id'
+    X = df.reset_index().drop(['id'], axis=1).values.tolist()
+    return X
+
+def train(Xdata):
+    model = load('model.pkl')
+    predicted = model.predict(Xdata)
+    result = []
+    for i,j in zip(Xdata, predicted):
+        temp = []
+        temp.append(id2webstie[i[0]])
+        temp.append(id2webstie[i[1]])
+        temp.append(j)
+        result.append(temp)
+
+    df = pd.DataFrame(result)
+    df.rename(columns={0: 'left_instance_id', 1: 'right_instance_id', 2: 'label'}, inplace=True)
+
+    df.to_csv("output.csv", sep=',', encoding='utf-8', index=False)
+
+
+if __name__ == '__main__':
+    Xdata = clean()
+    Xdata = transform(Xdata)
+    train(Xdata)

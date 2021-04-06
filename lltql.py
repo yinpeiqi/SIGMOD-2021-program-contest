@@ -10,10 +10,12 @@ def generate(data, name):
     result = []
     length = len(array)
     for i in range(length):
-        for j in range(i, length):
+        for j in range(i+1, length):
             temp = []
             temp.append(true_table[website2id[array[i][0]]][website2id[array[j][0]]])
-            for t in range(len(array[i])):
+            temp.append(website2id[array[i][0]])
+            temp.append(website2id[array[j][0]])
+            for t in range(1, len(array[i])):
                 temp.append(array[i][t])
                 temp.append(array[j][t])
             result.append(temp)
@@ -23,8 +25,6 @@ def generate(data, name):
     col_len = len(columns)
     for i in range(col_len):
         df.rename(columns={((i+1)*2-1): 'left_'+columns[i], ((i+1)*2): 'right_'+columns[i]}, inplace=True)
-    df = df.drop(['right_instance_id', 'left_instance_id'], axis=1)
-    df = df.fillna('')
     df.index.name = 'id'
 
     df.to_csv(name+".csv", sep=',', encoding='utf-8')
@@ -55,7 +55,7 @@ if __name__ == '__main__':
         true_table[rid][lid] = label
 
 
-    train_data = Xdata.sample(frac=0.8, axis=0)
+    train_data = Xdata.sample(frac=0.6, axis=0)
     test_data = Xdata[~Xdata.index.isin(train_data.index)]
 
     generate(train_data, 'train')
