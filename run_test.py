@@ -28,9 +28,7 @@ colors = ['steel gray', 'grey',
           'indigo blue', ]
 
 
-def clean(dataset):
-    file_name = 'X'+ dataset + '.csv'
-    Xdata = pd.read_csv(file_name)
+def clean_X2(Xdata, file_name):
     instance_ids = Xdata.filter(items=['instance_id'], axis=1)
     titles = Xdata.filter(items=['title'], axis=1)
     information = Xdata.drop(['instance_id'], axis=1)
@@ -123,7 +121,6 @@ def clean(dataset):
                 display_size = result_display_size.group()[:-1].strip().replace(' ', '.')
 
 
-        print(name_info)
         if brand == brands_map['lenovo']:
             result_name_number = re.search(r'[0-9]{4}[0-9a-zA-Z]{3}', name_info)
             if result_name_number is None:
@@ -150,8 +147,9 @@ def clean(dataset):
             result_name_number = re.search(r'[A-Za-z][0-9]-[0-9]{3}', name_info)
             if result_name_number is not None:
                 name_number = result_name_number.group().lower().replace('-', '')
-        print(name_number)
 
+        # print(name_info)
+        # print(name_number)
         for c in range(ord('a'), ord('z')):
             name_number = name_number.replace(chr(c), str( (c-ord('a')+1)%10 ) )
 
@@ -167,6 +165,18 @@ def clean(dataset):
             name_number
             # titles[row][0].lower()
         ])
+
+    for col in range(3, len(result[0])):
+        mp = {}
+        cnt = 0
+        for i in range(len(result)):
+            if result[i][col] == '0':
+                continue
+            if result[i][col] not in mp:
+                cnt += 1
+                mp[result[i][col]] = cnt
+            result[i][col] = mp[result[i][col]]
+
 
     result = pd.DataFrame(result)
     name = [
@@ -327,7 +337,17 @@ if __name__ == '__main__':
     STATE = TESTING
     dataset = '2'
 
-    Xdata = clean(dataset)
+
+    file_name = 'X'+ dataset + '.csv'
+    Xdata = pd.read_csv(file_name)
+    if 'name' not in Xdata.columns:
+        if 'source' not in Xdata.filter(['instance_id']).sample(1).values[0][0]:
+            Xdata = clean_X2(Xdata, file_name)
+    #     else:
+    #         Xdata = clean_X3(Xdata, file_name)
+    # else:
+    #     Xdata = clean_X4(Xdata, file_name)
+
     if STATE == RUNING:
         Xdata = transform(Xdata)
         train(Xdata)
