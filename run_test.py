@@ -100,7 +100,7 @@ def generate_model(Xdata, dataset):
         true_table[rid][lid] = label
 
     if STATE == TESTING:
-        train_data = Xdata.sample(frac=0.7, axis=0)
+        train_data = Xdata.sample(frac=0.6, axis=0)
         test_data = Xdata[~Xdata.index.isin(train_data.index)]
 
         train_data = generate(train_data)
@@ -147,6 +147,9 @@ def test_train(train_data, test_data=None):
         y_pred = text_clf.predict(X_test)
         f1 = metrics.f1_score(y_pred, y_test)
         print(f1)
+        y_pred = text_clf.predict(X_train)
+        f1 = metrics.f1_score(y_pred, y_train)
+        print(f1)
     else:
         dump(text_clf, 'model.pkl')
 
@@ -160,9 +163,9 @@ if __name__ == '__main__':
     Xdata = pd.read_csv(file_name)
     if 'name' not in Xdata.columns:
         if 'source' not in Xdata.filter(['instance_id']).sample(1).values[0][0]:
-            Xdata = clean_X2(Xdata, file_name)
+            Xdata = clean_X2(Xdata)
         else:
-            Xdata = clean_X3(Xdata, file_name)
+            Xdata = clean_X3(Xdata)
     # else:
     #     Xdata = clean_X4(Xdata, file_name)
 

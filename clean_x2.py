@@ -24,7 +24,7 @@ colors = ['steel gray', 'grey',
           'indigo blue', ]
 
 
-def clean_X2(Xdata, file_name):
+def clean_X2(Xdata):
     instance_ids = Xdata.filter(items=['instance_id'], axis=1)
     titles = Xdata.filter(items=['title'], axis=1)
     information = Xdata.drop(['instance_id'], axis=1)
