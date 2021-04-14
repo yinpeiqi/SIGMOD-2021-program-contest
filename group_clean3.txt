@@ -189,7 +189,7 @@ source5__1976       lenovo    intel     i5        560m                2.66      
 
 source3__824        lenovo    intel     i5        3320m               2.6       4g        12.5      3435      x230       source3__824
 source0__16080      lenovo    intel     i5        3320m               2.6       0         0.0       0         x230       source0__16080
-source0__18566      lenovo    intel     i5        3320m               2.6       4g        0.0       3435      x230       source0__18566
+source0__18566      lenovo    intel     i5        3320m               2.6       4g        0.0       3435      x230t      source0__18566
 source0__15463      lenovo    intel     i5        3320m               3.3       4g        12.5      3435      x230       source0__15463
 source0__18562      lenovo    intel     i5        3320m               3.3       4g        12.5      3435      x230       source0__18562
 source0__8312       lenovo    intel     i5        3rd gen             2.6       0         12.5      0         x230       source0__8312
@@ -422,8 +422,8 @@ source0__51351      hp        amd       athlon    64x2                1.7       
 source0__25226      lenovo    intel     i7        3520m               2.9       8g        12.5      6787      x230       source0__25226
 source5__685        lenovo    intel     i7        3520m               2.9       8g        12.5      3435      x230       source5__685
 
-source0__15923      lenovo    intel     2 duo     sl9400              1.86      4g        12.1      0         x200       source0__15923
-source0__15967      lenovo    intel     2 duo     l9400               1.86      4g        0.0       0         x200       source0__15967
+source0__15923      lenovo    intel     2 duo     sl9400              1.86      4g        12.1      0         x200t      source0__15923
+source0__15967      lenovo    intel     2 duo     l9400               1.86      4g        0.0       0         x200t      source0__15967
 
 source0__52346      dell      amd       a-series  8-5545              1.7       8g        17.3      m731r     inspiron   source0__52346
 
