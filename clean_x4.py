@@ -5,7 +5,7 @@ brand_list = ["intenso", "pny", "lexar", "sony", "sandisk", "kingston", "samsung
 
 intenso_type = ["basic", "premium", "rainbow", "speed"]
 
-
+colors = ['midnight black', 'prism white', 'prism black', 'red', 'black', 'blue', 'white', 'silver', 'gold']
 def clean_x4(Xdata):
     names = Xdata.filter(items=['name'], axis=1).fillna('')
     prices = Xdata.filter(items=['price'], axis=1).fillna('')
@@ -90,9 +90,11 @@ def clean_x4(Xdata):
             if type_model is None:
                 type_model = re.search(r'[\s][0-9]+00x(?![a-z0-9])', nameinfo)
             if type_model is None:
-                type_model = re.search(r'[\s]x[0-9]+00', nameinfo)
+                type_model = re.search(r'(([\s][x])|(beu))[0-9]+00', nameinfo)
             if type_model is not None:
-                type = type_model.group().strip().replace('x', '').replace('l', '').replace('j', '').replace('d', '')
+                type = type_model.group().strip() \
+                    .replace('x', '').replace('l', '').replace('j', '').replace('d', '') \
+                    .replace('b', '').replace('e', '').replace('u', '')
         # judge type and model
 
 
@@ -125,6 +127,7 @@ def clean_x4(Xdata):
         # 4: usmr
         # 4: usmmp | usb
 
+
         elif brand == 'sandisk':
             model_model = re.search(r'glide', nameinfo)
             if model_model is None:
@@ -135,7 +138,7 @@ def clean_x4(Xdata):
                 model_model = re.search(r'cruzer', nameinfo)
             if model_model is not None:
                 model = model_model.group()
-            print(nameinfo, model)
+            # print(nameinfo, model)
         # 256: ext
         # 256: glide
         # 128: ext
@@ -163,22 +166,81 @@ def clean_x4(Xdata):
         # 4: microsd
 
 
-    mp = {}
-    cnt = 0
-    for i in range(len(result)):
-        if result[i][1] is None:
-            result[i][1] = 0
-        else:
-            if result[i][1] not in mp:
-                cnt += 1
-                mp[result[i][1]] = cnt
-            result[i][1] = mp[result[i][1]]
+        elif brand == 'pny':
+            pass
+        # do not need model, separate by GB and memtype is enough
+
+
+        elif brand == 'kingston':
+            model_model = re.search(r'(dt[i1]0?1?)|(data[ ]?traveler)', nameinfo)
+            if model_model is not None:
+                model = 'data traveler'
+                type_model = re.search(r'(g[24])|(gen[ ]?[24])', nameinfo)
+                if type_model is not None:
+                    type = type_model.group()[-1:]
+        #512, 256, 128: judge by memtype
+        # 64: g2, g4
+        # 32: g2
+        # 16: microsd, sd, usb ????
+        # 8: microsd, usb
+
+        elif brand == 'samsung':
+            if 'lte' in nameinfo:
+                model_model = re.search(r'[\s][a-z][0-9]{1,2}[\s]', nameinfo)
+                if model_model is None:
+                    model_model = re.search(r'[\s]note[ ][0-9]{1,2}', nameinfo)
+                if model_model is None:
+                    model_model = re.search(r'prime plus', nameinfo)
+                if model_model is not None:
+                    model = model_model.group().replace(' ', '')
+            elif 'tv' in nameinfo:
+                model_model = re.search(r'[0-9]{1,2}-inch', nameinfo)
+                if model_model is not None:
+                    model = model_model.group().strip()
+            for c in colors:
+                if c in nameinfo:
+                    type = c
+                    break
+        # LTE: color(type), gb, model
+        # TV: color(type), inch(model)
+        # others: gb
+
+
+        elif brand == 'toshiba':
+            model_model = re.search(r'[\s\-n][a-z][0-9]{3}', nameinfo)
+            if model_model is not None:
+                model = model_model.group()[1:]
+            print(nameinfo, model, type, mem_type)
+
+
+        elif brand == 'transcend':
+            pass
+
+        result.append([
+            instance_ids[row][0],
+            brand,
+            size,
+            price,
+            mem_type,
+            type,
+            model,
+        ])
+    # mp = {}
+    # cnt = 0
+    # for i in range(len(result)):
+    #     if result[i][1] is None:
+    #         result[i][1] = 0
+    #     else:
+    #         if result[i][1] not in mp:
+    #             cnt += 1
+    #             mp[result[i][1]] = cnt
+    #         result[i][1] = mp[result[i][1]]
 
 
     # print(result[0])
     result = pd.DataFrame(result)
 
-    name = ['instance_id', 'brand', 'size']
+    name = ['instance_id', 'brand', 'size', 'price', 'mem_type', 'type', 'model']
     for i in range(len(name)):
         result.rename({i: name[i]}, inplace=True, axis=1)
 
