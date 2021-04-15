@@ -7,7 +7,7 @@ altosight.com//760  lexar     32gb      87.45     0                   1400      
 altosight.com//2534 lexar     32gb      78.0      0                   1400      xqd       carte xqd lexar 32go 1400x                                                                           altosight.com//2534
 altosight.com//3076 lexar     32gb      239.0     0                   1400      xqd       lexar xqd 32gb x1400 professional xqd  - xqd - karty pami?ci - no?niki pami?ci - produkty            altosight.com//3076
 altosight.com//4054 lexar     32gb      0.0       0                   1400      xqd       lexar 32 gb 1400x professional xqd compactflash card                                                 altosight.com//4054
-altosight.com//5257 lexar     32gb      0.0       0                   0         xqd       lexar lxqd32gcrbeu1400 - tarjeta de memoria de 32 gb                                                 altosight.com//5257
+altosight.com//5257 lexar     32gb      0.0       0                   1400      xqd       lexar lxqd32gcrbeu1400 - tarjeta de memoria de 32 gb                                                 altosight.com//5257
 altosight.com//6380 lexar     32gb      0.0       0                   1400      xqd       scheda lexar professional 32gb 1400x xqd 2.0 - lxqd32gcrbeu1400                                      altosight.com//6380
 altosight.com//11024lexar     32gb      989.0     0                   1400      xqd       lexar xqd 32gb 210mb/s 1400x                                                                         altosight.com//11024
 altosight.com//11026lexar     32gb      898.0     0                   1400      xqd       lexar xqd 32gb 210mb/s 1400x                                                                         altosight.com//11026
@@ -952,3 +952,6 @@ altosight.com//13306sandisk   8gb       2.5       usb                 0         
 altosight.com//13369sandisk   8gb       12.0      usb                 0         ultra     tesco direct: sandisk ultra usb flash drive                                                          altosight.com//13369
 
 altosight.com//13640kingston  128gb     49.99     usb                 0         0         kingston datatraveler generation 4 (g4) usb- stick, 128gb, usb 3.0 (dtig4/128gb) bei                 altosight.com//13640
+
+
+Process finished with exit code 0
