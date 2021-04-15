@@ -193,10 +193,12 @@ def clean_x4(Xdata):
                     model_model = re.search(r'prime plus', nameinfo)
                 if model_model is not None:
                     model = model_model.group().replace(' ', '') + '-lte'
+                mem_type = 'lte'
             elif 'tv' in nameinfo:
                 model_model = re.search(r'[0-9]{1,2}-inch', nameinfo)
                 if model_model is not None:
-                    model = model_model.group().strip() + '-tv'
+                    model = model_model.group().strip()
+                mem_type = 'tv'
             else:
                 model = 'upan'
             for c in colors:
