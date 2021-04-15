@@ -155,7 +155,7 @@ def clean_x2(Xdata):
         # print(display_size)
 
         if brand == 'lenovo':
-            result_name_number = re.search(r'[\- ][0-9]{4}(?![0-9a-zA-Z])', name_info)
+            result_name_number = re.search(r'[\- ][0-9]{4}(?!([Mm][Hh][Zz]))', name_info)
             if result_name_number is not None:
                 name_number = result_name_number.group().replace('-', '').strip().lower()[:4]
         elif brand == 'hp':
