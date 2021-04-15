@@ -52,12 +52,7 @@ def clean_x2(Xdata):
         lower_item = item.lower()
 
         rest_info = re.split(r'\s[:\\/-]\s', titles[row][0])
-        print(instance_ids[row],titles[row][0])
         name_info = item
-        # useless = ['amazon', 'other laptops', 'miniprice']
-        # for name in useless:
-        #     if name in rest_info[0].lower():
-        #         name_info = rest_info[1]
 
         for b in brands:
             if b in lower_item:
@@ -160,10 +155,7 @@ def clean_x2(Xdata):
         # print(display_size)
 
         if brand == 'lenovo':
-            print(instance_ids[row][0],name_info)
-            result_name_number = re.search(r'[\- ][0-9]{4}[0-9a-zA-Z]{3}(?![0-9a-zA-Z])', name_info)
-            if result_name_number is None:
-                result_name_number = re.search(r'[\- ][0-9]{4}(?![0-9a-zA-Z])', name_info)
+            result_name_number = re.search(r'[\- ][0-9]{4}(?![0-9a-zA-Z])', name_info)
             if result_name_number is not None:
                 name_number = result_name_number.group().replace('-', '').strip().lower()[:4]
         elif brand == 'hp':

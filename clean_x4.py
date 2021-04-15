@@ -214,7 +214,6 @@ def clean_x4(Xdata):
             model_model = re.search(r'[\s\-n][a-z][0-9]{3}', nameinfo)
             if model_model is not None:
                 model = model_model.group()[1:]
-            print(nameinfo, model, type, mem_type)
 
 
         elif brand == 'transcend':
