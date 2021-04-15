@@ -35,7 +35,7 @@ def clean_x4(Xdata):
         else:
             size_model = re.search(r'[0-9]{1,4}[ ]*[gt][bo]', nameinfo)
             if size_model is not None:
-                size = size_model.group()[:].lower()
+                size = size_model.group()[:].lower().replace(' ','')
 
         if prices[row][0] != '':
             price = prices[row][0]
@@ -73,7 +73,7 @@ def clean_x4(Xdata):
 
             type_model = re.search(r'[a-z]+\s(?=line)', nameinfo.lower())
             if type_model is not None:
-                type = type_model.group()[:]
+                type = type_model.group()[:].replace(' ','')
             else:
                 for t in intenso_type:
                     if t in nameinfo:
@@ -192,15 +192,11 @@ def clean_x4(Xdata):
                 if model_model is None:
                     model_model = re.search(r'prime plus', nameinfo)
                 if model_model is not None:
-                    model = model_model.group().replace(' ', '') + '-lte'
-                mem_type = 'lte'
+                    model = model_model.group().replace(' ', '')
             elif 'tv' in nameinfo:
                 model_model = re.search(r'[0-9]{1,2}-inch', nameinfo)
                 if model_model is not None:
                     model = model_model.group().strip()
-                mem_type = 'tv'
-            else:
-                model = 'upan'
             for c in colors:
                 if c in nameinfo:
                     type = c
@@ -214,6 +210,7 @@ def clean_x4(Xdata):
             model_model = re.search(r'[\s\-n][a-z][0-9]{3}', nameinfo)
             if model_model is not None:
                 model = model_model.group()[1:]
+            print(nameinfo, model, type, mem_type)
 
 
         elif brand == 'transcend':
@@ -227,6 +224,7 @@ def clean_x4(Xdata):
             mem_type,
             type,
             model,
+            nameinfo
         ])
     # mp = {}
     # cnt = 0
@@ -243,7 +241,7 @@ def clean_x4(Xdata):
     # print(result[0])
     result = pd.DataFrame(result)
 
-    name = ['instance_id', 'brand', 'size', 'price', 'mem_type', 'type', 'model']
+    name = ['instance_id', 'brand', 'capacity', 'price', 'mem_type', 'type', 'model', 'title']
     for i in range(len(name)):
         result.rename({i: name[i]}, inplace=True, axis=1)
 
