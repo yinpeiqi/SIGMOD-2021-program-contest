@@ -15,7 +15,7 @@ def generate(data, name):
         for j in range(i+1, length):
             temp = []
             temp.append(true_table[website2id[array[i][0]]][website2id[array[j][0]]])
-            for t in range(1, len(array[i])):
+            for t in range(0, len(array[i])):
                 temp.append(array[i][t])
                 temp.append(array[j][t])
             result.append(temp)
@@ -25,21 +25,23 @@ def generate(data, name):
     # col_len = len(columns)
     # for i in range(col_len):
     #     df.rename(columns={((i+1)*2+1): 'left_'+columns[i], ((i+1)*2): 'right_'+columns[i]}, inplace=True)
-    df.rename(columns={1: 'left_title', 2: 'right_title'}, inplace=True)
+    df.rename(columns={1: 'left_instance_id', 2: 'right_instance_id'}, inplace=True)
+    df.rename(columns={3: 'left_title', 4: 'right_title'}, inplace=True)
     df.index.name = 'id'
     df.to_csv(name+".csv", sep=',', encoding='utf-8')
 
 
 if __name__ == '__main__':
-    dataset = '4'
+    dataset = '3'
     Xdata = pd.read_csv('X' + dataset + '.csv')
     Xarray = Xdata.sample(frac=1).values.tolist()
     Xtemp = []
+
     for line in Xarray:
         temp = []
-        temp.append(line[-1])
-        mess = line[0]
-        for i in range(1, len(line)-1):
+        temp.append(line[0])
+        mess = ''
+        for i in range(1, len(line)):
             if line[i] is not None and (type(line[i]) != float or not math.isnan(line[i])) and str(line[i]) not in mess:
                 mess = mess + ' - ' + str(line[i])
         temp.append(mess)

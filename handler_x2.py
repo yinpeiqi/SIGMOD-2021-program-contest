@@ -1,5 +1,5 @@
 import pandas as pd
-from clean_x3 import clean_x3
+from legacy.clean_x3 import clean_x3
 
 pc_aliases = {
     "2320": "3435", "v7482": "v7582", "810g2": "810", "2338": "2339",

@@ -12,15 +12,14 @@ amd_cores = ['e-series', 'a8', 'radeon', 'athlon', 'turion', 'phenom']
 
 familys = {
     'hp': [r'elitebook', r'compaq', r'folio', r'pavilion'],
-    'lenovo': [r' x[0-9]{3}[t]?', r'x1 carbon'],
+    'lenovo': [r' x[0-9]{3}', r'x1 carbon'],
     'dell': [r'inspiron'],
     'asus': [r'zenbook', ],
     'acer': [r'aspire', r'extensa', ],
     '0': []
 }
 
-
-def clean_x3(Xdata):
+def clean_X3(Xdata):
     instance_ids = Xdata.filter(items=['instance_id'], axis=1)
     titles = Xdata.filter(items=['title'], axis=1)
     information = Xdata.drop(['instance_id'], axis=1)
@@ -131,13 +130,10 @@ def clean_x3(Xdata):
             cpu_frequency = result_frequency
 
         result_ram_capacity = re.search(
-            r'[\s-][12468][\s]?[Gg][Bb]([-\s]|([Rr][Aa][Mm]))', item)
-        if result_ram_capacity is None:
-            result_ram_capacity = re.search(
-                r'[\s-][12468][\s]?[Gg][-\s]', item)
+            r'[1-9][\s]?[Gg][Bb][\s]?((S[Dd][Rr][Aa][Mm])|(D[Dd][Rr]3)|([Rr][Aa][Mm])|(Memory))', item)
         if result_ram_capacity is not None:
-            ram_capacity = result_ram_capacity.group().lower()\
-                .replace('-', ' ').replace('b', '').replace('r', '').replace('a', '').replace('m', '').replace(' ', '')
+            ram_capacity = result_ram_capacity.group()[:1]
+        # if ram_capacity != '0':
 
 
         result_display_size = re.search(r'1[0-9]([. ][0-9])?\"', item)
@@ -153,10 +149,10 @@ def clean_x3(Xdata):
             display_size = result_display_size.group().replace("\'", " ").strip().replace(' ', '.')
         # print(item)
         # print(display_size)
-        if display_size == '0':
-            totz += 1
-        # print(item)
-        # print(display_size)
+        # if display_size == '0':
+        #     totz += 1
+            # print(item)
+            # print(display_size)
 
         if brand == 'lenovo':
             result_name_number = re.search(r'[\- ][0-9]{4}[0-9a-zA-Z]{3}(?![0-9a-zA-Z])', name_info)
@@ -205,6 +201,7 @@ def clean_x3(Xdata):
                 name_family = result_name_family.group().strip()
                 break
 
+
         # print(item)
         # print(brand,
         #     cpu_brand,
@@ -213,7 +210,8 @@ def clean_x3(Xdata):
         #     cpu_frequency,
         #     ram_capacity,
         #     display_size,
-        #     name_number)
+        #     name_number,
+        #     name_family)
         result.append([
             instance_ids[row][0],
             brand,
@@ -221,23 +219,23 @@ def clean_x3(Xdata):
             cpu_core,
             cpu_model,
             cpu_frequency,
-            ram_capacity,
+            # ram_capacity,
             display_size,
             name_number,
-            name_family,
-            titles[row][0].lower()
+            name_family
+            # titles[row][0].lower()
         ])
     # print(totz)
-    # for col in range(1, len(result[0])):
-    #     mp = {}
-    #     cnt = 0
-    #     for i in range(len(result)):
-    #         if result[i][col] == '0':
-    #             continue
-    #         if result[i][col] not in mp:
-    #             cnt += 1
-    #             mp[result[i][col]] = cnt
-    #         result[i][col] = mp[result[i][col]]
+    for col in range(1, len(result[0])):
+        mp = {}
+        cnt = 0
+        for i in range(len(result)):
+            if result[i][col] == '0':
+                continue
+            if result[i][col] not in mp:
+                cnt += 1
+                mp[result[i][col]] = cnt
+            result[i][col] = mp[result[i][col]]
 
 
     result = pd.DataFrame(result)
@@ -248,11 +246,10 @@ def clean_x3(Xdata):
         'cpu_core',
         'cpu_model',
         'cpu_frequency',
-        'ram_capacity',
+        # 'ram_capacity',
         'display_size',
         'pc_name',
-        'family',
-        'title'
+        'family'
     ]
     for i in range(len(name)):
         result.rename({i: name[i]}, inplace=True, axis=1)

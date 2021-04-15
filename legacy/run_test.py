@@ -1,25 +1,20 @@
 from joblib import load, dump
 import pandas as pd
-import re
-import numpy
 from sklearn import metrics
-from sklearn.svm import *
-from sklearn.linear_model import *
 from sklearn.tree import *
-from clean_x2 import clean_X2
-from clean_x3 import  clean_X3
+from legacy.clean_x2 import clean_X2
+from legacy.clean_x3 import  clean_X3
+from legacy.clean_x4 import clean_X4
 
-RUNING = 0
+RUNNING = 0
 TESTING = 1
 GENERATE = 2
 STATE = TESTING
+Flag = True
 
 
-website2id = {}
-id2webstie = {}
 
-
-def transform(Xdata):
+def transform(Xdata, website2id, id2website):
     array = Xdata.values.tolist()
     columns = Xdata.columns.tolist()
 
@@ -27,7 +22,7 @@ def transform(Xdata):
     for line in array:
         tot_id += 1
         website2id[line[0]] = tot_id
-        id2webstie[tot_id] = line[0]
+        id2website[tot_id] = line[0]
 
     result = []
     length = len(array)
@@ -51,7 +46,7 @@ def transform(Xdata):
 
 
 true_table = []
-def generate(data):
+def generate(data, website2id, id2website):
     array = data.values.tolist()
     columns = data.columns.tolist()
 
@@ -76,7 +71,7 @@ def generate(data):
     return df
 
 
-def generate_model(Xdata, dataset):
+def generate_model(Xdata, website2id, id2website, dataset):
     Ydata = pd.read_csv('Y' + dataset + '.csv')
 
     Xarray = Xdata.sample(frac=1).values.tolist()
@@ -103,31 +98,36 @@ def generate_model(Xdata, dataset):
         train_data = Xdata.sample(frac=0.6, axis=0)
         test_data = Xdata[~Xdata.index.isin(train_data.index)]
 
-        train_data = generate(train_data)
-        test_data = generate(test_data)
+        train_data = generate(train_data, website2id, id2website)
+        test_data = generate(test_data, website2id, id2website)
         return train_data, test_data
 
     elif STATE == GENERATE:
         train_data = Xdata.sample(frac=1, axis=0)
-        train_data = generate(train_data)
+        train_data = generate(train_data, website2id, id2website)
         return train_data
 
 
-def train(Xdata):
-    model = load('model.pkl')
+def train(Xdata, website2id, id2website, dataset):
+    global Flag
+    model = load('model' + dataset + '.pkl')
     predicted = model.predict(Xdata)
     result = []
     for i, j in zip(Xdata, predicted):
         temp = []
-        temp.append(id2webstie[i[0]])
-        temp.append(id2webstie[i[1]])
-        temp.append(j)
-        result.append(temp)
+        if j == 1:
+            temp.append(id2website[i[0]])
+            temp.append(id2website[i[1]])
+            result.append(temp)
 
     df = pd.DataFrame(result)
-    df.rename(columns={0: 'left_instance_id', 1: 'right_instance_id', 2: 'label'}, inplace=True)
+    df.rename(columns={0: 'left_instance_id', 1: 'right_instance_id'}, inplace=True)
 
-    df.to_csv("output.csv", sep=',', encoding='utf-8', index=False)
+    if Flag:
+        df.to_csv("output.csv", sep=',', encoding='utf-8', index=False)
+        Flag = False
+    else:
+        df.to_csv("output.csv", mode='a', sep=',', encoding='utf-8', index=False, header=None)
 
 
 def test_train(train_data, test_data=None):
@@ -139,7 +139,7 @@ def test_train(train_data, test_data=None):
         return X, y
 
     X_train, y_train = handle(train_data)
-    model = DecisionTreeClassifier()
+    model = DecisionTreeClassifier(max_leaf_nodes=50000, max_depth=500)
     text_clf = model.fit(X_train, y_train)
 
     if test_data is not None:
@@ -151,33 +151,48 @@ def test_train(train_data, test_data=None):
         f1 = metrics.f1_score(y_pred, y_train)
         print(f1)
     else:
-        dump(text_clf, 'model.pkl')
+        dump(text_clf, 'model' + dataset + '.pkl')
 
 
 if __name__ == '__main__':
-    STATE = TESTING
-    dataset = '3'
+    STATE = RUNNING
 
-
-    file_name = 'X'+ dataset + '.csv'
-    Xdata = pd.read_csv(file_name)
-    if 'name' not in Xdata.columns:
-        if 'source' not in Xdata.filter(['instance_id']).sample(1).values[0][0]:
-            Xdata = clean_X2(Xdata)
+    website2id = {}
+    id2website = {}
+    dataset = '4'
+    if STATE == RUNNING:
+        for file_name in ['X2.csv','X3.csv','X4.csv']:
+            website2id = {}
+            id2website = {}
+            Xdata = pd.read_csv(file_name)
+            if 'name' not in Xdata.columns:
+                if 'source' not in Xdata.filter(['instance_id']).sample(1).values[0][0]:
+                    Xdata = clean_X2(Xdata)
+                    dataset = '2'
+                else:
+                    Xdata = clean_X3(Xdata)
+                    dataset = '3'
+            else:
+                Xdata = clean_X4(Xdata)
+                dataset = '4'
+            Xdata = transform(Xdata, website2id, id2website)
+            train(Xdata, website2id, id2website, dataset)
+    else:
+        file_name = 'X' + dataset + '.csv'
+        Xdata = pd.read_csv(file_name)
+        if 'name' not in Xdata.columns:
+            if 'source' not in Xdata.filter(['instance_id']).sample(1).values[0][0]:
+                Xdata = clean_X2(Xdata)
+            else:
+                Xdata = clean_X3(Xdata)
         else:
-            Xdata = clean_X3(Xdata)
-    # else:
-    #     Xdata = clean_X4(Xdata, file_name)
+            Xdata = clean_X4(Xdata)
 
-    if STATE == RUNING:
-        Xdata = transform(Xdata)
-        train(Xdata)
-
-    elif STATE == TESTING:
+    if STATE == TESTING:
         Xdata.to_csv("./test/clean"+file_name, sep=',', index=False)
-        train_data, test_data = generate_model(Xdata, dataset)
+        train_data, test_data = generate_model(Xdata, website2id, id2website, dataset)
         test_train(train_data, test_data)
 
     elif STATE == GENERATE:
-        train_data = generate_model(Xdata, dataset)
+        train_data = generate_model(Xdata, website2id, id2website, dataset)
         test_train(train_data)

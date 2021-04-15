@@ -1,8 +1,8 @@
 import pandas as pd
 
 if __name__ == '__main__':
-    LXdata = pd.read_csv('./test/cleanX2.csv')
-    RXdata = pd.read_csv('./test/cleanX2.csv')
+    LXdata = pd.read_csv('../test/cleanX2.csv')
+    RXdata = pd.read_csv('../test/cleanX2.csv')
     # LXdata = LXdata.drop(
     #     ["brand", "cpu_brand", "cpu_model", "cpu_type", "cpu_frequency", "ram_capacity", "ram_type", "ram_frequency",
     #      "hdd_capacity", "ssd_capacity", "weight", "dimensions"], axis=1)
@@ -18,8 +18,9 @@ if __name__ == '__main__':
     data = pd.merge(data, RXdata, left_on=['right_instance_id'], right_on=['right_instance_id'], how='left')
     data = data.drop(['right_instance_id', 'left_instance_id'], axis=1)
     data = data.fillna('')
-    # print(pd.isnull(data).sum())
+    data.index.name = 'id'
 
+    # data.to_csv("train.csv", sep=',', encoding='utf-8')
     train_data = data.sample(frac=0.9, axis=0)
     test_data = data[~data.index.isin(train_data.index)]
     validate_data = data.sample(frac=(0.01 / 0.9), axis=0)

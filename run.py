@@ -1,9 +1,6 @@
 import pandas as pd
-from joblib import load, dump
 from handler_x2 import handle_x2
 from handler_x3 import handle_x3
-from clean_x4 import clean_x4
-import random
 
 Flag = True
 website2id = {}
