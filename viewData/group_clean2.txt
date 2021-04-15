@@ -2,8 +2,8 @@
 www.softwarecity.ca//737lenovo    intel     i5        3320m               2.6       4g        12.5      3435      x230       www.softwarecity.ca//737
 www.flexshopper.com//884lenovo    intel     i5        3320m               2.6       4g        12.5      3435      x230       www.flexshopper.com//884
 www.flexshopper.com//488lenovo    intel     i5        3320m               2.6       4g        12.5      3435      x230       www.flexshopper.com//488
-www.tigerdirect.com//12lenovo    intel     i5        3320m               2.6       4g        12.5      3435      x230t      www.tigerdirect.com//12
-buy.net//1960       lenovo    intel     i5        3320m               2.6       0         12.5      3435      x230       buy.net//1960
+www.tigerdirect.com//12lenovo    intel     i5        3320m               2.6       4g        12.5      1600      x230t      www.tigerdirect.com//12
+buy.net//1960       lenovo    intel     i5        3320m               2.6       4g        12.5      3435      x230       buy.net//1960
 www.vology.com//80  lenovo    intel     i5        3320m               2.6       4g        12.5      3435      x230       www.vology.com//80
 www.vology.com//62  lenovo    intel     i5        3320m               2.6       4g        12.5      2320      x230       www.vology.com//62
 www.vology.com//1895lenovo    intel     i5        3320m               2.6       4g        12.5      2320      x230       www.vology.com//1895
@@ -38,7 +38,7 @@ www.isupplyhub.com//326acer      intel     i5        4200u               1.6    
 www.flexshopper.com//1352acer      intel     i5        4200u               1.6       4g        15.6      e1572     aspire     www.flexshopper.com//1352
 www.flexshopper.com//1905acer      intel     i5        4200u               1.6       4g        15.6      e1572     aspire     www.flexshopper.com//1905
 www.amazon.com//2284acer      intel     i5        4200u               1.6       4g        15.6      e1572     aspire     www.amazon.com//2284
-buy.net//2012       acer      intel     i5        4200u               1.6       0         15.6      e1572     aspire     buy.net//2012
+buy.net//2012       acer      intel     i5        4200u               1.6       4g        15.6      e1572     aspire     buy.net//2012
 
 www.isupplyhub.com//821hp        amd       e-series  1-2100              0.0       4g        15.6      15f009wm  0          www.isupplyhub.com//821
 www.amazon.com//1645hp        amd       e-series  1-2100              0.0       4g        0.0       15f009wm  0          www.amazon.com//1645
@@ -52,7 +52,7 @@ www.isupplyhub.com//75lenovo    intel     i7        0                   2.13    
 
 www.isupplyhub.com//648acer      intel     i5        3230m               2.6       6g        17.3      e1771     aspire     www.isupplyhub.com//648
 www.flexshopper.com//292acer      intel     i5        3230m               2.6       6g        17.3      e1771     aspire     www.flexshopper.com//292
-buy.net//1992       acer      intel     i5        3230m               2.6       0         17.3      e1771     aspire     buy.net//1992
+buy.net//1992       acer      intel     i5        3230m               2.6       6g        17.3      e1771     aspire     buy.net//1992
 
 www.isupplyhub.com//669acer      intel     i7        4702m               2.2       0         17.3      v3772     aspire     www.isupplyhub.com//669
 buy.net//1963       acer      intel     i7        4702m               2.2       0         17.3      v3772     aspire     buy.net//1963
@@ -62,14 +62,14 @@ www.isupplyhub.com//1128acer      intel     i7        0                   2.0   
 www.flexshopper.com//2450acer      intel     i7        4510u               3.1       8g        15.6      v3572     aspire     www.flexshopper.com//2450
 www.flexshopper.com//458acer      intel     i7        4510u               3.1       8g        15.6      v3572     aspire     www.flexshopper.com//458
 
-www.isupplyhub.com//168dell      intel     i5        0                   2.0       8g        15.6      0         inspiron   www.isupplyhub.com//168
-www.amazon.com//1879dell      intel     i5        0                   2.0       8g        15.6      0         inspiron   www.amazon.com//1879
+www.isupplyhub.com//168dell      intel     i5        0                   2.0       8g        15.6      547578    inspiron   www.isupplyhub.com//168
+www.amazon.com//1879dell      intel     i5        0                   2.0       8g        15.6      547578    inspiron   www.amazon.com//1879
 
 www.isupplyhub.com//1377dell      amd       a-series  8-5545              1.7       8g        18.0      m731r     inspiron   www.isupplyhub.com//1377
 www.amazon.com//8   dell      amd       a-series  8-5545              1.7       8g        18.0      m731r     inspiron   www.amazon.com//8
 
-www.isupplyhub.com//389dell      intel     i5        0                   2.0       0         15.6      0         inspiron   www.isupplyhub.com//389
-www.amazon.com//1652dell      intel     i5        0                   2.0       0         15.6      0         inspiron   www.amazon.com//1652
+www.isupplyhub.com//389dell      intel     i5        0                   2.0       0         15.6      547150    inspiron   www.isupplyhub.com//389
+www.amazon.com//1652dell      intel     i5        0                   2.0       0         15.6      547150    inspiron   www.amazon.com//1652
 
 www.isupplyhub.com//1586acer      intel     celeron   0                   2.16      2g        11.6      e3111     aspire     www.isupplyhub.com//1586
 www.amazon.com//2043acer      intel     celeron   0                   2.16      2g        11.6      e3111     aspire     www.amazon.com//2043
@@ -79,7 +79,7 @@ www.isupplyhub.com//890acer      intel     pentium   0                   2.16   
 www.flexshopper.com//742acer      intel     pentium   n3530               2.16      4g        11.6      v3111     aspire     www.flexshopper.com//742
 www.amazon.com//398 acer      intel     pentium   0                   2.16      4g        11.6      v3111     aspire     www.amazon.com//398
 
-www.isupplyhub.com//1244lenovo    intel     i5        3320m               0.0       4g        12.5      0         x230       www.isupplyhub.com//1244
+www.isupplyhub.com//1244lenovo    intel     i5        3320m               0.0       4g        12.5      2325      x230       www.isupplyhub.com//1244
 www.vology.com//3113lenovo    intel     i5        3320m               2.6       4g        12.5      2325      x230       www.vology.com//3113
 www.vology.com//842 lenovo    intel     i5        3320m               2.6       4g        12.5      2325      x230       www.vology.com//842
 www.vology.com//497 lenovo    intel     i5        3320m               2.6       4g        12.5      2325      x230       www.vology.com//497
@@ -106,16 +106,16 @@ www.vology.com//4493lenovo    intel     i5        3320m               2.6       
 www.vology.com//1945lenovo    intel     i5        3320m               2.6       4g        12.5      2325      x230       www.vology.com//1945
 www.vology.com//823 lenovo    intel     i5        3320m               2.6       4g        12.5      2325      x230       www.vology.com//823
 
-www.isupplyhub.com//1434dell      intel     i5        4210u               1.7       6g        15.6      0         inspiron   www.isupplyhub.com//1434
-www.isupplyhub.com//748dell      intel     i5        4210u               1.7       6g        16.0      0         inspiron   www.isupplyhub.com//748
-www.amazon.com//1835dell      intel     i5        4210u               1.7       6g        16.0      0         inspiron   www.amazon.com//1835
+www.isupplyhub.com//1434dell      intel     i5        4210u               1.7       6g        15.6      547375    inspiron   www.isupplyhub.com//1434
+www.isupplyhub.com//748dell      intel     i5        4210u               1.7       6g        16.0      547375    inspiron   www.isupplyhub.com//748
+www.amazon.com//1835dell      intel     i5        4210u               1.7       6g        16.0      547375    inspiron   www.amazon.com//1835
 
 www.isupplyhub.com//451acer      intel     i3        3110m               2.4       6g        17.3      e1771     aspire     www.isupplyhub.com//451
 www.flexshopper.com//741acer      intel     i3        3110m               2.4       6g        17.3      e1771     aspire     www.flexshopper.com//741
 www.amazon.com//279 acer      intel     i3        3110m               2.4       6g        17.3      e1771     aspire     www.amazon.com//279
 www.amazon.com//1545acer      intel     i3        3110m               2.4       6g        17.3      e1771     aspire     www.amazon.com//1545
 www.amazon.com//331 acer      intel     i3        3110m               2.4       6g        17.3      e1771     aspire     www.amazon.com//331
-buy.net//1836       acer      intel     i3        3110m               2.4       0         17.3      e1771     aspire     buy.net//1836
+buy.net//1836       acer      intel     i3        3110m               2.4       6g        17.3      e1771     aspire     buy.net//1836
 
 www.isupplyhub.com//1431hp        amd       a-series  0                   1.7       8g        15.6      15p030nr  0          www.isupplyhub.com//1431
 www.amazon.com//953 hp        amd       a-series  0                   1.7       8g        15.6      15p030nr  0          www.amazon.com//953
@@ -134,14 +134,14 @@ www.amazon.com//1752acer      intel     i3        4030u               1.8       
 www.flexshopper.com//2173acer      intel     i3        4010u               1.7       4g        15.6      e1572     aspire     www.flexshopper.com//2173
 www.flexshopper.com//1098acer      intel     i3        4010u               1.7       4g        15.6      e1572     aspire     www.flexshopper.com//1098
 www.amazon.com//1389acer      intel     i3        4010u               1.7       0         15.6      e1572     aspire     www.amazon.com//1389
-www.amazon.com//2395acer      intel     i3        4010u               1.7       4g        15.6      0         aspire     www.amazon.com//2395
+www.amazon.com//2395acer      intel     i3        4010u               1.7       4g        15.6      e1572     aspire     www.amazon.com//2395
 www.amazon.com//1313acer      intel     i3        4010u               1.7       4g        15.6      e1572     aspire     www.amazon.com//1313
 www.amazon.com//1014acer      intel     i3        4010u               1.7       4g        15.6      e1572     aspire     www.amazon.com//1014
 www.amazon.com//1081acer      intel     i3        4010u               1.7       4g        15.6      e1572     aspire     www.amazon.com//1081
 www.amazon.com//291 acer      intel     i3        4010u               1.7       4g        16.0      e1572     aspire     www.amazon.com//291
 www.amazon.com//2226acer      intel     i3        4010u               1.7       0         15.6      e1572     aspire     www.amazon.com//2226
-buy.net//393        acer      intel     i3        4010u               1.7       0         15.6      e1572     aspire     buy.net//393
-buy.net//634        acer      intel     i3        4010u               1.7       0         15.6      e1572     aspire     buy.net//634
+buy.net//393        acer      intel     i3        4010u               1.7       4g        15.6      e1572     aspire     buy.net//393
+buy.net//634        acer      intel     i3        4010u               1.7       4g        15.6      e1572     aspire     buy.net//634
 
 www.flexshopper.com//990hp        intel     i3        4010u               0.0       4g        11.6      810g2     elitebook  www.flexshopper.com//990
 www.flexshopper.com//2032hp        intel     i3        4010u               1.7       4g        11.6      810g2     elitebook  www.flexshopper.com//2032
@@ -166,11 +166,11 @@ www.flexshopper.com//1333hp        intel     i5        9470m               0.0  
 www.flexshopper.com//2098hp        intel     i5        9470m               0.0       8g        0.0       9470m     elitebook  www.flexshopper.com//2098
 
 www.flexshopper.com//1361acer      intel     pentium   2020m               2.4       4g        17.3      e1731     aspire     www.flexshopper.com//1361
-buy.net//121        acer      intel     pentium   2020m               2.4       0         17.3      e1731     aspire     buy.net//121
+buy.net//121        acer      intel     pentium   2020m               2.4       4g        17.3      e1731     aspire     buy.net//121
 
 www.flexshopper.com//703hp        intel     i5        3437u               0.0       4g        11.6      810       elitebook  www.flexshopper.com//703
-buy.net//1789       hp        intel     i5        3437u               1.9       0         11.6      810       elitebook  buy.net//1789
-buy.net//132        hp        intel     i5        3437u               1.9       0         11.6      810       elitebook  buy.net//132
+buy.net//1789       hp        intel     i5        3437u               1.9       4g        11.6      810       elitebook  buy.net//1789
+buy.net//132        hp        intel     i5        3437u               1.9       4g        11.6      810       elitebook  buy.net//132
 
 www.flexshopper.com//1729lenovo    intel     i5        3320m               0.0       4g        12.5      3437      x230       www.flexshopper.com//1729
 www.vology.com//1286lenovo    intel     i5        3320m               2.6       4g        12.5      3437      x230       www.vology.com//1286
@@ -196,11 +196,11 @@ www.vology.com//3294hp        intel     i5        3427u               1.8       
 
 www.flexshopper.com//2217acer      intel     celeron   2957u               1.4       4g        15.6      e1532     aspire     www.flexshopper.com//2217
 www.flexshopper.com//43acer      intel     celeron   2957u               1.4       4g        15.6      e1532     aspire     www.flexshopper.com//43
-buy.net//1759       acer      intel     celeron   2957u               1.4       0         15.6      e1532     aspire     buy.net//1759
-buy.net//93         acer      intel     celeron   2957u               1.4       0         15.6      e1532     aspire     buy.net//93
+buy.net//1759       acer      intel     celeron   2957u               1.4       4g        15.6      e1532     aspire     buy.net//1759
+buy.net//93         acer      intel     celeron   2957u               1.4       4g        15.6      e1532     aspire     buy.net//93
 
 www.flexshopper.com//1050acer      amd       a-series  4-5000              1.5       4g        15.6      e1522     aspire     www.flexshopper.com//1050
-buy.net//1801       acer      amd       a-series  4-5000              1.5       0         15.6      e1522     aspire     buy.net//1801
+buy.net//1801       acer      amd       a-series  4-5000              1.5       4g        15.6      e1522     aspire     buy.net//1801
 
 www.amazon.com//1780acer      intel     i3        2348m               0.0       4g        15.6      e1571     aspire     www.amazon.com//1780
 www.amazon.com//753 acer      intel     i3        2348m               0.0       4g        15.6      e1571     aspire     www.amazon.com//753
@@ -224,10 +224,10 @@ www.vology.com//1676lenovo    intel     i3        2367m               1.4       
 buy.net//2255       hp        intel     i5        2410m               2.3       4g        15.6      8560p     elitebook  buy.net//2255
 www.vology.com//1322hp        intel     i5        2540m               2.6       4g        15.6      8560p     elitebook  www.vology.com//1322
 
-buy.net//2109       acer      intel     i5        4200u               1.6       0         15.6      v5573     aspire     buy.net//2109
-buy.net//243        acer      intel     i5        4200u               1.6       0         15.6      v5573     aspire     buy.net//243
+buy.net//2109       acer      intel     i5        4200u               1.6       8g        15.6      v5573     aspire     buy.net//2109
+buy.net//243        acer      intel     i5        4200u               1.6       8g        15.6      v5573     aspire     buy.net//243
 
-buy.net//370        lenovo    intel     i5        3427u               1.8       0         14.0      3460      x1 carbon  buy.net//370
+buy.net//370        lenovo    intel     i5        3427u               1.8       4g        14.0      3460      x1 carbon  buy.net//370
 www.vology.com//554 lenovo    intel     i5        3427u               1.8       4g        14.0      3460      x1 carbon  www.vology.com//554
 www.vology.com//4339lenovo    intel     i5        3427u               1.8       4g        14.0      3460      x1 carbon  www.vology.com//4339
 www.vology.com//1677lenovo    intel     i5        3427u               1.8       4g        14.0      3460      x1 carbon  www.vology.com//1677
