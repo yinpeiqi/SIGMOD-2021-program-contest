@@ -1,4 +1,4 @@
-5721
+5720
 buy.net//1          hp        intel     i7        840qm               1.86      8         17.0      8740w     elitebook                                                                                            buy.net//1
 
 buy.net//100        acer      intel     celeron   0                   1.4       2         11.6      0         0                                                                                                    buy.net//100
@@ -3453,6 +3453,7 @@ www.flexshopper.com//479hp        amd       0         0                   0.0   
 
 www.flexshopper.com//488lenovo    intel     i5        3320m               0.0       4         12.5      3435      x230                                                                                                 www.flexshopper.com//488
 www.flexshopper.com//884lenovo    intel     i5        3320m               0.0       4         12.5      3435      x230                                                                                                 www.flexshopper.com//884
+www.softwarecity.ca//737lenovo    intel     i5        3320m               2.6       4         12.5      3435      x230                                                                                                 www.softwarecity.ca//737
 www.vology.com//103 lenovo    intel     i5        3320m               0.0       4         12.5      2320      x230                                                                                                 www.vology.com//103
 www.vology.com//1277lenovo    intel     i5        3320m               0.0       4         12.5      3435      x230                                                                                                 www.vology.com//1277
 www.vology.com//1895lenovo    intel     i5        3320m               0.0       4         12.5      2320      x230                                                                                                 www.vology.com//1895
@@ -5539,8 +5540,6 @@ www.softwarecity.ca//734lenovo    amd       a-series  0                   0.0   
 www.softwarecity.ca//735lenovo    intel     pentium   0                   2.6       4         0.0       0         0                                                                                                    www.softwarecity.ca//735
 
 www.softwarecity.ca//736lenovo    intel     i7        3667u               2.0       0         11.6      3698      0                                                                                                    www.softwarecity.ca//736
-
-www.softwarecity.ca//737lenovo    intel     i5        3320m               2.6       4         12.5      3435      x230                                                                                                 www.softwarecity.ca//737
 
 www.softwarecity.ca//738lenovo    0         0         0                   0.0       0         10.8      0         0                                                                                                    www.softwarecity.ca//738
 
