@@ -1,17 +1,17 @@
 D:\Software\Anaconda\envs\Sigmod\python.exe D:/Software/Git/Workspace/Sigmod/DSU.py
 119
-altosight.com//0    lexar     32gb      31990.0   0                   1400      xqd       lexar 32gb 1400x 210mb/s professional xqd memóriakártya                                              altosight.com//0
-altosight.com//94   lexar     32gb      329.0     0                   1400      xqd       lexar xqd 32gb x1400 professional xqd +kupon premium -50% na ab fotoksi??k? - abfoto                 altosight.com//94
-altosight.com//95   lexar     32gb      329.0     0                   1400      xqd       lexar xqd 32gb x1400 professional xqd +kupon premium -50% na ab fotoksi??k? - abfoto                 altosight.com//95
-altosight.com//240  lexar     32gb      289.0     0                   1400      xqd       karta pami?ci lexar xqd 32 gb x1400 pro                                                              altosight.com//240
-altosight.com//760  lexar     32gb      87.45     0                   1400      xqd       carte xqd lexar xqd pro 32 go 1400x (mk937093372)                                                    altosight.com//760
-altosight.com//2534 lexar     32gb      78.0      0                   1400      xqd       carte xqd lexar 32go 1400x                                                                           altosight.com//2534
-altosight.com//3076 lexar     32gb      239.0     0                   1400      xqd       lexar xqd 32gb x1400 professional xqd  - xqd - karty pami?ci - no?niki pami?ci - produkty            altosight.com//3076
-altosight.com//4054 lexar     32gb      0.0       0                   1400      xqd       lexar 32 gb 1400x professional xqd compactflash card                                                 altosight.com//4054
-altosight.com//5257 lexar     32gb      0.0       0                   1400      xqd       lexar lxqd32gcrbeu1400 - tarjeta de memoria de 32 gb                                                 altosight.com//5257
-altosight.com//6380 lexar     32gb      0.0       0                   1400      xqd       scheda lexar professional 32gb 1400x xqd 2.0 - lxqd32gcrbeu1400                                      altosight.com//6380
-altosight.com//11024lexar     32gb      989.0     0                   1400      xqd       lexar xqd 32gb 210mb/s 1400x                                                                         altosight.com//11024
-altosight.com//11026lexar     32gb      898.0     0                   1400      xqd       lexar xqd 32gb 210mb/s 1400x                                                                         altosight.com//11026
+altosight.com//0    lexar     32gb      31990.0   xqd                 1400      0         lexar 32gb 1400x 210mb/s professional xqd memóriakártya                                              altosight.com//0
+altosight.com//94   lexar     32gb      329.0     xqd                 1400      0         lexar xqd 32gb x1400 professional xqd +kupon premium -50% na ab fotoksi??k? - abfoto                 altosight.com//94
+altosight.com//95   lexar     32gb      329.0     xqd                 1400      0         lexar xqd 32gb x1400 professional xqd +kupon premium -50% na ab fotoksi??k? - abfoto                 altosight.com//95
+altosight.com//240  lexar     32gb      289.0     xqd                 1400      0         karta pami?ci lexar xqd 32 gb x1400 pro                                                              altosight.com//240
+altosight.com//760  lexar     32gb      87.45     xqd                 1400      0         carte xqd lexar xqd pro 32 go 1400x (mk937093372)                                                    altosight.com//760
+altosight.com//2534 lexar     32gb      78.0      xqd                 1400      0         carte xqd lexar 32go 1400x                                                                           altosight.com//2534
+altosight.com//3076 lexar     32gb      239.0     xqd                 1400      0         lexar xqd 32gb x1400 professional xqd  - xqd - karty pami?ci - no?niki pami?ci - produkty            altosight.com//3076
+altosight.com//4054 lexar     32gb      0.0       xqd                 1400      0         lexar 32 gb 1400x professional xqd compactflash card                                                 altosight.com//4054
+altosight.com//5257 lexar     32gb      0.0       xqd                 1400      0         lexar lxqd32gcrbeu1400 - tarjeta de memoria de 32 gb                                                 altosight.com//5257
+altosight.com//6380 lexar     32gb      0.0       xqd                 1400      0         scheda lexar professional 32gb 1400x xqd 2.0 - lxqd32gcrbeu1400                                      altosight.com//6380
+altosight.com//11024lexar     32gb      989.0     xqd                 1400      0         lexar xqd 32gb 210mb/s 1400x                                                                         altosight.com//11024
+altosight.com//11026lexar     32gb      898.0     xqd                 1400      0         lexar xqd 32gb 210mb/s 1400x                                                                         altosight.com//11026
 
 altosight.com//25   sony      128gb     59990.0   microsd             0         0         sony microsdxc uhs-1 u3 128gb memóriakártya + adapter (srg1uxa)                                      altosight.com//25
 altosight.com//289  sony      128gb     229.0     microsd             0         0         wysokiej jako?ci karta pami?ci microsd sr-ux2a, która zosta?a zaprojektowana do zapisu zdj?? w wysokiej rozdzielczo?ci, obs?ugi szybkich trybów zdj?? seryjnych oraz filmowania w rozdzielczo?ci 4k lub full hd (xavc s), w trakcie korzystania z urz?dze? takich jak np. zaawansowane smartfony, tablety czy kamery sportowe. wytrzyma?a obudowa zapewnia bezpiecze?stwo danych i odporno?? na wstrz?sy, kurz, py?, wilgo?, promieniowanie rentgenowskie i skrajne temperatury. szybki odczyt wynosz?cy 95 mb/s i pozwala na swobodn? prac? w cyfrowej ciemni czy studiu monta?owym z profesjonalnymi aparatami cyfrowymi i kamerami. w zestawie z adapterem umo?liwiaj?cym ?atwe przes?anie danych z i do pami?ci komputera. altosight.com//289
@@ -126,7 +126,7 @@ altosight.com//329  kingston  4gb       0.0       sd                  0         
 altosight.com//1295 kingston  4gb       0.0       sd                  0         0         kingston - carte mémoire flash - 4 go - sdhc                                                         altosight.com//1295
 altosight.com//3814 kingston  4gb       0.0       sd                  0         0         kingston sd4/4gb memory 4gb sdhc class 4 flash card                                                  altosight.com//3814
 altosight.com//5696 kingston  4gb       0.0       sd                  0         0         kingston carte sd standard sd4/4gb sdhc classe 4 - 4go                                               altosight.com//5696
-altosight.com//6619 kingston  4gb       7.99      0                   0         0         kingston secure digital card high-capacity 4gb  (retail)                                             altosight.com//6619
+altosight.com//6619 kingston  4gb       7.99      sd                  0         0         kingston secure digital card high-capacity 4gb  (retail)                                             altosight.com//6619
 altosight.com//7694 kingston  4gb       0.0       sd                  0         0         karta pami?ci sdhc (secure digital high capacity) gwarantuj?ca minimaln? szybko?? transferu 4 mb/s, kompatybilna tylko z urz?dzeniami obs?uguj?cymi standard sdhc. obj?ta wieczyst? gwarancj?. altosight.com//7694
 altosight.com//9189 kingston  4gb       9.99      sd                  0         0         kingston sdhc class 4 (4gb) speicherkarte                                                            altosight.com//9189
 altosight.com//9517 kingston  4gb       0.0       sd                  0         0         kingston - carte mémoire flash - 4 go - sdhc                                                         altosight.com//9517
@@ -148,7 +148,7 @@ altosight.com//5216 lexar     8gb       11.9      sd                  300       
 altosight.com//5562 lexar     8gb       11.9      sd                  300       0         lexar lsd8gbbbeu300 - tarjeta de memoria sd premium de 8 gb (con hasta 45 mb/s, clase 10, velocidad de 300x) altosight.com//5562
 altosight.com//6336 lexar     8gb       10.99     sd                  300       0         lexar premium ii 300x 8gb sdhc u1 scheda di memoria - lsd8gbbbeu300                                  altosight.com//6336
 altosight.com//7717 lexar     8gb       7.9       sd                  300       0         carte sd lexar premium series sdhc 8 go - sd 300x 8gb (4116020)                                      altosight.com//7717
-altosight.com//8050 lexar     8gb       7.9       sd                  0         0         tarjeta de memoria lexar sdhc de 8gb clase 10                                                        altosight.com//8050
+altosight.com//8050 lexar     8gb       7.9       sd                  300       0         tarjeta de memoria lexar sdhc de 8gb clase 10                                                        altosight.com//8050
 altosight.com//9922 lexar     8gb       13.99     sd                  300       0         lexar sdhc 8gb premium uhs-i 300x                                                                    altosight.com//9922
 altosight.com//10247lexar     8gb       8.0       sd                  300       0         tarjeta sd 8 gb lexar (45 mb/sg  300x) premium ii                                                    altosight.com//10247
 
@@ -179,11 +179,11 @@ altosight.com//5809 lexar     32gb      20.29     usb                 s25       
 altosight.com//6317 lexar     32gb      13.11     usb                 s25       0         lexar jumpdrive s25 32gb usb 3.0 flash drive ljds25-32gabeu (verde)                                  altosight.com//6317
 altosight.com//7765 lexar     32gb      16.9      usb                 s25       0         clé usb lexar jumpdrive s25 32gb (4110331)                                                           altosight.com//7765
 altosight.com//9513 lexar     32gb      0.0       usb                 s25       0         clé usb3.0 lexar jumpdrive s25 32 go vert et blanc                                                   altosight.com//9513
-altosight.com//13814lexar     32gb      13.99     0                   s25       0         pendrive lexar jumpdrive s25 32 gb                                                                   altosight.com//13814
+altosight.com//13814lexar     32gb      13.99     usb                 s25       0         pendrive lexar jumpdrive s25 32 gb                                                                   altosight.com//13814
 
 altosight.com//433  lexar     64gb      39.9      usb                 s25       0         clé usb lexar jumpdrive s25 64gb (4110315)                                                           altosight.com//433
 altosight.com//1445 lexar     64gb      34.99     usb                 s25       0         lexar jumpdrive s25  memoria usb 3.0  64 gb violeta en fnac.es                                       altosight.com//1445
-altosight.com//2428 lexar     64gb      34.99     0                   s25       0         lexar jumpdrive s25 64gb                                                                             altosight.com//2428
+altosight.com//2428 lexar     64gb      34.99     usb                 s25       0         lexar jumpdrive s25 64gb                                                                             altosight.com//2428
 altosight.com//3646 lexar     64gb      0.0       usb                 s25       0         lexar jumpdrive s25 64gb 64gb usb 3.0 púrpura, color blanco unidad fl                                altosight.com//3646
 altosight.com//4430 lexar     64gb      37.99     usb                 s25       0         lexar jumpdrive s25 64gb usb 3.0 flash drive ljds25-64gabeu (purple)                                 altosight.com//4430
 altosight.com//4711 lexar     64gb      21.1      usb                 s25       0         lexar jumpdrive s25 64gb usb 3.0 flash drive ljds25-64gabeu (lila)                                   altosight.com//4711
@@ -195,7 +195,7 @@ altosight.com//9632 lexar     64gb      29.95     usb                 s25       
 altosight.com//11172lexar     64gb      34.0      usb                 s25       0         lexar jumpdrive s25 usb 3.0 64gb                                                                     altosight.com//11172
 altosight.com//12450lexar     64gb      47.22     usb                 s25       0         lexar jumpdrive s25 - usb-flash-laufwerk - 64 gb - usb 3.0 - violett                                 altosight.com//12450
 altosight.com//13253lexar     64gb      27.27     usb                 s25       0         tesco direct: lexar jumpdrive s25 64 gb usb 3.0 flash drive - purple, white                          altosight.com//13253
-altosight.com//13815lexar     64gb      24.99     0                   s25       0         pendrive lexar jumpdrive s25 64 gb                                                                   altosight.com//13815
+altosight.com//13815lexar     64gb      24.99     usb                 s25       0         pendrive lexar jumpdrive s25 64 gb                                                                   altosight.com//13815
 
 altosight.com//434  lexar     16gb      8.9       usb                 v30       0         clé usb lexar v30 16gb usb 2.0 (4169409)                                                             altosight.com//434
 altosight.com//590  lexar     16gb      11.94     usb                 v30       0         clé usb lexar 16gb jumpdrive v30 16go usb 2.0 type a blanc lecteur usb flash (mk1289619889)          altosight.com//590
@@ -368,7 +368,7 @@ altosight.com//8960 kingston  64gb      29.99     usb                 4         
 
 altosight.com//593  lexar     128gb     76.72     usb                 c20c      0         clé usb lexar jumpdrive c20c 128gb 128gb usb 3.0 (3.1 gen 1) type-a/type-c noir, argent lecteur usb flash (mk1008030400) altosight.com//593
 altosight.com//1451 lexar     128gb     79.99     usb                 c20c      0         memoria usb lexar jumpdrive c20c 128 gb en fnac.es                                                   altosight.com//1451
-altosight.com//2421 lexar     128gb     89.99     0                   c20c      0         lexar jumpdrive c20c 128 gb                                                                          altosight.com//2421
+altosight.com//2421 lexar     128gb     89.99     usb                 c20c      0         lexar jumpdrive c20c 128 gb                                                                          altosight.com//2421
 altosight.com//3612 lexar     128gb     63.99     usb                 c20c      0         lexar jumpdrive c20c 128gb 128gb usb 3.0 (3.1 gen 1) conector usb tipo                               altosight.com//3612
 altosight.com//4073 lexar     128gb     39.68     usb                 c20m      0         lexar jumpdrive c20m 128 gb micro-usb flash drive,lexj4,ljdc20m-128bbeu                              altosight.com//4073
 altosight.com//4435 lexar     128gb     50.23     usb                 c20c      0         lexar jumpdrive c20c 128 gb usb type-c flash drive                                                   altosight.com//4435
@@ -377,12 +377,12 @@ altosight.com//5844 lexar     128gb     0.0       usb                 c20c      
 altosight.com//7877 lexar     128gb     72.51     usb                 c20c      0         clé usb lexar jumpdrive c20c 128gb 128gb usb 3.0 (3.1 gen 1) type-a/type-c noir, argent lecteur usb flash (mk1008030400) altosight.com//7877
 altosight.com//8082 lexar     128gb     97.9      usb                 c20c      0         pendrive lexar jumpdrive c20c usb 3.1 128 gb con cable plata/negro/rojo                              altosight.com//8082
 altosight.com//9636 lexar     128gb     88.14     usb                 c20c      0         memoria usb lexar jumpdrive c20c 128 gb ipec discount lexar                                          altosight.com//9636
-altosight.com//11316lexar     128gb     339.99    0                   c20c      0         pami?? lexar jumpdrive c20c (ljdc20c pami?? lexar jumpdrive c20c (ljdc20c                            altosight.com//11316
+altosight.com//11316lexar     128gb     339.99    usb                 c20c      0         pami?? lexar jumpdrive c20c (ljdc20c pami?? lexar jumpdrive c20c (ljdc20c                            altosight.com//11316
 altosight.com//13244lexar     128gb     0.0       usb                 c20c      0         tesco direct: lexar jumpdrive c20c 128gb usb 3.0 (3.1 gen 1) type-a/type-c black silver              altosight.com//13244
 altosight.com//13459lexar     128gb     8.99      usb                 v10       0         lexar 8gb jumpdrive v10 8gb usb 2.0 tipo-a blu unità flash usb                                       altosight.com//13459
 
 altosight.com//596  lexar     128gb     57.8      usb                 c20m      0         clé usb lexar jumpdrive c20m 128gb 128gb usb 3.0 (3.1 gen 1) type-a noir, argent lecteur usb flash (mk1902705846) altosight.com//596
-altosight.com//2424 lexar     128gb     59.99     0                   c20m      0         lexar jumpdrive c20m 128gb                                                                           altosight.com//2424
+altosight.com//2424 lexar     128gb     59.99     usb                 c20m      0         lexar jumpdrive c20m 128gb                                                                           altosight.com//2424
 altosight.com//3643 lexar     128gb     0.0       usb                 c20m      0         lexar jumpdrive c20m 128gb 128gb usb 3.0 (3.1 gen 1) type-a negro                                    altosight.com//3643
 altosight.com//4433 lexar     128gb     43.75     usb                 c20m      0         lexar jumpdrive c20m 128 gb micro-usb flash drive                                                    altosight.com//4433
 altosight.com//4787 lexar     128gb     53.61     usb                 c20m      0         lexar ljdc20m-128bbeuk jumpdrive c20m micro-usb-flash-laufwerk 128gb                                 altosight.com//4787
@@ -391,12 +391,12 @@ altosight.com//6394 lexar     128gb     58.05     usb                 c20m      
 altosight.com//7880 lexar     128gb     57.07     usb                 c20m      0         clé usb lexar jumpdrive c20m 128gb 128gb usb 3.0 (3.1 gen 1) type-a noir, argent lecteur usb flash (mk1902705846) altosight.com//7880
 altosight.com//9482 lexar     128gb     0.0       usb                 c20m      0         clé micro-usb lexar jumpdrive c20m 128 go                                                            altosight.com//9482
 altosight.com//9639 lexar     128gb     56.12     usb                 c20m      0         memoria usb lexar jumpdrive c20m usb3.0 - microusb 128gb pendrive ipec discount lexar                altosight.com//9639
-altosight.com//11320lexar     128gb     274.99    0                   c20m      0         pami?? lexar jumpdrive c20m (ljdc20m pami?? lexar jumpdrive c20m (ljdc20m                            altosight.com//11320
+altosight.com//11320lexar     128gb     274.99    usb                 c20m      0         pami?? lexar jumpdrive c20m (ljdc20m pami?? lexar jumpdrive c20m (ljdc20m                            altosight.com//11320
 altosight.com//11419lexar     128gb     74.99     usb                 c20m      0         lexar usb-stick 128 gb (ljdc20m-128bbeu)                                                             altosight.com//11419
 altosight.com//13247lexar     128gb     0.0       usb                 c20m      0         tesco direct: lexar jumpdrive c20m 128gb usb 3.0 (3.1 gen 1) type-a black silver                     altosight.com//13247
 
 altosight.com//597  lexar     32gb      29.97     usb                 c20m      0         clé usb lexar jumpdrive c20m 32gb 32gb usb 3.0 (3.1 gen 1) type-a/type-c noir, argent lecteur usb flash (mk113845669) altosight.com//597
-altosight.com//2425 lexar     32gb      28.99     0                   c20m      0         lexar jumpdrive c20m 32gb                                                                            altosight.com//2425
+altosight.com//2425 lexar     32gb      28.99     usb                 c20m      0         lexar jumpdrive c20m 32gb                                                                            altosight.com//2425
 altosight.com//3644 lexar     32gb      0.0       usb                 c20m      0         lexar jumpdrive c20m 32gb 32gb usb 3.0 (3.1 gen 1) type-a/type-c negro                               altosight.com//3644
 altosight.com//4071 lexar     32gb      18.41     usb                 c20m      0         lexar jumpdrive c20m 32gb micro-usb flash drive,lexj4,ljdc20m-32gbbeu                                altosight.com//4071
 altosight.com//4431 lexar     32gb      19.28     usb                 c20m      0         lexar jumpdrive c20m 32gb micro-usb flash drive                                                      altosight.com//4431
@@ -404,7 +404,7 @@ altosight.com//4785 lexar     32gb      24.88     usb                 c20m      
 altosight.com//7881 lexar     32gb      28.17     usb                 c20m      0         clé usb lexar jumpdrive c20m 32gb 32gb usb 3.0 (3.1 gen 1) type-a/type-c noir, argent lecteur usb flash (mk113845669) altosight.com//7881
 altosight.com//8080 lexar     32gb      32.9      usb                 c20m      0         pendrive lexar jumpdrive c20m usb 3.1 32 gb con cable plata/negro/azul                               altosight.com//8080
 altosight.com//9640 lexar     32gb      29.24     usb                 c20m      0         memoria usb lexar jumpdrive c20m usb3.0 - microusb 32gb pendrive ipec discount lexar                 altosight.com//9640
-altosight.com//11319lexar     32gb      87.9      0                   c20m      0         pami?? lexar jumpdrive c20m 32 gb                                                                    altosight.com//11319
+altosight.com//11319lexar     32gb      87.9      usb                 c20m      0         pami?? lexar jumpdrive c20m 32 gb                                                                    altosight.com//11319
 altosight.com//11422lexar     32gb      34.99     usb                 c20m      0         lexar usb-stick 32 gb (ljdc20m-32gbbeu)                                                              altosight.com//11422
 altosight.com//12634lexar     32gb      21.05     usb                 c20m      0         mémoire 32gb jumpdrive c20m lexar achat dans le rayon clés usb usb 3.1                               altosight.com//12634
 altosight.com//12635lexar     32gb      22.58     usb                 c20m      0         mémoire 32gb jumpdrive c20m lexar achat dans le rayon clés usb usb 3.1                               altosight.com//12635
@@ -461,7 +461,7 @@ altosight.com//12123sony      8gb       350.0     sd                  class 10  
 altosight.com//12124sony      8gb       350.0     sd                  class 10  0         sony sdhc 8gb class 10 uhs-i                                                                         altosight.com//12124
 
 altosight.com//1069 kingston  512gb     949.0     usb                 0         0         kingston hyperx savage 512gb usb 3.0                                                                 altosight.com//1069
-altosight.com//3608 kingston  512gb     296.0     0                   0         0         kingston hxs3, 512gb, 3.1 - mediamarkt.es                                                            altosight.com//3608
+altosight.com//3608 kingston  512gb     296.0     usb                 0         0         kingston hxs3, 512gb, 3.1 - mediamarkt.es                                                            altosight.com//3608
 altosight.com//4149 kingston  512gb     206.09    usb                 0         0         hyperx 512 gb savage usb 2.0/3.0/3.1 flash drive                                                     altosight.com//4149
 altosight.com//4841 kingston  512gb     222.47    usb                 0         0         hyperx savage hxs3/512 gb usb-stick usb 3.0 schwarz/rot bis zu 350mb/sek r, 250mb/sek w              altosight.com//4841
 altosight.com//6452 kingston  512gb     232.89    usb                 0         0         kingston hxs3/512gb hyperx savage memoria flash, usb 3.0, 512 gb, lettura 350 mb/s, scrittura 250 mb/s, nero/rosso altosight.com//6452
@@ -471,7 +471,7 @@ altosight.com//8731 kingston  512gb     859.0     usb                 0         
 altosight.com//8920 kingston  512gb     6179.0    usb                 0         0         usb flash kingston hyperx savage 512gb ?erný/?ervený                                                 altosight.com//8920
 altosight.com//8921 kingston  512gb     6210.0    usb                 0         0         usb flash kingston hyperx savage 512gb usb 3.1 ?erný/?ervený                                         altosight.com//8921
 altosight.com//9768 kingston  512gb     255.99    usb                 0         0         hyperx - 512gb 512gb usb 3.1/usb 3.0 negro, rojo unidad flash usb mercado actual kingston technology altosight.com//9768
-altosight.com//10742kingston  512gb     364.7     0                   0         0         kingston hyperx savage 512 gb                                                                        altosight.com//10742
+altosight.com//10742kingston  512gb     364.7     usb                 0         0         kingston hyperx savage 512 gb                                                                        altosight.com//10742
 altosight.com//10952kingston  512gb     309.0     usb                 0         0         kingston hyperx savage - usb-flash-laufwerk - 512 gb - usb 3.1 -                                     altosight.com//10952
 altosight.com//12159kingston  512gb     268.72    usb                 0         0         kingston hx savage usb 3.1/3.0 512gb\n                                                               altosight.com//12159
 altosight.com//13801kingston  512gb     269.0     usb                 0         0         pendrive kingston 512gb hxsav usb 3.1                                                                altosight.com//13801
@@ -532,9 +532,9 @@ altosight.com//9563 lexar     16gb      0.0       usb                 s70       
 altosight.com//13254lexar     16gb      21.41     usb                 s70       0         tesco direct: lexar jumpdrive s70 16gb usb memory flash drive - (burgundy) small blister             altosight.com//13254
 altosight.com//13476lexar     16gb      19.9      usb                 s70       0         lexar jumpdrive s70 16gb usb 2.0 tipo-a grigio, arancione unità flash usb                            altosight.com//13476
 
-altosight.com//1202 lexar     8gb       6.99      0                   v10       0         lexar - jumpdrive v10 8gb&nbsp;                                                                      altosight.com//1202
+altosight.com//1202 lexar     8gb       6.99      usb                 v10       0         lexar - jumpdrive v10 8gb&nbsp;                                                                      altosight.com//1202
 altosight.com//5550 lexar     8gb       18.8      usb                 v10       0         lexar 8gb jumpdrive v10 4gb usb 2.0 tipo a azul unidad flash usb - memoria usb (4 gb, usb 2.0, tipo a, azul, win, mac) altosight.com//5550
-altosight.com//12167lexar     8gb       9.04      0                   v10       0         lexar jumpdrive v10 8gb (fp)-\n                                                                      altosight.com//12167
+altosight.com//12167lexar     8gb       9.04      usb                 v10       0         lexar jumpdrive v10 8gb (fp)-\n                                                                      altosight.com//12167
 
 altosight.com//1204 sandisk   16gb      29.9      usb                 0         ext       sandisk - cruzer extreme usb 3.0 16gb&nbsp;                                                          altosight.com//1204
 altosight.com//1472 sandisk   16gb      0.0       usb                 0         ext       memoria usb sandisk extreme usb 3.0 flash drive 16 gb pendrive en fnac.es                            altosight.com//1472
@@ -591,7 +591,7 @@ altosight.com//6225 kingston  16gb      14.39     sd                  0         
 altosight.com//8611 kingston  16gb      24.99     sd                  0         0         kingston sdhc class 10 uhs-i 16gb                                                                    altosight.com//8611
 altosight.com//8823 kingston  16gb      399.0     sd                  0         0         pam??ová karta kingston sdhc 16gb uhs-i u1 (90r/45w)                                                 altosight.com//8823
 altosight.com//10508kingston  16gb      20.02     sd                  0         0         kingston ultimate - carte mémoire flash - 16 go - sdhc\n                                             altosight.com//10508
-altosight.com//10864kingston  16gb      17.95     0                   0         0         kingston ultimate - flash-speicherkarte - 16 gb - uhs class 1 /                                      altosight.com//10864
+altosight.com//10864kingston  16gb      17.95     sd                  0         0         kingston ultimate - flash-speicherkarte - 16 gb - uhs class 1 /                                      altosight.com//10864
 altosight.com//11962kingston  16gb      450.0     sd                  0         0         kingston sdhc 16gb ultimate memory class 10 uhs-i                                                    altosight.com//11962
 altosight.com//12194kingston  16gb      20.02     sd                  0         0         kingston ultimate - flashgeheugenkaart - 16 gb - sdhc\n                                              altosight.com//12194
 altosight.com//12858kingston  16gb      14.99     sd                  0         0         kingston ultimate sdhc 16gb, uhs-i/class 10 (sda10/16gb)                                             altosight.com//12858
@@ -696,8 +696,6 @@ altosight.com//1865 sandisk   16gb      81.9      sd                  0         
 altosight.com//7938 sandisk   16gb      66.06     sd                  0         ext       carte sd sandisk carte extreme pro sdhc 16 go 280 mo/s classe 10 uhs-ii u3 (mk935585202)             altosight.com//7938
 altosight.com//11040sandisk   16gb      548.0     sd                  0         ext       sandisk sdhc extreme pro 16gb 280mb/s                                                                altosight.com//11040
 
-altosight.com//1449 lexar     8gb       6.29      usb                 v30       0         lexar jumpdrive v30 - unidad flash usb - 8 gb en fnac.es                                             altosight.com//1449
-
 altosight.com//1482 sony      4gb       0.0       usb                 0         0         memoria usb sony micro vault style 4 gb color blanco pendrive en fnac.es                             altosight.com//1482
 altosight.com//1483 sony      4gb       0.0       usb                 0         0         memoria usb sony micro vault style 4 gb color rosa pendrive en fnac.es                               altosight.com//1483
 altosight.com//13390sony      4gb       8.78      usb                 usmmp     0         tesco direct: sony microvault style usm4gmp (4gb) usb flash drive (pink)                             altosight.com//13390
@@ -710,14 +708,10 @@ altosight.com//5757 sony      32gb      51.5      0                   usmqx     
 altosight.com//6240 sony      32gb      52.34     usb                 usmqx     0         sony usm32gqx memoria usb 3.0, capacità 32 gb, velocità massima di lettura 226 mb/s, nero,sony,usm32gqx/b,vergini,226mb/s,32gb,memoriausb,nera,sony altosight.com//6240
 altosight.com//12813sony      32gb      54.59     usb                 0         0         usb3.0 key machqx 32gb 5ywarr sony achat dans le rayon clés usb usb 3.0                              altosight.com//12813
 
-altosight.com//1521 sony      8gb       0.0       usb                 usmqx     0         sony unidad flash usb alta velocidad (8 gb) usm8gqx - pendrive / memoria usb en fnac.es              altosight.com//1521
-
 altosight.com//1550 toshiba   128gb     0.0       usb                 0         0         toshiba usb 3.0 128gb - pendrive / memoria usb en fnac.es                                            altosight.com//1550
 altosight.com//4539 toshiba   128gb     85.67     usb                 0         0         toshiba transmemory?ex ii 128 gb usb 3.0 (up to 220mb/s read) flash drive                            altosight.com//4539
 altosight.com//5666 toshiba   128gb     98.64     usb                 0         v128      toshiba thnv128osus(bl8 - memoria usb de 128 gb, plateado                                            altosight.com//5666
 altosight.com//5667 toshiba   128gb     65.76     usb                 0         v128      toshiba thnv128osusil(8 - memoria usb 3.0 de 128 gb, color plata                                     altosight.com//5667
-
-altosight.com//1575 toshiba   64gb      0.0       usb                 0         u201      toshiba - u201 64gb usb 2.0 verde, color blanco unidad flash usb en fnac.es                          altosight.com//1575
 
 altosight.com//1579 sandisk   256gb     0.0       usb                 0         glide     sandisk cruzer glide 256 gb 256gb usb 2.0 negro, rojo unidad flash usb en fnac.es                    altosight.com//1579
 altosight.com//2625 sandisk   256gb     79.99     usb                 0         glide     sandisk cruzer&reg; glide&trade; usb flash-laufwerk, 256 gb                                          altosight.com//2625
@@ -792,25 +786,13 @@ altosight.com//3095 samsung   64gb      3400.0    0                   black     
 altosight.com//12401samsung   64gb      3480.0    0                   black     a30       shop samsung galaxy a30 black 64gb 4g lte online in egypt                                            altosight.com//12401
 altosight.com//12403samsung   64gb      3700.0    0                   black     a30       shop samsung galaxy a30 dual sim black 64gb 4g lte online in egypt                                   altosight.com//12403
 
-altosight.com//3098 samsung   128 gb    4530.0    0                   white     a50       samsung galaxy a50 dual sim, 128 gb, 4g lte, white                                                   altosight.com//3098
+altosight.com//3098 samsung   128gb     4530.0    0                   white     a50       samsung galaxy a50 dual sim, 128 gb, 4g lte, white                                                   altosight.com//3098
 altosight.com//12409samsung   128gb     4575.0    0                   white     a50       shop samsung galaxy a50 dual sim white 128gb 4g lte online in egypt                                  altosight.com//12409
 altosight.com//12410samsung   128gb     4599.0    0                   white     a50       shop samsung galaxy a50 dual sim white 128gb 4g lte online in egypt                                  altosight.com//12410
 altosight.com//12411samsung   128gb     4784.0    0                   white     a50       shop samsung galaxy a50 white 128gb 4g lte online in egypt                                           altosight.com//12411
 
-altosight.com//3101 samsung   128gb     4950.0    0                   gold      a7        samsung galaxy a7 2018 dual sim - 128gb, 4gb ram, 4g lte, gold                                       altosight.com//3101
-
-altosight.com//3107 samsung   16gb      1899.0    0                   black     j4        samsung galaxy j4 core dual sim - 16gb, 1gb ram, 4g lte, black                                       altosight.com//3107
-
-altosight.com//3111 samsung   32gb      2875.0    0                   black     j6        samsung galaxy j6 plus dual sim - 32gb, 4g lte, black                                                altosight.com//3111
-
 altosight.com//3114 samsung   512gb     16666.0   0                   midnight blacknote9     samsung galaxy note 9 dual sim - 512gb, 8gb ram, 4g lte, midnight black                              altosight.com//3114
 altosight.com//12422samsung   512gb     13999.0   0                   midnight black0         shop samsung samsung galaxy note9 dual sim midnight black 512gb 4g lte online in egypt               altosight.com//12422
-
-altosight.com//3116 samsung   128gb     13499.0   0                   prism blacks10       samsung galaxy s10 dual sim - 128gb, 8gb, 4g lte, prism black                                        altosight.com//3116
-
-altosight.com//3117 samsung   128gb     12999.0   0                   prism whites10       samsung galaxy s10 dual sim - 128gb, 8gb, 4g lte, prism white                                        altosight.com//3117
-
-altosight.com//3119 samsung   8gb       2399.0    0                   silver    primeplus samsung grand prime plus dual sim - 8gb, 1.5gb ram, 4g lte, silver                                   altosight.com//3119
 
 altosight.com//3223 samsung   128gb     399.0     microsd             0         0         karta pami?ci samsung 128gb microsdxc pro+ mb                                                        altosight.com//3223
 altosight.com//8843 samsung   128gb     1997.0    microsd             0         0         pam??ová karta samsung micro sdxc pro+ 128gb uhs-i u3 (95r/90w) + adapter                            altosight.com//8843
@@ -893,16 +875,8 @@ altosight.com//6311 kingston  8gb       0.0       usb                 2         
 altosight.com//8919 kingston  8gb       247.0     usb                 2         data travelerusb flash kingston datatraveler se9 g2 8gb kovový                                                    altosight.com//8919
 altosight.com//13207kingston  8gb       7.89      usb                 2         data travelertesco direct: kingston 8gb datatraveler se9 g2 usb 3.0 flash drive                                   altosight.com//13207
 
-altosight.com//4909 toshiba   128gb     0.0       microsd             0         m302      toshiba thn-m302r1280ea - exceria m302-ea - flash memory card (microsdxc to sd adapter included) - 128 gb - uhs class 3 / class10 - microsdxc uhs-i altosight.com//4909
-
 altosight.com//5044 intenso   8gb       0.0       usb                 speed     3530460   intenso speed line - memoria usb de 8 gb (usb 3.0, 60 mb/s, con tapa), negro,intenso,3530460         altosight.com//5044
 altosight.com//10501intenso   8gb       17.55     usb                 speed     0         intenso speed line - clé usb - 8 go\n                                                                altosight.com//10501
-
-altosight.com//5535 kingston  16gb      54.05     sd                  0         0         kingston sda3/128gb - tarjeta de memoria sdhc/sdxc uhs-i u3, 128 gb velocidades 90r/80w              altosight.com//5535
-
-altosight.com//5668 toshiba   32gb      24.52     usb                 0         0         toshiba thnv32osusil(8 - memoria usb 3.0 de 32 gb, color plata                                       altosight.com//5668
-
-altosight.com//5873 toshiba   8gb       12.32     usb                 0         u302      toshiba transmemory u302 8 go usb 3.0 noir                                                           altosight.com//5873
 
 altosight.com//6178 sony      4gb       0.0       usb                 usmr      0         sony usm4gr micro vault memoria usb portatile 4096 mb                                                altosight.com//6178
 altosight.com//13628sony      4gb       8.99      usb                 usmr      0         sony usb-stick 4gb 2.0 usm midi model (usm4gr) bei                                                   altosight.com//13628
@@ -928,31 +902,11 @@ altosight.com//10645sony      1tb       109.0     usb                 0         
 altosight.com//10646sony      1tb       109.0     usb                 0         0         sony compact slim hd-sl1 - disque dur - 1 to - usb 3.0\n                                             altosight.com//10646
 altosight.com//13530sony      1tb       129.0     0                   0         0         sony hdsl1 1000gb nero disco rigido esterno                                                          altosight.com//13530
 
-altosight.com//7815 sony      256gb     159.9     ssd                 0         0         disque dur ssd sony sony ssd externe 256 go                                                          altosight.com//7815
-
-altosight.com//7934 samsung   1tb       334.0     ssd                 0         0         disque dur ssd samsung samsung disque dur usb3.0 externe t3 1to ssd                                  altosight.com//7934
-
-altosight.com//9058 sandisk   4gb       7.9       0                   0         cruzer    sandisk cruzer edge (4gb) speicherstick schwarz/rot                                                  altosight.com//9058
-
 altosight.com//10138sony      32gb      20.99     microsd             0         0         memoria microsdhc sony 32gb + adaptador                                                              altosight.com//10138
 altosight.com//13375sony      32gb      27.0      sd                  0         0         tesco direct: sony 32gb sdhc memory card black                                                       altosight.com//13375
 
 altosight.com//12307sandisk   16gb      31.9      usb                 0         ext       sandisk extreme pro - usb-flashstation - 16 gb\n                                                     altosight.com//12307
 altosight.com//13327sandisk   16gb      32.02     sd                  0         ext       tesco direct: sandisk extreme pro sdhc 95mb/sec uhs-i card                                           altosight.com//13327
-
-altosight.com//12390samsung   0         3199.0    0                   black     32-inch   shop samsung 32-inch flat hd led tv series 5 ua32n5000 black online in egypt                         altosight.com//12390
-
-altosight.com//12391samsung   0         6550.0    0                   black     43-inch   shop samsung 43-inch smart uhd tv ua43nu7100 black online in egypt                                   altosight.com//12391
-
-altosight.com//12421samsung   128gb     15899.0   0                   prism whites10       shop samsung galaxy s10 plus dual sim prism white 128gb 4g lte online in egypt                       altosight.com//12421
-
-altosight.com//13208kingston  64gb      21.0      usb                 2         data travelertesco direct: kingston datatraveler 101 64gb g2 usb 20 flash drive green                             altosight.com//13208
-
-altosight.com//13306sandisk   8gb       2.5       usb                 0         cruzer    tesco direct: sandisk cruzer u usb 2.0 flash drive 8gb - pink                                        altosight.com//13306
-
-altosight.com//13369sandisk   8gb       12.0      usb                 0         ultra     tesco direct: sandisk ultra usb flash drive                                                          altosight.com//13369
-
-altosight.com//13640kingston  128gb     49.99     usb                 4         data travelerkingston datatraveler generation 4 (g4) usb- stick, 128gb, usb 3.0 (dtig4/128gb) bei                 altosight.com//13640
 
 
 Process finished with exit code 0
