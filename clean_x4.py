@@ -3,9 +3,12 @@ import re
 
 brand_list = ["intenso", "pny", "lexar", "sony", "sandisk", "kingston", "samsung", "toshiba", "transcend"]
 
-intenso_type = ["basic", "premium", "rainbow", "speed"]
+intenso_type = ["basic", "rainbow", "high speed", "speed", "premium", "alu", "business", "micro",
+                "imobile", "cmobile", "mini", "ultra", "slim", "flash", "mobile"]
 
 colors = ['midnight black', 'prism white', 'prism black', 'red', 'black', 'blue', 'white', 'silver', 'gold']
+
+
 def clean_x4(Xdata):
     names = Xdata.filter(items=['name'], axis=1).fillna('')
     prices = Xdata.filter(items=['price'], axis=1).fillna('')
@@ -29,13 +32,14 @@ def clean_x4(Xdata):
         brand = '0'
         type = '0'
         model = '0'
+        item_code = '0'
 
         if sizes[row][0] != '':
             size = sizes[row][0].lower().replace(' ', '')
         else:
             size_model = re.search(r'[0-9]{1,4}[ ]*[gt][bo]', nameinfo)
             if size_model is not None:
-                size = size_model.group()[:].lower().replace(' ','')
+                size = size_model.group()[:].lower().replace(' ', '')
 
         if prices[row][0] != '':
             price = prices[row][0]
@@ -57,23 +61,34 @@ def clean_x4(Xdata):
             mem_model = re.search(r'usb', nameinfo)
         if mem_model is None:
             mem_model = re.search(r'sd', nameinfo)
+        if mem_model is None:
+            mem_model = re.search(r'secure digital', nameinfo)
+        if mem_model is None:
+            mem_model = re.search(r'xqd', nameinfo)
+        if mem_model is None:
+            mem_model = re.search(r'ljd', nameinfo)
         if mem_model is not None:
             mem_type = mem_model.group()
-            if mem_type not in ('ssd', 'usb'):
+            if mem_type not in ('ssd', 'usb', 'xqd'):
                 if 'micro' in mem_type:
                     mem_type = 'microsd'
+                elif 'ljd' in mem_type:
+                    mem_type = 'usb'
                 else:
                     mem_type = 'sd'
 
+        item_code_model = re.search(r'\((mk)?[0-9]{6,10}\)', nameinfo)
+        if item_code_model is not None:
+            item_code = item_code_model.group()[1:-1]
 
         if brand == "intenso":
             model_model = re.search(r'[0-9]{7}', nameinfo)
             if model_model is not None:
                 model = model_model.group()[:]
 
-            type_model = re.search(r'[a-z]+\s(?=line)', nameinfo.lower())
+            type_model = re.search(r'(high\s)?[a-z]+\s(?=line)', nameinfo)
             if type_model is not None:
-                type = type_model.group()[:].replace(' ','')
+                type = type_model.group()[:].replace(' ', '')
             else:
                 for t in intenso_type:
                     if t in nameinfo:
@@ -82,35 +97,33 @@ def clean_x4(Xdata):
 
 
         elif brand == "lexar":
-            model_model = re.search(r'xqd', nameinfo)
-            if model_model is not None:
-                model = model_model.group()
+            if mem_type == '0':
+                if 'jumpdrive' in nameinfo:
+                    mem_type = 'usb'
 
             type_model = re.search(r'((ljd)|[\s])[a-wy-z][0-9]{2}[a-z]?', nameinfo)
             if type_model is None:
-                type_model = re.search(r'[\s][0-9]+00x(?![a-z0-9])', nameinfo)
+                type_model = re.search(r'[\s][0-9]+x(?![a-z0-9])', nameinfo)
             if type_model is None:
-                type_model = re.search(r'(([\s][x])|(beu))[0-9]+00', nameinfo)
+                type_model = re.search(r'(([\s][x])|(beu))[0-9]+', nameinfo)
             if type_model is not None:
                 type = type_model.group().strip() \
                     .replace('x', '').replace('l', '').replace('j', '').replace('d', '') \
                     .replace('b', '').replace('e', '').replace('u', '')
         # judge type and model
 
-
         elif brand == 'sony':
-            type_model = re.search(r'usm[-]?[0-9]?[0-9]?[0-9]?[a-z]{1,4}', nameinfo)
+            if mem_type == '0':
+                if ('ux' in nameinfo) or ('uy' in nameinfo) or ('sr' in nameinfo):
+                    mem_type = 'microsd'
+                elif ('uf' in nameinfo):
+                    mem_type = 'sd'
+
+            type_model = re.search(r'((sf)|(usm))[-]?[0-9a-z]{1,6}', nameinfo)
             if type_model is not None:
                 type = type_model.group().replace('-', '').replace('g', '')
                 for c in range(ord('0'), ord('9')):
                     type = type.replace(chr(c), '')
-            else:
-                type_model = re.search(r'((class?e?[\s-]?)|(cl[ -]))[0-9]{1,4}', nameinfo)
-                if type_model is not None:
-                    type = type_model.group().replace('-', '').replace(' ', '')
-                    for c in range(ord('a'), ord('z')):
-                        type = type.replace(chr(c), '')
-                    type = 'class ' + type
         # 1024: 1 TB
         # 256: ssd
         # 128: usmqx usb
@@ -126,7 +139,6 @@ def clean_x4(Xdata):
         # 8: usmqx usb
         # 4: usmr
         # 4: usmmp | usb
-
 
         elif brand == 'sandisk':
             model_model = re.search(r'glide', nameinfo)
@@ -165,20 +177,26 @@ def clean_x4(Xdata):
         # 4: cruzer
         # 4: microsd
 
-
         elif brand == 'pny':
-            pass
-        # do not need model, separate by GB and memtype is enough
+            type_model = re.search(r'att.*?[0-9]', nameinfo)
+            if type_model is not None:
+                type = type_model.group().replace(' ', '').replace('-', '')
+                type = 'att' + list(filter(lambda ch: ch in '0123456789', type))[0]
 
 
         elif brand == 'kingston':
+            if mem_type == '0':
+                if ('savage' in nameinfo) or ('hx' in nameinfo) or ('hyperx' in nameinfo):
+                    mem_type = 'usb'
+                elif ('ultimate' in nameinfo):
+                    mem_type = 'sd'
             model_model = re.search(r'(dt[i1]0?1?)|(data[ ]?traveler)', nameinfo)
             if model_model is not None:
                 model = 'data traveler'
                 type_model = re.search(r'(g[24])|(gen[ ]?[24])', nameinfo)
                 if type_model is not None:
                     type = type_model.group()[-1:]
-        #512, 256, 128: judge by memtype
+        # 512, 256, 128: judge by memtype
         # 64: g2, g4
         # 32: g2
         # 16: microsd, sd, usb ????
@@ -205,12 +223,10 @@ def clean_x4(Xdata):
         # TV: color(type), inch(model)
         # others: gb
 
-
         elif brand == 'toshiba':
             model_model = re.search(r'[\s\-n][a-z][0-9]{3}', nameinfo)
             if model_model is not None:
                 model = model_model.group()[1:]
-            print(nameinfo, model, type, mem_type)
 
 
         elif brand == 'transcend':
@@ -224,6 +240,7 @@ def clean_x4(Xdata):
             mem_type,
             type,
             model,
+            item_code,
             nameinfo
         ])
     # mp = {}
@@ -237,11 +254,9 @@ def clean_x4(Xdata):
     #             mp[result[i][1]] = cnt
     #         result[i][1] = mp[result[i][1]]
 
-
-    # print(result[0])
     result = pd.DataFrame(result)
 
-    name = ['instance_id', 'brand', 'capacity', 'price', 'mem_type', 'type', 'model', 'title']
+    name = ['instance_id', 'brand', 'capacity', 'price', 'mem_type', 'type', 'model', 'item_code', 'title']
     for i in range(len(name)):
         result.rename({i: name[i]}, inplace=True, axis=1)
 
