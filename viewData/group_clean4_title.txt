@@ -120,7 +120,7 @@ altosight.com//9805 pny       128gb     45.0      usb                 att4      
 altosight.com//12259pny       128gb     36.51     usb                 att4      0         0                   pny attaché 4 - usb-flashstation - 128 gb\n                                                          altosight.com//12259
 altosight.com//12653pny       128gb     35.45     usb                 att4      0         0                   clé usb attaché 4 2.0 128 gb - fd128att4-ef - noir pny achat dans le rayon clés usb usb 2.0          altosight.com//12653
 altosight.com//12967pny       128gb     27.99     usb                 att4      0         0                   pny attache 4 2.0, usb-stick, usb 2.0, 128 gb                                                        altosight.com//12967
-altosight.com//13780pny       128gb     29.99     sd                  att4      0         0                   pendrive 128 gb  pny attache 4 2.0                                                                   altosight.com//13780
+altosight.com//13780pny       128gb     29.99     usb                 att4      0         0                   pendrive 128 gb  pny attache 4 2.0                                                                   altosight.com//13780
 
 altosight.com//329  kingston  4gb       0.0       sd                  0         0         0                   karta pami?ci sdhc (secure digital high capacity) gwarantuj?ca minimaln? szybko?? transferu 4 mb/s, kompatybilna tylko z urz?dzeniami obs?uguj?cymi standard sdhc. obj?ta wieczyst? gwarancj?. altosight.com//329
 altosight.com//1295 kingston  4gb       0.0       sd                  0         0         0                   kingston - carte mémoire flash - 4 go - sdhc                                                         altosight.com//1295
@@ -253,7 +253,7 @@ altosight.com//10480sandisk   128gb     64.91     usb                 0         
 altosight.com//500  sony      16gb      29.99     usb                 usmca     0         4190041             clé usb sony clé otg 16go usm16ca1 type c et usb 3.1 (4190041)                                       altosight.com//500
 altosight.com//1226 sony      16gb      29.9      usb                 0         0         0                   sony - memoria usb type-c usb 3.1 16gb&nbsp;                                                         altosight.com//1226
 altosight.com//1281 sony      16gb      19.99     usb                 0         0         0                   clé usb 3.1 sony type c 16 go + etui en métal argent                                                 altosight.com//1281
-altosight.com//2397 sony      16gb      10989.0   sd                  usmca     0         0                   sony usm16ca1 pendrive 16 gb                                                                         altosight.com//2397
+altosight.com//2397 sony      16gb      10989.0   usb                 usmca     0         0                   sony usm16ca1 pendrive 16 gb                                                                         altosight.com//2397
 altosight.com//3665 sony      16gb      0.0       usb                 usmca     0         0                   pendrive 16gb sony usm16ca1, usb 3.0, micro-usb, plateado                                            altosight.com//3665
 altosight.com//5883 sony      16gb      22.99     usb                 usmca     0         0                   sony usm16ca1 clé usb 3.1 16 go argent,sony,mvt608,clé usb                                           altosight.com//5883
 altosight.com//7796 sony      16gb      29.99     usb                 usmca     0         4190041             clé usb sony clé otg 16go usm16ca1 type c et usb 3.1 (4190041)                                       altosight.com//7796
@@ -489,7 +489,7 @@ altosight.com//10968pny       8gb       9.95      usb                 att4      
 altosight.com//12214pny       8gb       8.02      usb                 att4      0         0                   pny attaché 4 - usb-flashstation - 8 gb\n                                                            altosight.com//12214
 altosight.com//12652pny       8gb       7.71      usb                 att4      0         0                   attache 4 - black pny achat dans le rayon clés usb usb 2.0                                           altosight.com//12652
 altosight.com//13275pny       8gb       0.0       usb                 att4      0         0                   tesco direct: pny attach 4 8gb usb 2.0 type-a black flash drive                                      altosight.com//13275
-altosight.com//13796pny       8gb       8.99      sd                  att4      0         0                   pendrive 8gb pny attaché4 2.0 negro                                                                  altosight.com//13796
+altosight.com//13796pny       8gb       8.99      usb                 att4      0         0                   pendrive 8gb pny attaché4 2.0 negro                                                                  altosight.com//13796
 
 altosight.com//1178 sony      16gb      12.99     sd                  sfn       0         0                   sony - sony sdhc memory 16gb sf16n4&nbsp;                                                            altosight.com//1178
 altosight.com//1437 sony      16gb      0.0       sd                  0         0         0                   sony carte mémoire sdhc 16 go class4                                                                 altosight.com//1437
@@ -555,7 +555,7 @@ altosight.com//9307 sandisk   128gb     129.0     0                   0         
 
 altosight.com//1245 sony      32gb      29.9      usb                 usmr      0         0                   sony - usm32gr&nbsp;nero                                                                             altosight.com//1245
 altosight.com//1384 sony      32gb      0.0       usb                 usmr      0         0                   sony usm32gr noir clé usb 32go                                                                       altosight.com//1384
-altosight.com//2344 sony      32gb      8999.0    sd                  usmr      0         0                   sony 32gb pendrive usm32gr                                                                           altosight.com//2344
+altosight.com//2344 sony      32gb      8999.0    usb                 usmr      0         0                   sony 32gb pendrive usm32gr                                                                           altosight.com//2344
 altosight.com//4583 sony      32gb      24.73     usb                 0         0         0                   sony micro vault midi 32gb speicherstick usb 2.0                                                     altosight.com//4583
 altosight.com//5053 sony      32gb      20.91     usb                 0         0         0                   sony micro vault r-series - memoria usb de 32 gb, negro                                              altosight.com//5053
 altosight.com//5729 sony      32gb      28.79     usb                 usmr      0         0                   sony usm32gr noir clé usb 32go,sony,558j683,clé usb                                                  altosight.com//5729
@@ -704,8 +704,8 @@ altosight.com//13390sony      4gb       8.78      usb                 usmmp     
 
 altosight.com//1520 sony      32gb      0.0       usb                 usmqx     0         0                   sony unidad flash usb alta velocidad (32 gb) usm32gqx - pendrive / memoria usb en fnac.es            altosight.com//1520
 altosight.com//2345 sony      32gb      19989.0   usb                 usmqx     0         0                   sony 32gb usb 3.0 pendrive usm32gqx                                                                  altosight.com//2345
-altosight.com//3808 sony      32gb      38.3      sd                  usmqx     0         0                   sony micro vault mach usm32gqx drive,sony,usm32gqx/b                                                 altosight.com//3808
-altosight.com//4513 sony      32gb      29.04     sd                  usmqx     0         0                   sony micro vault mach usm32gqx drive                                                                 altosight.com//4513
+altosight.com//3808 sony      32gb      38.3      usb                 usmqx     0         0                   sony micro vault mach usm32gqx drive,sony,usm32gqx/b                                                 altosight.com//3808
+altosight.com//4513 sony      32gb      29.04     usb                 usmqx     0         0                   sony micro vault mach usm32gqx drive                                                                 altosight.com//4513
 altosight.com//5757 sony      32gb      51.5      usb                 usmqx     0         0                   sony usm32gqx noir,sony - rme new média,usm32gqx/b                                                   altosight.com//5757
 altosight.com//6240 sony      32gb      52.34     usb                 usmqx     0         0                   sony usm32gqx memoria usb 3.0, capacità 32 gb, velocità massima di lettura 226 mb/s, nero,sony,usm32gqx/b,vergini,226mb/s,32gb,memoriausb,nera,sony altosight.com//6240
 altosight.com//12813sony      32gb      54.59     usb                 0         0         0                   usb3.0 key machqx 32gb 5ywarr sony achat dans le rayon clés usb usb 3.0                              altosight.com//12813
@@ -743,7 +743,7 @@ altosight.com//12304sandisk   8gb       66.18     sd                  0         
 altosight.com//13944sandisk   8gb       22.97     sd                  0         ext       0                   tarjeta de memoria sandisk extreme pro sdhc 8gb                                                      altosight.com//13944
 
 altosight.com//2255 toshiba   32gb      35.99     sd                  0         n401      0                   toshiba exceria pro n401 , 32 gb                                                                     altosight.com//2255
-altosight.com//3595 toshiba   32gb      24.4      sd                  0         0         0                   toshiba sdhc exceria pro 32go, silber                                                                altosight.com//3595
+altosight.com//3595 toshiba   32gb      24.4      sd                  0         n401      0                   toshiba sdhc exceria pro 32go, silber                                                                altosight.com//3595
 altosight.com//4188 toshiba   32gb      21.99     sd                  0         n401      0                   toshiba exceria pro n401 32gb sd memory card 95 mb/s 4k hd - thn-n401s0320e4                         altosight.com//4188
 altosight.com//4534 toshiba   32gb      24.99     sd                  0         n401      0                   toshiba exceria pro n401 32gb sd memory card 95 mb/s 4k hd - thn-n401s0320e4                         altosight.com//4534
 altosight.com//4871 toshiba   32gb      0.0       sd                  0         n401      0                   toshiba exceria pro n401 sdhc 32gb uhs-i u3 speicherkarte (bis zu 95mb/sek. lesen),toshiba,thn-n401s0320e4 altosight.com//4871
@@ -839,7 +839,7 @@ altosight.com//8546 toshiba   128gb     849.0     sd                  0         
 altosight.com//11646toshiba   128gb     89.95     sd                  0         n401      0                   toshiba exceria pro n401, 128 gb                                                                     altosight.com//11646
 altosight.com//13438toshiba   128gb     90.51     sd                  0         n401      0                   tesco direct: toshiba exceria pro - n401 128gb sdxc uhs-i class 3 memory card                        altosight.com//13438
 
-altosight.com//3600 toshiba   64gb      54.95     sd                  0         0         0                   toshiba sdhc exceria pro 64gb, silber                                                                altosight.com//3600
+altosight.com//3600 toshiba   64gb      54.95     sd                  0         n401      0                   toshiba sdhc exceria pro 64gb, silber                                                                altosight.com//3600
 altosight.com//4189 toshiba   64gb      41.47     sd                  0         n401      0                   toshiba exceria pro n401 64gb sd memory card 95 mb/s 4k hd - thn-n401s0640e4                         altosight.com//4189
 altosight.com//4535 toshiba   64gb      40.92     sd                  0         n401      0                   toshiba exceria pro n401 64gb sd memory card 95 mb/s 4k hd - thn-n401s0640e4                         altosight.com//4535
 altosight.com//4872 toshiba   64gb      0.0       sd                  0         n401      0                   toshiba exceria pro n401 sdxc 64gb uhs-i u3 speicherkarte (bis zu 95mb/sek. lesen),toshiba,thn-n401s0640e4 altosight.com//4872
@@ -848,7 +848,7 @@ altosight.com//6480 toshiba   64gb      0.0       sd                  0         
 altosight.com//8479 toshiba   64gb      499.0     sd                  0         n401      0                   toshiba exceria pro n401 sdxc kort 64 gb - minneskort, usb-minne                                     altosight.com//8479
 altosight.com//8549 toshiba   64gb      499.0     sd                  0         n401      0                   toshiba exceria pro n401 sdxc kort 64 gb - minneskort, usb-minne                                     altosight.com//8549
 altosight.com//9459 toshiba   64gb      39.0      sd                  0         n401      0                   toshiba exceria pro n401 sdxc 64 gb uhs-i u3 class 10                                                altosight.com//9459
-altosight.com//11666toshiba   64gb      59.95     sd                  0         0         0                   toshiba sdhc exceria pro 64gb, silber                                                                altosight.com//11666
+altosight.com//11666toshiba   64gb      59.95     sd                  0         n401      0                   toshiba sdhc exceria pro 64gb, silber                                                                altosight.com//11666
 
 altosight.com//3672 toshiba   8gb       0.0       usb                 0         0         0                   pendrive 32gb toshiba transmemory white, usb 2.0, blanco                                             altosight.com//3672
 altosight.com//3676 toshiba   8gb       0.0       usb                 0         0         0                   pendrive 8gb azul toshiba transmemory aqua, usb 2.0 (mod.thnu08hayaqa(                               altosight.com//3676
@@ -885,7 +885,7 @@ altosight.com//5923 pny       32gb      16.49     usb                 0         
 
 altosight.com//4492 sandisk   256gb     178.17    sd                  0         ext       0                   sandisk sdcz880-256g-g46 cruzer extreme drive                                                        altosight.com//4492
 altosight.com//6534 sandisk   256gb     182.06    usb                 0         ext       0                   sandisk sdcz880-256g-g46 cruzer extreme memoria usb portatile                                        altosight.com//6534
-altosight.com//13832sandisk   256gb     195.99    sd                  0         ext       0                   pendrive sandisk extreme go 3.1 256gb                                                                altosight.com//13832
+altosight.com//13832sandisk   256gb     195.99    usb                 0         ext       0                   pendrive sandisk extreme go 3.1 256gb                                                                altosight.com//13832
 
 altosight.com//4704 kingston  8gb       0.0       usb                 2         data traveler0                   kingston datatraveler dtse9g2 8gb speicherstick usb 3.0 silber                                       altosight.com//4704
 altosight.com//5193 kingston  8gb       0.0       usb                 2         data traveler0                   kingston datatraveler se9 g2 - memoria 8gb usb 3.0, plateado                                         altosight.com//5193
@@ -930,7 +930,7 @@ altosight.com//13530sony      1tb       129.0     0                   0         
 
 altosight.com//7815 sony      256gb     159.9     ssd                 0         0         0                   disque dur ssd sony sony ssd externe 256 go                                                          altosight.com//7815
 
-altosight.com//7934 samsung   1tb       334.0     ssd                 0         0         0                   disque dur ssd samsung samsung disque dur usb3.0 externe t3 1to ssd                                  altosight.com//7934
+altosight.com//7934 samsung   1tb       334.0     ssd                 0         t3        0                   disque dur ssd samsung samsung disque dur usb3.0 externe t3 1to ssd                                  altosight.com//7934
 
 altosight.com//9058 sandisk   4gb       7.9       usb                 0         cruzer    0                   sandisk cruzer edge (4gb) speicherstick schwarz/rot                                                  altosight.com//9058
 
@@ -940,9 +940,9 @@ altosight.com//13375sony      32gb      27.0      sd                  0         
 altosight.com//12307sandisk   16gb      31.9      usb                 0         ext       0                   sandisk extreme pro - usb-flashstation - 16 gb\n                                                     altosight.com//12307
 altosight.com//13327sandisk   16gb      32.02     sd                  0         ext       0                   tesco direct: sandisk extreme pro sdhc 95mb/sec uhs-i card                                           altosight.com//13327
 
-altosight.com//12390samsung   32        3199.0    hd                  black     5000      0                   shop samsung 32-inch flat hd led tv series 5 ua32n5000 black online in egypt                         altosight.com//12390
+altosight.com//12390samsung   32        3199.0    hd                  black     n5000     0                   shop samsung 32-inch flat hd led tv series 5 ua32n5000 black online in egypt                         altosight.com//12390
 
-altosight.com//12391samsung   43        6550.0    uhd                 black     u7100     0                   shop samsung 43-inch smart uhd tv ua43nu7100 black online in egypt                                   altosight.com//12391
+altosight.com//12391samsung   43        6550.0    uhd                 black     nu7100    0                   shop samsung 43-inch smart uhd tv ua43nu7100 black online in egypt                                   altosight.com//12391
 
 altosight.com//12421samsung   128gb     15899.0   sim                 prism whites10       0                   shop samsung galaxy s10 plus dual sim prism white 128gb 4g lte online in egypt                       altosight.com//12421
 
