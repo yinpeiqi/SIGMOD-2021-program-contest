@@ -60,6 +60,8 @@ def clean_x4(Xdata):
         if mem_model is None:
             mem_model = re.search(r'usb', nameinfo)
         if mem_model is None:
+            mem_model = re.search(r'pendrive', nameinfo)
+        if mem_model is None:
             mem_model = re.search(r'sd', nameinfo)
         if mem_model is None:
             mem_model = re.search(r'secure digital', nameinfo)
@@ -72,7 +74,9 @@ def clean_x4(Xdata):
         if mem_model is not None:
             mem_type = mem_model.group()
             if mem_type not in ('ssd', 'usb', 'xqd', 'sim'):
-                if 'micro' in mem_type:
+                if 'pendrive' in mem_type:
+                    mem_type = 'usb'
+                elif 'micro' in mem_type:
                     mem_type = 'microsd'
                 elif 'ljd' in mem_type:
                     mem_type = 'usb'
@@ -212,7 +216,7 @@ def clean_x4(Xdata):
 
         elif brand == 'samsung':
             if 'lte' in nameinfo:
-                model_model = re.search(r'[\s][a-z][0-9]{1,2}[\s]', nameinfo)
+                model_model = re.search(r'[\s][a-z][0-9]{1,2}[a-z]?[\s]', nameinfo)
                 if model_model is None:
                     model_model = re.search(r'[\s]note[\s]?[0-9]{1,2}', nameinfo)
                 if model_model is None:
