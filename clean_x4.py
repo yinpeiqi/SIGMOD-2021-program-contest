@@ -68,6 +68,8 @@ def clean_x4(Xdata):
         if mem_model is None:
             mem_model = re.search(r'usb', nameinfo)
         if mem_model is None:
+            mem_model = re.search(r'drive', nameinfo)
+        if mem_model is None:
             mem_model = re.search(r'sd', nameinfo)
         if mem_model is None:
             mem_model = re.search(r'secure digital', nameinfo)
@@ -79,8 +81,6 @@ def clean_x4(Xdata):
             mem_model = re.search(r'sim', nameinfo)
         if mem_model is None:
             mem_model = re.search(r'speicherstick', nameinfo)
-        if mem_model is None:
-            mem_model = re.search(r'drive', nameinfo)
         if mem_model is not None:
             mem_type = mem_model.group()
             if mem_type not in ('ssd', 'usb', 'xqd', 'sim'):
@@ -143,7 +143,7 @@ def clean_x4(Xdata):
         elif brand == "lexar":
 
             type_model = re.search(r'((ljd)|[\s])[a-wy-z][0-9]{2}[a-z]?', nameinfo)
-            if type_model is not None:
+            if type_model is not None and mem_type == '0':
                 mem_type = 'usb'
             if type_model is None:
                 type_model = re.search(r'[\s][0-9]+x(?![a-z0-9])', nameinfo)
@@ -169,7 +169,7 @@ def clean_x4(Xdata):
                 type = type_model.group().replace('-', '').replace('g', '')
                 for c in range(ord('0'), ord('9')):
                     type = type.replace(chr(c), '')
-                if type == 'sfn':
+                if type == 'sfn' and mem_type == '0':
                     mem_type = 'sd'
         # 1024: 1 TB
         # 256: ssd
@@ -197,6 +197,8 @@ def clean_x4(Xdata):
                 model_model = re.search(r'cruzer', nameinfo)
             if model_model is not None:
                 model = model_model.group()
+                if mem_type == '0' and model in ('cruzer', 'glide'):
+                    mem_type = 'usb'
             # print(nameinfo, model)
         # 256: ext
         # 256: glide
