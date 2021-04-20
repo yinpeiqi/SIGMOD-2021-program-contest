@@ -81,6 +81,8 @@ def clean_x4(Xdata):
             mem_model = re.search(r'sim', nameinfo)
         if mem_model is None:
             mem_model = re.search(r'speicherstick', nameinfo)
+        if mem_model is None:
+            mem_model = re.search(r'(pen)[ ]?(drive)', nameinfo)
         if mem_model is not None:
             mem_type = mem_model.group()
             if mem_type not in ('ssd', 'usb', 'xqd', 'sim'):
@@ -90,7 +92,7 @@ def clean_x4(Xdata):
                     mem_type = 'usb'
                 elif 'micro' in mem_type:
                     mem_type = 'microsd'
-                elif 'ljd' in mem_type:
+                elif 'ljd' in mem_type or 'pen' in mem_type::
                     mem_type = 'usb'
                 else:
                     mem_type = 'sd'
@@ -341,6 +343,8 @@ def clean_x4(Xdata):
         # others: gb
 
         elif brand == 'toshiba':
+            if 'transmemory' in nameinfo and mem_type == '0':
+                mem_type = 'usb'
             model_model = re.search(r'[\s\-n][a-z][0-9]{3}', nameinfo)
             if model_model is not None:
                 model = model_model.group()[1:]
