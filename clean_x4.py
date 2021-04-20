@@ -176,6 +176,11 @@ def clean_x4(Xdata):
                         type = type.replace(chr(c), '')
                     if type == 'sfn' and mem_type == '0':
                         mem_type = 'sd'
+                if type_model is None:
+                    type_model = re.search(r'machqx', nameinfo)
+                    if type_model is not None:
+                        type = 'usmqx'
+
         # 1024: 1 TB
         # 256: ssd
         # 128: usmqx usb
