@@ -246,6 +246,7 @@ def clean_x4(Xdata):
             # DT SE9, DataTraveler microDuo 3.0 G2, DT Exodia, IronKey D300, IronKey S1000
             if ('savage' in nameinfo) or ('hx' in nameinfo) or ('hyperx' in nameinfo):
                 model = 'hyperx'
+                mem_type = 'usb'
             model_model = re.search(r'(dt[i 0-9])|(data[ ]?traveler)', nameinfo)
             if model_model is not None:
                 model = 'dt'
@@ -284,7 +285,7 @@ def clean_x4(Xdata):
                     type = 'sdc10'
                 elif 'sdca3' in nameinfo:
                     type = 'sdca3'
-                if mem_type == '0':
+                if mem_type == '0' and type != '0':
                     if type == 'sd4' or type == 'sda10' or type == 'sda3':
                         mem_type = 'sd'
                     else:
@@ -323,12 +324,14 @@ def clean_x4(Xdata):
                     if model_model is not None:
                         model = model_model.group().strip()
                 else:
-                    model_model = re.search(r'pro', nameinfo)
+                    model_model = re.search(r'(pro)|(evo)', nameinfo)
                     if model_model is not None:
-                        model = 'pro'
+                        model = model_model.group()
                         model_model = re.search(r'(\+)|(plus)', nameinfo)
                         if model_model is not None:
-                            model = 'pro+'
+                            model = model + model_model.group().replace('plus', '+')
+                    if model == 'evo+' and mem_type == '0':
+                        mem_type = 'microsd'
             for c in colors:
                 if c in nameinfo:
                     type = c
