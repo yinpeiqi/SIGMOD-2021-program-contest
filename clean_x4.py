@@ -223,6 +223,13 @@ def clean_x4(Xdata):
                 model_model = re.search(r'[0-9]{1,2}-inch', nameinfo)
                 if model_model is not None:
                     model = model_model.group().strip()
+            else:
+                type_model = re.search(r'pro', nameinfo)
+                if type_model is not None:
+                    model = 'pro'
+                    type_model = re.search(r'\+', nameinfo)
+                    if type_model is not None:
+                        model = 'pro+'
             for c in colors:
                 if c in nameinfo:
                     type = c
