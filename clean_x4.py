@@ -7,11 +7,11 @@ intenso_type = ["basic", "rainbow", "high speed", "speed", "premium", "alu", "bu
                 "imobile", "cmobile", "mini", "ultra", "slim", "flash", "mobile"]
 
 colors = ['prism white', 'prism black', 'prism green', 'prism blue', 'canary yellow',
-       'flamingo pink', 'cardinal red', 'smoke blue', 'deep blue', 'coral orange',
-       'black sky', 'gold sand', 'blue mist and peach cloud', 'orchid gray',
-       'metallic copper', 'lavender purple', 'ocean blue', 'pure white', 'alpine white',
-       'copper', 'red', 'black', 'blue', 'white', 'silver', 'gold', 'violet', 'purple',
-       'brown','orange', 'coral', 'pink']
+          'flamingo pink', 'cardinal red', 'smoke blue', 'deep blue', 'coral orange',
+          'black sky', 'gold sand', 'blue mist and peach cloud', 'orchid gray',
+          'metallic copper', 'lavender purple', 'ocean blue', 'pure white', 'alpine white',
+          'copper', 'red', 'black', 'blue', 'white', 'silver', 'gold', 'violet', 'purple',
+          'brown', 'orange', 'coral', 'pink']
 
 
 def clean_x4(Xdata):
@@ -36,7 +36,7 @@ def clean_x4(Xdata):
         mem_type = '0'
         brand = '0'
         type = '0'
-        type2 =' 0'
+        type2 = ' 0'
         model = '0'
         item_code = '0'
         generation = '0'
@@ -86,7 +86,7 @@ def clean_x4(Xdata):
             if mem_type not in ('ssd', 'usb', 'xqd', 'sim'):
                 if 'drive' in mem_type:
                     mem_type = 'usb'
-                if 'speicherstick' in mem_type:
+                elif 'speicherstick' in mem_type:
                     mem_type = 'usb'
                 elif 'micro' in mem_type:
                     mem_type = 'microsd'
@@ -98,7 +98,7 @@ def clean_x4(Xdata):
         item_code_model = re.search(r'\((mk)?[0-9]{6,10}\)', nameinfo)
         if item_code_model is not None:
             item_code = item_code_model.group()[1:-1]
-        
+
         gen_model = re.search(r'(usb)[\- ][123][.][012]', nameinfo)
         if gen_model is not None:
             if mem_type == '0':
@@ -123,6 +123,7 @@ def clean_x4(Xdata):
             if sd_model is not None:
                 sd_code = 10
 
+
         if brand == "intenso":
             model_model = re.search(r'[0-9]{7}', nameinfo)
             if model_model is not None:
@@ -137,7 +138,6 @@ def clean_x4(Xdata):
                     if t in nameinfo:
                         type = t.replace(' ', '')
                         break
-
 
         elif brand == "lexar":
 
@@ -244,9 +244,10 @@ def clean_x4(Xdata):
                 mem_type = 'usb'
                 type_model = re.search(r'((dt)|(data[ ]?traveler))[ ]?[1-9][0-9][0-9]?[0-9]?[ g]', nameinfo)
                 if type_model is not None:
-                    type = type_model.group()[:].replace(' ', '').replace('g', '').replace('dt', '').replace('datatraveler', '')
+                    type = type_model.group()[:].replace(' ', '').replace('g', '').replace('dt', '').replace(
+                        'datatraveler', '')
                 if type_model is None:
-                    type_model =re.search(r'dt[ ]?i[ g]', nameinfo)
+                    type_model = re.search(r'dt[ ]?i[ g]', nameinfo)
                     if type_model is not None:
                         type = 'i'
                 if type_model is None:
@@ -342,6 +343,20 @@ def clean_x4(Xdata):
                     mem_type = 'sd'
                 elif ch == 'm':
                     mem_type = 'microsd'
+            if model == '0' and 'silber' in nameinfo:
+                model = 'n401'
+            speed_model = re.search(r'[1-9][0-9]{1,2}[\s]?mb\\s', nameinfo)
+            if speed_model is not None:
+                speed = re.search(r'[0-9]{2,3}', speed_model.group()).group()
+                if model == '0' and mem_type in ('usb', 'microsd', 'sd'):
+                    if mem_type == 'usb':
+                        ch = 'u'
+                    elif mem_type == 'microsd':
+                        ch = 'm'
+                    else:
+                        ch = 'n'
+                    if speed == '260':
+                        model = ch + '101'
 
         elif brand == 'transcend':
             pass
@@ -362,7 +377,8 @@ def clean_x4(Xdata):
         ])
     result = pd.DataFrame(result)
 
-    name = ['instance_id', 'brand', 'capacity', 'price', 'mem_type', 'type', 'type2', 'model', 'item_code', 'generation','sd_code', 'title']
+    name = ['instance_id', 'brand', 'capacity', 'price', 'mem_type', 'type', 'type2', 'model', 'item_code',
+            'generation', 'sd_code', 'title']
     for i in range(len(name)):
         result.rename({i: name[i]}, inplace=True, axis=1)
 
