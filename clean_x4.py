@@ -92,7 +92,7 @@ def clean_x4(Xdata):
                     mem_type = 'usb'
                 elif 'micro' in mem_type:
                     mem_type = 'microsd'
-                elif 'ljd' in mem_type or 'pen' in mem_type::
+                elif 'ljd' in mem_type or 'pen' in mem_type:
                     mem_type = 'usb'
                 else:
                     mem_type = 'sd'
