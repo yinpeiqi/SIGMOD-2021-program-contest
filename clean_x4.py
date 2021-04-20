@@ -347,7 +347,7 @@ def clean_x4(Xdata):
                     mem_type = 'microsd'
             if model == '0' and 'silber' in nameinfo:
                 model = 'n401'
-            speed_model = re.search(r'[1-9][0-9]{1,2}[\s]?mb\\s', nameinfo)
+            speed_model = re.search(r'[1-9][0-9]{1,2}[ ]?mb/s', nameinfo)
             if speed_model is not None:
                 speed = re.search(r'[0-9]{2,3}', speed_model.group()).group()
                 if model == '0' and mem_type in ('usb', 'microsd', 'sd'):
@@ -359,6 +359,8 @@ def clean_x4(Xdata):
                         ch = 'n'
                     if speed == '260':
                         model = ch + '101'
+                    elif speed == '90':
+                        model = ch + '302'
 
         elif brand == 'transcend':
             pass
