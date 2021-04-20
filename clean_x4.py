@@ -246,16 +246,21 @@ def clean_x4(Xdata):
                 mem_model = re.search(r'(hd)|(qled)|(uhd)', nameinfo)
                 if mem_model is not None:
                     mem_type = mem_model.group()
-                model_model = re.search(r'[0-9]{2}[a-z]{1,2}[0-9]{4}', nameinfo)
+                model_model = re.search(r'[a-z]{1,2}[0-9]{4}', nameinfo)
                 if model_model is not None:
-                    model = model_model.group()[3:]
+                    model = model_model.group()
             else:
-                type_model = re.search(r'pro', nameinfo)
-                if type_model is not None:
-                    model = 'pro'
-                    type_model = re.search(r'(\+)|(plus)', nameinfo)
-                    if type_model is not None:
-                        model = 'pro+'
+                if mem_type == 'ssd':
+                    model_model = re.search(r'[\s]t[0-9][\s]', nameinfo)
+                    if model_model is not None:
+                        model = model_model.group().strip()
+                else:
+                    model_model = re.search(r'pro', nameinfo)
+                    if model_model is not None:
+                        model = 'pro'
+                        model_model = re.search(r'(\+)|(plus)', nameinfo)
+                        if model_model is not None:
+                            model = 'pro+'
             for c in colors:
                 if c in nameinfo:
                     type = c
