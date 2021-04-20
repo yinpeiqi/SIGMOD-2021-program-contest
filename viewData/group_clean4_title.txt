@@ -415,18 +415,18 @@ altosight.com//8225 sandisk   64gb      57.99     usb                 0         
 
 altosight.com//638  toshiba   128gb     39.77     usb                 0         u202      mk1725168789        clé usb toshiba thn-u202w1280e4 128go usb 2.0 type a blanc lecteur usb flash (mk1725168789)          altosight.com//638
 altosight.com//1496 toshiba   128gb     39.99     usb                 0         u202      0                   memoria usb toshiba transmemory u202 usb 2.0 128gb en fnac.es                                        altosight.com//1496
-altosight.com//2742 toshiba   128gb     28.99     0                   0         u202      0                   toshiba transmemory u202, 128 gb                                                                     altosight.com//2742
-altosight.com//3531 toshiba   128gb     54.95     0                   0         u202      0                   toshiba transmemory u202, 128 gb, weiss                                                              altosight.com//3531
+altosight.com//2742 toshiba   128gb     28.99     usb                 0         u202      0                   toshiba transmemory u202, 128 gb                                                                     altosight.com//2742
+altosight.com//3531 toshiba   128gb     54.95     usb                 0         u202      0                   toshiba transmemory u202, 128 gb, weiss                                                              altosight.com//3531
 altosight.com//3661 toshiba   128gb     0.0       usb                 0         0         0                   pendrive 128gb toshiba transmemory white, usb 2.0, blanco                                            altosight.com//3661
 altosight.com//4131 toshiba   128gb     0.0       usb                 0         u202      0                   toshiba transmemory u202 128gb usb flash drive usb 2.0 - white - thn-u202w1280e4                     altosight.com//4131
 altosight.com//7918 toshiba   128gb     46.94     usb                 0         u202      mk1725168789        clé usb toshiba thn-u202w1280e4 128go usb 2.0 type a blanc lecteur usb flash (mk1725168789)          altosight.com//7918
 altosight.com//8485 toshiba   128gb     499.0     usb                 0         u202      0                   toshiba transmemory u202 flash drive 128 gb (vit) - minneskort, usb-minne                            altosight.com//8485
-altosight.com//11568toshiba   128gb     41.95     0                   0         u202      0                   toshiba transmemory u202, 128 gb, weiss                                                              altosight.com//11568
+altosight.com//11568toshiba   128gb     41.95     usb                 0         u202      0                   toshiba transmemory u202, 128 gb, weiss                                                              altosight.com//11568
 altosight.com//12243toshiba   128gb     34.54     usb                 0         u202      0                   toshiba transmemory u202 - usb-flashstation - 128 gb\n                                               altosight.com//12243
 altosight.com//12473toshiba   128gb     37.71     usb                 0         u202      0                   toshiba thn-u202w1280e4, 128 gb, 2.0, usb-anschluss typ a, kappe, 8 g, weiß                          altosight.com//12473
 altosight.com//12826toshiba   128gb     30.05     usb                 0         u202      0                   clé usb 128 go - thn-u202w1280e4 - blanc toshiba achat dans le rayon clés usb usb 2.0                altosight.com//12826
 altosight.com//13433toshiba   128gb     34.99     usb                 0         u202      0                   tesco direct: tos-u202-128gb-whi 128gb transmemory usb 2.0 flash drive                               altosight.com//13433
-altosight.com//13779toshiba   128gb     44.99     sd                  0         u202      0                   pen drive toshiba 128gb u202w blanco                                                                 altosight.com//13779
+altosight.com//13779toshiba   128gb     44.99     usb                 0         u202      0                   pen drive toshiba 128gb u202w blanco                                                                 altosight.com//13779
 
 altosight.com//693  sandisk   8gb       8.99      sd                  0         0         0                   carte sd sandisk sandisk 8go classe 4 sd secure digital sdhc                                         altosight.com//693
 altosight.com//835  sandisk   8gb       6.99      sd                  0         0         0                   carte sd sandisk sandisk 8go classe 4 sd secure digital sdhc                                         altosight.com//835
@@ -634,7 +634,7 @@ altosight.com//6349 toshiba   32gb      76.67     sd                  0         
 altosight.com//9531 toshiba   32gb      0.0       sd                  0         0         0                   toshiba exceria pro - carte mémoire flash - 32 go - sdhc uhs-ii                                      altosight.com//9531
 altosight.com//9544 toshiba   32gb      0.0       sd                  0         0         0                   toshiba exceria pro - carte mémoire flash - 32 go - sdhc uhs-ii                                      altosight.com//9544
 altosight.com//10113toshiba   32gb      91.99     sd                  0         0         0                   memoria toshiba sdhc 32gb exceria pro uhs clase 10                                                   altosight.com//10113
-altosight.com//11660toshiba   32gb      94.95     0                   0         n101      0                   toshiba exceria pro n101, 32 gb                                                                      altosight.com//11660
+altosight.com//11660toshiba   32gb      94.95     sd                  0         n101      0                   toshiba exceria pro n101, 32 gb                                                                      altosight.com//11660
 altosight.com//12461toshiba   32gb      79.47     sd                  0         0         0                   toshiba exceria pro - flash-speicherkarte - 32 gb - uhs class 3 - sdhc uhs-ii                        altosight.com//12461
 altosight.com//13435toshiba   32gb      84.54     sd                  0         0         0                   tesco direct: toshiba 32 gb exceria pro 32gb sdhc uhs class 3 memory card                            altosight.com//13435
 
@@ -645,16 +645,16 @@ altosight.com//4825 toshiba   128gb     0.0       sd                  0         
 altosight.com//5313 toshiba   128gb     0.0       sd                  0         0         0                   toshiba 128gb sdxc 128gb sdxc uhs clase 3 memoria flash - tarjeta de memoria (128 gb, sdxc, clase 3, 260 mb/s, 150 mb/s, uhs) altosight.com//5313
 altosight.com//6439 toshiba   128gb     0.0       sd                  0         0         0                   toshiba 128gb sdxc 128gb sdxc uhs class 3 memory card - memory cards (128 gb, sdxc, class 3, 260 mb/s, 150 mb/s, uhs) altosight.com//6439
 altosight.com//9545 toshiba   128gb     0.0       sd                  0         0         0                   toshiba exceria pro - carte mémoire flash - 128 go - sdxc uhs-ii                                     altosight.com//9545
-altosight.com//11645toshiba   128gb     289.95    0                   0         n101      0                   toshiba exceria pro n101, 128 gb                                                                     altosight.com//11645
+altosight.com//11645toshiba   128gb     289.95    sd                  0         n101      0                   toshiba exceria pro n101, 128 gb                                                                     altosight.com//11645
 
 altosight.com//1354 toshiba   64gb      0.0       sd                  0         0         0                   toshiba exceria pro - carte mémoire flash - 64 go - sdxc uhs-ii                                      altosight.com//1354
-altosight.com//3599 toshiba   64gb      154.95    0                   0         n101      0                   toshiba exceria pro n101, 64 gb                                                                      altosight.com//3599
+altosight.com//3599 toshiba   64gb      154.95    sd                  0         n101      0                   toshiba exceria pro n101, 64 gb                                                                      altosight.com//3599
 altosight.com//4008 toshiba   64gb      137.66    sd                  0         n101      0                   toshiba exceria pro n101 64gb sd memory card 260 mb/s 4k hd - thn-n101k0640e6                        altosight.com//4008
 altosight.com//4527 toshiba   64gb      209.99    sd                  0         n101      0                   toshiba exceria pro n101 64gb sd memory card 260 mb/s 4k hd - thn-n101k0640e6                        altosight.com//4527
 altosight.com//4738 toshiba   64gb      148.45    sd                  0         n101      0                   toshiba thn-n101k0640e6 64gb exceria pro n101 sd karte                                               altosight.com//4738
 altosight.com//5225 toshiba   64gb      147.9     sd                  0         0         0                   toshiba 64gb exceria pro 64gb sdhc uhs clase 3 memoria flash - tarjeta de memoria (64 gb, sdhc, clase 3, 260 mb/s, 240 mb/s, uhs) altosight.com//5225
 altosight.com//6350 toshiba   64gb      151.5     sd                  0         0         0                   toshiba 64gb exceria pro 64gb sdhc uhs class 3 memory card - memory cards (64 gb, sdhc, class 3, 260 mb/s, 240 mb/s, uhs) altosight.com//6350
-altosight.com//11665toshiba   64gb      184.95    0                   0         n101      0                   toshiba exceria pro n101, 64 gb                                                                      altosight.com//11665
+altosight.com//11665toshiba   64gb      184.95    sd                  0         n101      0                   toshiba exceria pro n101, 64 gb                                                                      altosight.com//11665
 altosight.com//13436toshiba   64gb      114.98    sd                  0         0         0                   tesco direct: toshiba 64gb exceria pro sdhc uhs class 3 memory card                                  altosight.com//13436
 
 altosight.com//1389 transcend 64gb      0.0       sd                  0         0         0                   transcend ultimate series - carte mémoire flash - 64 go - sdxc uhs-ii                                altosight.com//1389
@@ -742,7 +742,7 @@ altosight.com//2494 sandisk   8gb       25.2      sd                  0         
 altosight.com//12304sandisk   8gb       66.18     sd                  0         ext       0                   sandisk extreme pro - flashgeheugenkaart - 8 gb - sdhc uhs-i\n                                       altosight.com//12304
 altosight.com//13944sandisk   8gb       22.97     sd                  0         ext       0                   tarjeta de memoria sandisk extreme pro sdhc 8gb                                                      altosight.com//13944
 
-altosight.com//2255 toshiba   32gb      35.99     0                   0         n401      0                   toshiba exceria pro n401 , 32 gb                                                                     altosight.com//2255
+altosight.com//2255 toshiba   32gb      35.99     sd                  0         n401      0                   toshiba exceria pro n401 , 32 gb                                                                     altosight.com//2255
 altosight.com//3595 toshiba   32gb      24.4      sd                  0         0         0                   toshiba sdhc exceria pro 32go, silber                                                                altosight.com//3595
 altosight.com//4188 toshiba   32gb      21.99     sd                  0         n401      0                   toshiba exceria pro n401 32gb sd memory card 95 mb/s 4k hd - thn-n401s0320e4                         altosight.com//4188
 altosight.com//4534 toshiba   32gb      24.99     sd                  0         n401      0                   toshiba exceria pro n401 32gb sd memory card 95 mb/s 4k hd - thn-n401s0320e4                         altosight.com//4534
@@ -816,18 +816,18 @@ altosight.com//3223 samsung   128gb     399.0     microsd             0         
 altosight.com//8843 samsung   128gb     1997.0    microsd             0         pro+      0                   pam??ová karta samsung micro sdxc pro+ 128gb uhs-i u3 (95r/90w) + adapter                            altosight.com//8843
 altosight.com//10033samsung   128gb     112.99    microsd             0         pro+      0                   memoria samsung microsdxc pro clase 10 128gb + adaptador                                             altosight.com//10033
 
-altosight.com//3566 toshiba   16gb      17.95     0                   0         m401      0                   toshiba exceria pro m401, 16 gb                                                                      altosight.com//3566
+altosight.com//3566 toshiba   16gb      17.95     microsd             0         m401      0                   toshiba exceria pro m401, 16 gb                                                                      altosight.com//3566
 altosight.com//4150 toshiba   16gb      13.01     microsd             0         m401      0                   toshiba thn-m401s0160e2 16 gb exceria pro m401 microsd card                                          altosight.com//4150
-altosight.com//4842 toshiba   16gb      18.78     0                   0         m401      0                   toshiba thn-m401s0160e2 exceria pro m401 flash-speicher 16gb                                         altosight.com//4842
+altosight.com//4842 toshiba   16gb      18.78     microsd             0         m401      0                   toshiba thn-m401s0160e2 exceria pro m401 flash-speicher 16gb                                         altosight.com//4842
 altosight.com//5335 toshiba   16gb      12.99     microsd             0         m401      0                   toshiba thn-m401s0160e2 exceria pro m401 tarjeta microsd de 16gb, blanco                             altosight.com//5335
 altosight.com//6453 toshiba   16gb      24.99     microsd             0         m401      0                   toshiba thn-m401s0160e2 16gb microsd nand class 10 memory card - memory cards (16 gb, microsd, class 10, 95 mb/s, 80 mb/s, nand) altosight.com//6453
 altosight.com//8189 toshiba   16gb      11.0      microsd             0         m401      0                   tarjeta de memoria - toshiba - thn-m401s0160e2 16gb microsd nand                                     altosight.com//8189
 altosight.com//8473 toshiba   16gb      179.0     microsd             0         m401      0                   toshiba exceria pro m401 micro sdhc kort 16 gb - minneskort, usb-minne                               altosight.com//8473
 altosight.com//8591 toshiba   16gb      179.0     microsd             0         m401      0                   toshiba exceria pro m401 micro sdhc kort 16 gb - minneskort, usb-minne                               altosight.com//8591
-altosight.com//11617toshiba   16gb      24.95     0                   0         m401      0                   toshiba exceria pro m401, 16 gb                                                                      altosight.com//11617
+altosight.com//11617toshiba   16gb      24.95     microsd             0         m401      0                   toshiba exceria pro m401, 16 gb                                                                      altosight.com//11617
 altosight.com//13441toshiba   16gb      16.15     microsd             0         m401      0                   tesco direct: toshiba thn-m401s0160e2 16gb microsd nand class 10 memory card                         altosight.com//13441
 
-altosight.com//3583 toshiba   128gb     79.95     0                   0         n401      0                   toshiba exceria pro n401, 128 gb                                                                     altosight.com//3583
+altosight.com//3583 toshiba   128gb     79.95     sd                  0         n401      0                   toshiba exceria pro n401, 128 gb                                                                     altosight.com//3583
 altosight.com//4164 toshiba   128gb     65.08     sd                  0         n401      0                   toshiba exceria pro n401 128gb sd memory card 95 mb/s 4k - thn-n401s1280e4                           altosight.com//4164
 altosight.com//4532 toshiba   128gb     52.99     sd                  0         n401      0                   toshiba exceria pro n401 128gb sd memory card 95 mb/s 4k - thn-n401s1280e4                           altosight.com//4532
 altosight.com//4854 toshiba   128gb     70.61     sd                  0         n401      0                   toshiba exceria pro n401 sdxc 128gb uhs-i u3 speicherkarte (bis zu 95mb/sek. lesen)                  altosight.com//4854
@@ -836,7 +836,7 @@ altosight.com//5662 toshiba   128gb     66.99     sd                  0         
 altosight.com//6467 toshiba   128gb     66.99     sd                  0         n401      0                   toshiba exceria pro - n401 128gb sdxc uhs-i class 3 memory card - memory cards (128 gb, sdxc, class 3, 95 mb/s, 75 mb/s, uhs-i) altosight.com//6467
 altosight.com//8476 toshiba   128gb     849.0     sd                  0         n401      0                   toshiba exceria pro n401 sdxc kort 128 gb - minneskort, usb-minne                                    altosight.com//8476
 altosight.com//8546 toshiba   128gb     849.0     sd                  0         n401      0                   toshiba exceria pro n401 sdxc kort 128 gb - minneskort, usb-minne                                    altosight.com//8546
-altosight.com//11646toshiba   128gb     89.95     0                   0         n401      0                   toshiba exceria pro n401, 128 gb                                                                     altosight.com//11646
+altosight.com//11646toshiba   128gb     89.95     sd                  0         n401      0                   toshiba exceria pro n401, 128 gb                                                                     altosight.com//11646
 altosight.com//13438toshiba   128gb     90.51     sd                  0         n401      0                   tesco direct: toshiba exceria pro - n401 128gb sdxc uhs-i class 3 memory card                        altosight.com//13438
 
 altosight.com//3600 toshiba   64gb      54.95     sd                  0         0         0                   toshiba sdhc exceria pro 64gb, silber                                                                altosight.com//3600
@@ -940,9 +940,9 @@ altosight.com//13375sony      32gb      27.0      sd                  0         
 altosight.com//12307sandisk   16gb      31.9      usb                 0         ext       0                   sandisk extreme pro - usb-flashstation - 16 gb\n                                                     altosight.com//12307
 altosight.com//13327sandisk   16gb      32.02     sd                  0         ext       0                   tesco direct: sandisk extreme pro sdhc 95mb/sec uhs-i card                                           altosight.com//13327
 
-altosight.com//12390samsung   0         3199.0    hd                  black     32        0                   shop samsung 32-inch flat hd led tv series 5 ua32n5000 black online in egypt                         altosight.com//12390
+altosight.com//12390samsung   32        3199.0    hd                  black     5000      0                   shop samsung 32-inch flat hd led tv series 5 ua32n5000 black online in egypt                         altosight.com//12390
 
-altosight.com//12391samsung   0         6550.0    uhd                 black     43        0                   shop samsung 43-inch smart uhd tv ua43nu7100 black online in egypt                                   altosight.com//12391
+altosight.com//12391samsung   43        6550.0    uhd                 black     u7100     0                   shop samsung 43-inch smart uhd tv ua43nu7100 black online in egypt                                   altosight.com//12391
 
 altosight.com//12421samsung   128gb     15899.0   sim                 prism whites10       0                   shop samsung galaxy s10 plus dual sim prism white 128gb 4g lte online in egypt                       altosight.com//12421
 
