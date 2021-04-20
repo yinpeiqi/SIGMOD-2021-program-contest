@@ -233,21 +233,56 @@ def clean_x4(Xdata):
 
 
         elif brand == 'kingston':
-            if mem_type == '0':
-                if ('savage' in nameinfo) or ('hx' in nameinfo) or ('hyperx' in nameinfo):
-                    mem_type = 'usb'
-                    type = 'hyperx'
-                elif ('ultimate' in nameinfo):
-                    mem_type = 'sd'
-            model_model = re.search(r'(dt[i1]0?1?)|(data[ ]?traveler)', nameinfo)
+            # microsd: SDCS2, SDCG3, MLPMR2, SDCE, SDCIT
+            # sd: SDS2, SDG3, MLPR2
+            # usb: DT Locker+ G3, DT Vault Privacy, DT2000, DT4000G2, DT100G3, DT70, DT80, DT Duo,
+            # DT Elite G2, DT G4, DT Kyson, DataTraveler Micro 3.1, DataTraveler MicroDuo 3C,
+            # DT SE9, DataTraveler microDuo 3.0 G2, DT Exodia, IronKey D300, IronKey S1000
+            model_model = re.search(r'(dt[i 0-9])|(data[ ]?traveler)', nameinfo)
             if model_model is not None:
-                model = 'data traveler'
-            type_model = re.search(r'(g[24])|(gen[ ]?[24])', nameinfo)
-            if type_model is not None:
-                model = 'data traveler'
-                type = type_model.group()[-1:]
-            if model == 'data traveler':
+                model = 'dt'
                 mem_type = 'usb'
+                type_model = re.search(r'((dt)|(data[ ]?traveler))[ ]?[1-9][0-9][0-9]?[0-9]?[ g]', nameinfo)
+                if type_model is not None:
+                    type = type_model.group()[:].replace(' ', '').replace('g', '').replace('dt', '').replace('datatraveler', '')
+                if type_model is None:
+                    type_model =re.search(r'dt[ ]?i[ g]', nameinfo)
+                    if type_model is not None:
+                        type = 'i'
+                if type_model is None:
+                    type_model = re.search(r'se[- ]?9', nameinfo)
+                    if type_model is not None:
+                        type = 'se9'
+                if type_model is None:
+                    if ('savage' in nameinfo) or ('hx' in nameinfo) or ('hyperx' in nameinfo):
+                        type = 'hyperx'
+                if mem_type == '0' and type != '0':
+                    mem_type = 'usb'
+                type2_model = re.search(r'(g[ ]?[1-4])|(gen[ ]?[1-4])', nameinfo)
+                if type2_model is not None:
+                    type2 = type2_model.group()[:].replace('gen', 'g').replace(' ', '')
+            if model_model is None:
+                if 'ultimate' in nameinfo:
+                    if mem_type == '0':
+                        mem_type = 'sd'
+                    model = 'ultimate'
+                if 'sd4' in nameinfo or sd_code == '4':
+                    type = 'sd4'
+                elif 'sda10' in nameinfo or (mem_type == 'sd' and sd_code == '10'):
+                    type = 'sda10'
+                elif 'sdcac' in nameinfo:
+                    type = 'sdcac'
+                elif 'sda3' in nameinfo:
+                    type = 'sda3'
+                elif 'sdc10' in nameinfo or 'sdcit' in nameinfo or (mem_type == 'microsd' and sd_code == '10'):
+                    type = 'sdc10'
+                elif 'sdca3' in nameinfo:
+                    type = 'sdca3'
+                if mem_type == '0':
+                    if type == 'sd4' or type == 'sda10' or type == 'sda3':
+                        mem_type = 'sd'
+                    else:
+                        mem_type = 'microsd'
         # 512, 256, 128: judge by memtype
         # 64: g2, g4
         # 32: g2
