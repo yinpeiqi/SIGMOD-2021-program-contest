@@ -95,7 +95,6 @@ def clean_x4(Xdata):
                         type = t
                         break
 
-
         elif brand == "lexar":
             if mem_type == '0':
                 if 'jumpdrive' in nameinfo:
@@ -178,11 +177,7 @@ def clean_x4(Xdata):
         # 4: microsd
 
         elif brand == 'pny':
-            type_model = re.search(r'att.*?[0-9]', nameinfo)
-            if type_model is not None:
-                type = type_model.group().replace(' ', '').replace('-', '')
-                type = 'att' + list(filter(lambda ch: ch in '0123456789', type))[0]
-
+            pass
 
         elif brand == 'kingston':
             if mem_type == '0':
@@ -193,9 +188,10 @@ def clean_x4(Xdata):
             model_model = re.search(r'(dt[i1]0?1?)|(data[ ]?traveler)', nameinfo)
             if model_model is not None:
                 model = 'data traveler'
-                type_model = re.search(r'(g[24])|(gen[ ]?[24])', nameinfo)
-                if type_model is not None:
-                    type = type_model.group()[-1:]
+            type_model = re.search(r'(g[24])|(gen[ ]?[24])', nameinfo)
+            if type_model is not None:
+                model = 'data traveler'
+                type = type_model.group()[-1:]
         # 512, 256, 128: judge by memtype
         # 64: g2, g4
         # 32: g2
@@ -206,15 +202,17 @@ def clean_x4(Xdata):
             if 'lte' in nameinfo:
                 model_model = re.search(r'[\s][a-z][0-9]{1,2}[\s]', nameinfo)
                 if model_model is None:
-                    model_model = re.search(r'[\s]note[ ][0-9]{1,2}', nameinfo)
+                    model_model = re.search(r'[\s]note[ ]?[0-9]{1,2}', nameinfo)
                 if model_model is None:
                     model_model = re.search(r'prime plus', nameinfo)
                 if model_model is not None:
                     model = model_model.group().replace(' ', '')
+                mem_type = 'lte'
             elif 'tv' in nameinfo:
                 model_model = re.search(r'[0-9]{1,2}-inch', nameinfo)
                 if model_model is not None:
                     model = model_model.group().strip()
+                mem_type = 'tv'
             for c in colors:
                 if c in nameinfo:
                     type = c
@@ -231,7 +229,8 @@ def clean_x4(Xdata):
 
         elif brand == 'transcend':
             pass
-
+        # if brand != 'sony':
+        #     continue
         result.append([
             instance_ids[row][0],
             brand,
@@ -243,16 +242,6 @@ def clean_x4(Xdata):
             item_code,
             nameinfo
         ])
-    # mp = {}
-    # cnt = 0
-    # for i in range(len(result)):
-    #     if result[i][1] is None:
-    #         result[i][1] = 0
-    #     else:
-    #         if result[i][1] not in mp:
-    #             cnt += 1
-    #             mp[result[i][1]] = cnt
-    #         result[i][1] = mp[result[i][1]]
 
     result = pd.DataFrame(result)
 
