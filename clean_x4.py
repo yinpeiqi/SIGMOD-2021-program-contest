@@ -36,8 +36,11 @@ def clean_x4(Xdata):
         mem_type = '0'
         brand = '0'
         type = '0'
+        type2 =' 0'
         model = '0'
         item_code = '0'
+        generation = '0'
+        sd_code = '0'
 
         if sizes[row][0] != '':
             size = sizes[row][0].lower().replace(' ', '')
@@ -95,6 +98,30 @@ def clean_x4(Xdata):
         item_code_model = re.search(r'\((mk)?[0-9]{6,10}\)', nameinfo)
         if item_code_model is not None:
             item_code = item_code_model.group()[1:-1]
+        
+        gen_model = re.search(r'(usb)[\- ][123][.][012]', nameinfo)
+        if gen_model is not None:
+            if mem_type == '0':
+                mem_type = 'usb'
+            generation = gen_model.group()[-3:].replace('.0', '').replace('.1', '').replace('.2', '')
+        else:
+            gen_model = re.search(r'uhs[\\]?[\- ]?[i1]', nameinfo)
+            if gen_model is not None:
+                generation = 1
+            if gen_model is None:
+                gen_model = re.search(r'uhs[\\]?[\- ]?[i2][i]?', nameinfo)
+                if gen_model is not None:
+                    generation = 2
+            if gen_model is not None and mem_type == '0':
+                mem_type = 'sd'
+
+        sd_model = re.search(r'(clas[es][e]?[\- ]?[2468])|(cl[\- ]?[2468])', nameinfo)
+        if sd_model is not None:
+            sd_code = sd_model.group()[-1:]
+        if sd_model is not None:
+            sd_model = re.search(r'(clas[es][e]?[\- ]?10)|(cl[\- ]?10)', nameinfo)
+            if sd_model is not None:
+                sd_code = 10
 
         if brand == "intenso":
             model_model = re.search(r'[0-9]{7}', nameinfo)
@@ -291,13 +318,16 @@ def clean_x4(Xdata):
             price,
             mem_type,
             type,
+            type2,
             model,
             item_code,
+            generation,
+            sd_code,
             nameinfo
         ])
     result = pd.DataFrame(result)
 
-    name = ['instance_id', 'brand', 'capacity', 'price', 'mem_type', 'type', 'model', 'item_code', 'title']
+    name = ['instance_id', 'brand', 'capacity', 'price', 'mem_type', 'type', 'type2', 'model', 'item_code', 'generation','sd_code', 'title']
     for i in range(len(name)):
         result.rename({i: name[i]}, inplace=True, axis=1)
 
