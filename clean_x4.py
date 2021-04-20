@@ -118,7 +118,8 @@ def clean_x4(Xdata):
         sd_model = re.search(r'(clas[es][e]?[\- ]?[2468])|(cl[\- ]?[2468])', nameinfo)
         if sd_model is not None:
             sd_code = sd_model.group()[-1:]
-        if sd_model is not None:
+        if sd_model is None:
+
             sd_model = re.search(r'(clas[es][e]?[\- ]?10)|(cl[\- ]?10)', nameinfo)
             if sd_model is not None:
                 sd_code = 10
@@ -238,6 +239,8 @@ def clean_x4(Xdata):
             # usb: DT Locker+ G3, DT Vault Privacy, DT2000, DT4000G2, DT100G3, DT70, DT80, DT Duo,
             # DT Elite G2, DT G4, DT Kyson, DataTraveler Micro 3.1, DataTraveler MicroDuo 3C,
             # DT SE9, DataTraveler microDuo 3.0 G2, DT Exodia, IronKey D300, IronKey S1000
+            if ('savage' in nameinfo) or ('hx' in nameinfo) or ('hyperx' in nameinfo):
+                model = 'hyperx'
             model_model = re.search(r'(dt[i 0-9])|(data[ ]?traveler)', nameinfo)
             if model_model is not None:
                 model = 'dt'
@@ -254,9 +257,6 @@ def clean_x4(Xdata):
                     type_model = re.search(r'se[- ]?9', nameinfo)
                     if type_model is not None:
                         type = 'se9'
-                if type_model is None:
-                    if ('savage' in nameinfo) or ('hx' in nameinfo) or ('hyperx' in nameinfo):
-                        type = 'hyperx'
                 if mem_type == '0' and type != '0':
                     mem_type = 'usb'
                 type2_model = re.search(r'(g[ ]?[1-4])|(gen[ ]?[1-4])', nameinfo)
