@@ -13,9 +13,9 @@ def judge(ins):
     mem_type = ins['mem_type']
     id = brand + capacity
     if brand == 'intenso':
-        if capacity == '8gb' and type == 'speed':
-            return id + mem_type + type
-        return id
+        if type == '0':
+            type = 'premium'
+        return id + mem_type + type
 
     elif brand == 'lexar':
         if capacity == '128gb':
@@ -47,7 +47,7 @@ def judge(ins):
             return id + mem_type
 
         if capacity == '256gb':
-            return id
+            return id + mem_type
 
         if capacity == '128gb':
             return id + mem_type
@@ -78,6 +78,12 @@ def judge(ins):
 
     elif brand == 'sandisk':
 
+        if capacity == '1tb':
+            return id + mem_type
+
+        if capacity == '512gb':
+            return id + mem_type
+
         if capacity == '256gb':
             return id + mem_type + model
 
@@ -88,10 +94,8 @@ def judge(ins):
             return id + mem_type + model
 
         elif capacity == '32gb':
-            if model == 'ultra' and mem_type == 'microsd' \
-                    or model == 'ext' and mem_type == 'sd'\
-                    or model == 'ext' and mem_type == 'microsd':
-                return id + '3'
+            if model == '0':
+                model = 'ultra'
             return id + model + mem_type
 
         elif capacity == '16gb':
@@ -112,22 +116,37 @@ def judge(ins):
         return id + mem_type
 
     elif brand == 'kingston':
+        if model == 'data traveler' and type2 == '0':
+            type2 = '2'
+
+        if capacity == '1tb':
+            return id + mem_type
+
+        if capacity == '512gb':
+            return id + mem_type
+
         if capacity == '256gb':
             return id + mem_type
 
         elif capacity == '128gb':
+            if mem_type == '0':
+                mem_type = 'sd'
             return id + mem_type + type2
 
         elif capacity == '64gb':
+            if mem_type == '0':
+                mem_type = 'usb'
             return id + type2 + mem_type
 
         elif capacity == '32gb':
+            if mem_type == '0':
+                mem_type = 'usb'
             return id + type2 + mem_type
 
         elif capacity == '16gb':
             if type == 'sdca3':
                 return id + mem_type + type
-            return id + mem_type
+            return id + mem_type + type2
 
         elif capacity == '8gb':
             return id + mem_type
@@ -135,7 +154,7 @@ def judge(ins):
         elif capacity == '4gb':
             return id + mem_type
 
-        return id + mem_type + type + model
+        return id + mem_type + type2 + model
 
 
     elif brand == 'samsung':
@@ -157,7 +176,7 @@ def judge(ins):
                 return id + '3'
             elif mem_type == 'sd' and (model == '0' or model == 'n101'):
                 return id + '4'
-            elif mem_type == 'usb' and (model == '0' or model == 'n101'):
+            elif mem_type == 'usb' and (model == '0' or model == 'v128'):
                 return id + '5'
             return id + model + mem_type
 
@@ -177,7 +196,7 @@ def judge(ins):
         elif capacity == '8gb':
             if model == 'u302':
                 return id + '1'
-            elif mem_type == 'usb':
+            elif mem_type == 'usb' and (model == '0' or model == 'u202'):
                 return id + mem_type
             return id + mem_type + model
 
@@ -187,7 +206,7 @@ def judge(ins):
         return id + mem_type
 
 
-def handle_x4_pq(data: pd.DataFrame):
+def handle_x4_pq(data: pd.DataFrame, STATE='Val'):
     data = clean_x4(data)
 
     instance_list = []
@@ -222,7 +241,6 @@ def handle_x4_pq(data: pd.DataFrame):
             else:
                 singles.add((instance_list[i]['instance_id'], instance_list[j]['instance_id'], 0))
 
-    STATE = 'Val'
     if STATE == 'Val':
         output = couples.union(singles)
         output = pd.DataFrame(output, columns=['left_instance_id', 'right_instance_id', 'label'])
