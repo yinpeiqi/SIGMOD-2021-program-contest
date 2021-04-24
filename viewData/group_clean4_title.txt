@@ -549,9 +549,9 @@ altosight.com//8993 sandisk   16gb      22.99     usb                 0         
 altosight.com//12198sandisk   16gb      0.0       usb                 0         ext       0                   sandisk extreme - usb-flashstation - 16 gb\n                                                        
 altosight.com//13037sandisk   16gb      229.0     usb                 0         ext       0                   usb-minne 16gb cruzer extreme usb 3.0 new                                                           
 
-altosight.com//1205 sandisk   128gb     149.99    0                   0         fit       0                   sandisk - cruzer fit 128gb&nbsp;                                                                    
+altosight.com//1205 sandisk   128gb     149.99    usb                 0         fit       0                   sandisk - cruzer fit 128gb&nbsp;                                                                    
 altosight.com//3156 sandisk   128gb     69.0      usb                 0         fit       0                   sandisk ultra usb 3.0 fit 128gb usb stick                                                           
-altosight.com//9307 sandisk   128gb     129.0     0                   0         fit       0                   sandisk - cruzer fit 128gb -                                                                        
+altosight.com//9307 sandisk   128gb     129.0     usb                 0         fit       0                   sandisk - cruzer fit 128gb -                                                                        
 
 altosight.com//1245 sony      32gb      29.9      usb                 usmr      0         0                   sony - usm32gr&nbsp;nero                                                                            
 altosight.com//1384 sony      32gb      0.0       usb                 usmr      0         0                   sony usm32gr noir clé usb 32go                                                                      
@@ -761,7 +761,7 @@ altosight.com//2331 sony      128gb     49999.0   usb                 usmqx     
 altosight.com//4516 sony      128gb     113.31    usb                 usmqx     0         0                   sony usm128gqx 128 gb ram usb flash drive                                                           
 altosight.com//6243 sony      128gb     82.53     usb                 usmqx     0         0                   sony usm128gqx memoria usb 3.0, capacità 128 gb, velocità massima di lettura 226 mb/s, nero,sony,558m462,vergini,128gb,226mb/s,memoriausb,nera,sony
 
-altosight.com//2441 sandisk   32gb      19.99     0                   0         glide     0                   sandisk cruzer glide 32 gb                                                                          
+altosight.com//2441 sandisk   32gb      19.99     usb                 0         glide     0                   sandisk cruzer glide 32 gb                                                                          
 altosight.com//4138 sandisk   32gb      13.97     usb                 0         glide     0                   sandisk cruzer glide cz600 32gb sdcz600-032gb usb 3.0 jump drive pen drive flash drive,sandisk,fba_sdcz600-032g-g35
 altosight.com//5329 sandisk   32gb      17.97     usb                 0         glide     0                   sandisk ufm 32gb usb cruzer glide 3.0 32gb usb 3.0 (3.1 gen 1) conector usb tipo a negro, rojo unidad flash usb - memoria usb (32 gb, 3.0 (3.1 gen 1), conector usb tipo a, deslizar, negro, rojo): amazon.es: informática
 altosight.com//7790 sandisk   32gb      19.9      usb                 0         glide     4194527             clé usb sandisk glide 32 gb 3.0 (4194527)                                                           
@@ -932,7 +932,7 @@ altosight.com//7815 sony      256gb     159.9     ssd                 0         
 
 altosight.com//7934 samsung   1tb       334.0     ssd                 0         0         0                   disque dur ssd samsung samsung disque dur usb3.0 externe t3 1to ssd                                 
 
-altosight.com//9058 sandisk   4gb       7.9       0                   0         0         0                   sandisk cruzer edge (4gb) speicherstick schwarz/rot                                                 
+altosight.com//9058 sandisk   4gb       7.9       usb                 0         0         0                   sandisk cruzer edge (4gb) speicherstick schwarz/rot                                                 
 
 altosight.com//10138sony      32gb      20.99     microsd             0         0         0                   memoria microsdhc sony 32gb + adaptador                                                             
 altosight.com//13375sony      32gb      27.0      sd                  0         0         0                   tesco direct: sony 32gb sdhc memory card black                                                      
