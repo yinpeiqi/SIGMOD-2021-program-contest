@@ -883,9 +883,9 @@ altosight.com//8812 kingston  8gb       197.0     microsd             0         
 altosight.com//4228 pny       32gb      10.99     usb                 0         0         0                   pny p-fd32gotgslmb-ge 3.0 32 gb duo-link otg micro usb flash drive                                  
 altosight.com//5923 pny       32gb      16.49     usb                 0         0         0                   pny p-fd32gotgslmb-ge clé usb otg micro 32 go                                                       
 
-altosight.com//4492 sandisk   256gb     178.17    sd                  0         ext       0                   sandisk sdcz880-256g-g46 cruzer extreme drive                                                       
+altosight.com//4492 sandisk   256gb     178.17    usb                 0         ext       0                   sandisk sdcz880-256g-g46 cruzer extreme drive                                                       
 altosight.com//6534 sandisk   256gb     182.06    usb                 0         ext       0                   sandisk sdcz880-256g-g46 cruzer extreme memoria usb portatile                                       
-altosight.com//13832sandisk   256gb     195.99    0                   0         ext       0                   pendrive sandisk extreme go 3.1 256gb                                                               
+altosight.com//13832sandisk   256gb     195.99    usb                 0         ext       0                   pendrive sandisk extreme go 3.1 256gb                                                               
 
 altosight.com//4704 kingston  8gb       0.0       usb                 2         data traveler0                   kingston datatraveler dtse9g2 8gb speicherstick usb 3.0 silber                                      
 altosight.com//5193 kingston  8gb       0.0       usb                 2         data traveler0                   kingston datatraveler se9 g2 - memoria 8gb usb 3.0, plateado                                        
