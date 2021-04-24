@@ -95,7 +95,7 @@ altosight.com//5325 sandisk   16gb      18.59     sd                  0         
 altosight.com//7557 sandisk   16gb      19.99     sd                  0         ultra+    0                   sandisk ultra plus class 10 sd memory card - 16 gb                                                  
 altosight.com//7560 sandisk   16gb      19.99     sd                  0         ultra+    0                   sandisk ultra plus class 10 sdhc memory card - 16 gb                                                
 altosight.com//10450sandisk   16gb      19.99     sd                  0         ultra+    0                   carte mémoire sandisk ultra plus sdhc 16go 80mo/seconde uhs-i\n                                     
-altosight.com//12341sandisk   16gb      19.99     sd                  0         0         0                   sandisk sdhc 16gb 80mb/s cl10\n                                                                     
+altosight.com//12341sandisk   16gb      19.99     sd                  0         ultra+    0                   sandisk sdhc 16gb 80mb/s cl10\n                                                                     
 
 altosight.com//211  sandisk   64gb      39.99     sd                  0         ultra+    0                   sandisk ultra plus class 10 sd memory card - 64 gb                                                  
 altosight.com//5690 sandisk   64gb      37.99     sd                  0         ultra+    0                   carte mémoire sdxc sandisk ultra plus 64 go, classe 10                                              
@@ -920,7 +920,7 @@ altosight.com//7558 sandisk   32gb      29.99     sd                  0         
 altosight.com//7561 sandisk   32gb      29.99     sd                  0         ultra+    0                   sandisk ultra plus class 10 sdhc memory card - 32 gb                                                
 altosight.com//10451sandisk   32gb      27.04     sd                  0         ultra+    0                   carte mémoire sandisk ultra plus sdhc 32go 80mo/seconde uhs-i\n                                     
 altosight.com//11730sandisk   32gb      19.99     sd                  0         ultra+    0                   sandisk ultra plus sdhc / sdxc geheugenkaart 32 gb 80 mb/s                                          
-altosight.com//12344sandisk   32gb      27.04     sd                  0         0         0                   sandisk sdhc 32gb 80mb/s cl10\n                                                                     
+altosight.com//12344sandisk   32gb      27.04     sd                  0         ultra+    0                   sandisk sdhc 32gb 80mb/s cl10\n                                                                     
 
 altosight.com//7813 sony      1tb       109.9     0                   0         0         0                   disque dur externe sony dd2.5 1tb compact noir                                                      
 altosight.com//7814 sony      1tb       109.9     0                   0         0         0                   disque dur externe sony hd-sl 1 to - hd-sl 1 seu 1 to                                               
