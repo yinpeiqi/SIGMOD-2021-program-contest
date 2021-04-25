@@ -6,12 +6,6 @@ unsolved_spec = []
 
 instance_list = set()
 
-type_2_memtype = {"300": "sd", "s25": "usb", "v30": "usb", "p20": "usb", "c20c": "usb",
-                  "c20m": "usb", "v10": "usb", "s70": "usb"}
-
-model_2_memtype = {"cruzer": "usb", "m401": "microsd", "n401": "sd", "glide": "usb",
-                   "n101": "sd", "n302": "sd", "u201": "usb", "v128": "usb", "u202": "usb"}
-
 model_2_type = {"3502450": "rainbow", "3502460": "rainbow", "3502470": "rainbow", "3502480": "rainbow",
                 "3502490": "rainbow", "3502491": "rainbow",
                 "3503460": "basic", "3503470": "basic", "3503480": "basic", "3503490": "basic",
@@ -50,12 +44,6 @@ def handle_x4(dataset: pd.DataFrame, STATE='Test'):
         title = row['title']
         pc = {}
 
-        if mem_type == '0' and type in type_2_memtype.keys():
-            mem_type = type_2_memtype[type]
-
-        if mem_type == '0' and model in model_2_memtype.keys():
-            mem_type = model_2_memtype[model]
-
         if type == '0' and brand == "intenso" and model in model_2_type.keys():
             type = model_2_type[model]
 
@@ -70,7 +58,7 @@ def handle_x4(dataset: pd.DataFrame, STATE='Test'):
 
         if brand == 'lexar':
             if capacity!= '0' and type!='0'and mem_type!='0':
-                pc['identification'] = brand + ' ' + capacity + ' ' + mem_type + ' '+ type 
+                pc['identification'] = brand + ' ' + capacity + ' ' + mem_type + ' '+ type
                 solved_spec.append(pc)
             else:
                 unsolved_spec.append(pc)
@@ -86,16 +74,14 @@ def handle_x4(dataset: pd.DataFrame, STATE='Test'):
                 unsolved_spec.append(pc)
 
         elif brand == 'sandisk':
-            if (model == '0'):
-                model = 'ultra'
-            if capacity!='0' and mem_type!='0' and model!='0':
+            if capacity!='0' and mem_type!='0':
                 pc['identification'] = brand + ' ' + capacity + ' ' + mem_type + ' ' + model
                 solved_spec.append(pc)
             else:
                 unsolved_spec.append(pc)
 
         elif brand == 'pny':
-            if mem_type!='0' and capacity!='0' and type!='0':
+            if capacity!='0' and mem_type!='0' and type!='0':
                 pc['identification'] = brand + ' ' + capacity + ' ' + mem_type + ' ' + type
                 solved_spec.append(pc)
             else:
@@ -166,7 +152,29 @@ def handle_x4(dataset: pd.DataFrame, STATE='Test'):
     unsolved_spec_cp = unsolved_spec.copy()
     solved_spec_cp = solved_spec.copy()
 
+    # for u in unsolved_spec_cp:
+    #     if u['brand'] == 'intenso':
+    #         pass
+    #     elif u['brand'] == 'lexar':
+    #         pass
+    #     elif u['brand'] == 'sony':
+    #         pass
+    #     elif u['brand'] == 'sandisk':
+    #         pass
+    #     elif u['brand'] == 'pny':
+    #         pass
+    #     elif u['brand'] == 'kingston':
+    #         pass
+    #     elif u['brand'] == 'samsung':
+    #         pass
+    #     elif u['brand'] == 'toshiba':
+    #         pass
+    #     elif u['brand'] == 'transcend':
+    #         pass
+
     for u in unsolved_spec_cp:
+        if u['brand'] == 'sandisk':
+            continue
         for s in solved_spec_cp:
             if u['brand'] != '0' and u['capacity'] != '0' and u['mem_type'] != '0' and u['type'] != '0':
                 if u['brand'] == s['brand'] and u['capacity'] == s['capacity'] and u['mem_type'] == s['mem_type'] and u['type'] == s['type']:
