@@ -56,6 +56,12 @@ def handle_x4(dataset: pd.DataFrame, STATE='Test'):
         pc['model'] = model
         pc['item_code'] = item_code
 
+        if capacity in ('256gb', '512gb', '1tb', '2tb') and brand not in ('samsung', 'sandisk'):
+            pc['identification'] = brand + ' ' + capacity
+            solved_spec.append(pc)
+            instance_list.add(instance_id)
+            continue
+
         if brand == 'lexar':
             if capacity!= '0' and type!='0'and mem_type!='0':
                 pc['identification'] = brand + ' ' + capacity + ' ' + mem_type + ' '+ type
