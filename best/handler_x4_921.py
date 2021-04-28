@@ -63,79 +63,79 @@ def handle_x4(dataset: pd.DataFrame, STATE='Test'):
             continue
 
         if brand == 'lexar':
-            if capacity!= '0' and type!='0'and mem_type!='0':
-                pc['identification'] = brand + ' ' + capacity + ' ' + mem_type + ' '+ type
+            if capacity != '0' and type != '0' and mem_type != '0':
+                pc['identification'] = brand + ' ' + capacity + ' ' + mem_type + ' ' + type
                 solved_spec.append(pc)
             else:
                 unsolved_spec.append(pc)
 
         elif brand == 'sony':
-            if (mem_type in ('ssd', 'microsd') or capacity == '1tb') and capacity!='0':
+            if (mem_type in ('ssd', 'microsd') or capacity == '1tb') and capacity != '0':
                 pc['identification'] = brand + ' ' + capacity + ' ' + mem_type
                 solved_spec.append(pc)
-            elif mem_type!='0' and capacity!='0' and type!='0':
+            elif mem_type != '0' and capacity != '0' and type != '0':
                 pc['identification'] = brand + ' ' + capacity + ' ' + mem_type + ' ' + type
                 solved_spec.append(pc)
             else:
                 unsolved_spec.append(pc)
 
         elif brand == 'sandisk':
-            if capacity!='0' and mem_type!='0':
+            if capacity != '0' and mem_type != '0':
                 pc['identification'] = brand + ' ' + capacity + ' ' + mem_type + ' ' + model
                 solved_spec.append(pc)
             else:
                 unsolved_spec.append(pc)
 
         elif brand == 'pny':
-            if capacity!='0' and mem_type!='0' and type!='0':
+            if capacity != '0' and mem_type != '0' and type != '0':
                 pc['identification'] = brand + ' ' + capacity + ' ' + mem_type + ' ' + type
                 solved_spec.append(pc)
             else:
                 unsolved_spec.append(pc)
 
         elif brand == 'intenso':
-            if capacity!='0' and type!='0':
+            if capacity != '0' and type != '0':
                 pc['identification'] = brand + ' ' + capacity + ' ' + type
                 solved_spec.append(pc)
             else:
                 unsolved_spec.append(pc)
 
         elif brand == 'kingston':
-            if mem_type!='0' and capacity!='0':
+            if mem_type != '0' and capacity != '0':
                 pc['identification'] = brand + ' ' + capacity + ' ' + mem_type
                 solved_spec.append(pc)
             else:
                 unsolved_spec.append(pc)
 
         elif brand == 'samsung':
-            if mem_type in ('microsd', 'ssd', 'sd', 'usb') and capacity!='0' and model!='0':
-                pc['identification'] = brand + ' ' + capacity + ' ' + mem_type + ' '+ model
+            if mem_type in ('microsd', 'ssd', 'sd', 'usb') and capacity != '0' and model != '0':
+                pc['identification'] = brand + ' ' + capacity + ' ' + mem_type + ' ' + model
                 solved_spec.append(pc)
-            elif mem_type != '0' and capacity!='0' and type!='0' and model!='0':
-                pc['identification'] = brand + ' ' + capacity + ' ' + mem_type + ' '+ type + ' ' + model
+            elif mem_type != '0' and capacity != '0' and type != '0' and model != '0':
+                pc['identification'] = brand + ' ' + capacity + ' ' + mem_type + ' ' + type + ' ' + model
                 solved_spec.append(pc)
             else:
                 unsolved_spec.append(pc)
 
         elif brand == 'toshiba':
-            if capacity!='0' and mem_type != '0' and model != '0':
+            if capacity != '0' and mem_type != '0' and model != '0':
                 pc['identification'] = brand + ' ' + capacity + ' ' + model + mem_type
                 solved_spec.append(pc)
-            elif capacity!='0' and mem_type != '0' and type != '0':
+            elif capacity != '0' and mem_type != '0' and type != '0':
                 pc['identification'] = brand + ' ' + capacity + ' ' + type + mem_type
                 solved_spec.append(pc)
             else:
                 unsolved_spec.append(pc)
 
         elif brand == 'transcend':
-            if capacity!='0' and mem_type!='0':
+            if capacity != '0' and mem_type != '0':
                 pc['identification'] = brand + ' ' + capacity + ' ' + mem_type
                 solved_spec.append(pc)
             else:
                 unsolved_spec.append(pc)
 
         else:
-            if brand!='0' and capacity!='0' and mem_type!='0':
+            if brand != '0' and capacity != '0' and mem_type != '0':
                 pc['identification'] = brand + ' ' + capacity + ' ' + mem_type
                 solved_spec.append(pc)
             else:
@@ -161,17 +161,20 @@ def handle_x4(dataset: pd.DataFrame, STATE='Test'):
             continue
         for s in solved_spec_cp:
             if u['brand'] != '0' and u['capacity'] != '0' and u['mem_type'] != '0' and u['type'] != '0':
-                if u['brand'] == s['brand'] and u['capacity'] == s['capacity'] and u['mem_type'] == s['mem_type'] and u['type'] == s['type']:
+                if u['brand'] == s['brand'] and u['capacity'] == s['capacity'] and u['mem_type'] == s['mem_type'] and u[
+                    'type'] == s['type']:
                     u['identification'] = s['identification']
                     solved_spec.append(u)
                     break
             elif u['brand'] != '0' and u['capacity'] != '0' and u['mem_type'] != '0' and u['model'] != '0':
-                if u['brand'] == s['brand'] and u['capacity'] == s['capacity'] and u['mem_type'] == s['mem_type'] and u['model'] == s['model']:
+                if u['brand'] == s['brand'] and u['capacity'] == s['capacity'] and u['mem_type'] == s['mem_type'] and u[
+                    'model'] == s['model']:
                     u['identification'] = s['identification']
                     solved_spec.append(u)
                     break
             elif u['brand'] != '0' and u['capacity'] != '0' and u['type'] != '0' and u['model'] != '0':
-                if u['brand'] == s['brand'] and u['capacity'] == s['capacity'] and u['type'] == s['type'] and u['model'] == s['model']:
+                if u['brand'] == s['brand'] and u['capacity'] == s['capacity'] and u['type'] == s['type'] and u[
+                    'model'] == s['model']:
                     u['identification'] = s['identification']
                     solved_spec.append(u)
                     break

@@ -84,7 +84,6 @@ def clean_x4(Xdata):
         if ('adapter' in nameinfo or 'adaptateur' in nameinfo or 'adaptador' in nameinfo) and mem_type == '0':
             mem_type = 'microsd'
 
-
         item_code_model = re.search(r'\((mk)?[0-9]{6,10}\)', nameinfo)
         if item_code_model is not None:
             item_code = item_code_model.group()[1:-1]
@@ -181,7 +180,9 @@ def clean_x4(Xdata):
                     else:
                         model_model = re.search(r'ultra(\s)?((plus)|(pro)|\+|(performance)|(android))', nameinfo)
                         if model_model is None:
-                            model_model = re.search(r'sandisk 8gb ultra sdhc memory card, class 10, read speed up to 80 mb/s \+ sd adapter', nameinfo)
+                            model_model = re.search(
+                                r'sandisk 8gb ultra sdhc memory card, class 10, read speed up to 80 mb/s \+ sd adapter',
+                                nameinfo)
                         if model_model is None:
                             model_model = re.search(r'sandisk sdhc [0-9]+gb 80mb/s cl10\\n', nameinfo)
                         if model_model is not None:
@@ -211,7 +212,7 @@ def clean_x4(Xdata):
                     mem_type = 'usb'
                 elif 'cruzer' in nameinfo:
                     mem_type = 'usb'
-                elif model in ('glide','fit'):
+                elif model in ('glide', 'fit'):
                     mem_type = 'usb'
 
         elif brand == 'pny':
@@ -247,7 +248,6 @@ def clean_x4(Xdata):
         # 32: g2
         # 16: microsd, sd, usb ????
         # 8: microsd, usb
-
 
         elif brand == 'samsung':
             if 'lte' in nameinfo:
@@ -291,7 +291,6 @@ def clean_x4(Xdata):
         # TV: color(type), inch(model)
         # others: gb
 
-
         elif brand == 'toshiba':
             model_model = re.search(r'[\s\-n][umn][0-9]{3}', nameinfo)
             if model_model is not None:
@@ -316,9 +315,9 @@ def clean_x4(Xdata):
                 if type_model is not None:
                     type = type_model.group().replace(' ', '').replace('exceria', 'x')
                 elif size != '0':
-                    type_model = re.search(r'x[ ]?((high)|(plus)|(pro))?'+size[:-2], nameinfo)
+                    type_model = re.search(r'x[ ]?((high)|(plus)|(pro))?' + size[:-2], nameinfo)
                     if type_model is not None:
-                        type = type_model.group().replace(' ', '')[:-(len(size)-2)]
+                        type = type_model.group().replace(' ', '')[:-(len(size) - 2)]
                 if type == 'xpro' and mem_type == '0':
                     mem_type = 'sd'
                 if type == 'xhigh' and mem_type == '0':
@@ -331,12 +330,15 @@ def clean_x4(Xdata):
                 if model_model is not None:
                     model = 'n401'
             if mem_type == 'sd' and model == '0':
-                model_model = re.search(r'toshiba [0-9]+ ?gb ((exceria pro )|(sd[hx]c ))([0-9]+ ?gb )?sd[hx]c uhs clas[se] 3 memor(y|(ia)) ((card)|(flash))', nameinfo)
+                model_model = re.search(
+                    r'toshiba [0-9]+ ?gb ((exceria pro )|(sd[hx]c ))([0-9]+ ?gb )?sd[hx]c uhs clas[se] 3 memor(y|(ia)) ((card)|(flash))',
+                    nameinfo)
                 if model_model is not None:
                     model = 'n101'
                     type = 'xpro'
             if mem_type == 'sd' and model == '0':
-                model_model = re.search(r'toshiba exceria( pro)? - carte mémoire flash - [0-9]{2,3} go - sd[xh]c uhs-ii', nameinfo)
+                model_model = re.search(
+                    r'toshiba exceria( pro)? - carte mémoire flash - [0-9]{2,3} go - sd[xh]c uhs-ii', nameinfo)
                 if model_model is not None:
                     model = 'n101'
             if mem_type != 'usb':
