@@ -116,7 +116,8 @@ def clean_x4(Xdata):
             if mem_type == '0':
                 if 'drive' in nameinfo:
                     mem_type = 'usb'
-
+            if 'lexar 8gb jumpdrive v10 8gb usb 2.0 tipo-a blu unità flash usb' in nameinfo:
+                type = 'c20c'
         # judge type and model
 
         elif brand == 'sony':
@@ -214,6 +215,8 @@ def clean_x4(Xdata):
                     mem_type = 'usb'
                 elif model in ('glide', 'fit'):
                     mem_type = 'usb'
+            if 'sandisk - ' + size + ' extreme en fnac.es' in nameinfo:
+                mem_type = 'usb'
 
         elif brand == 'pny':
             type_model = re.search(r'att.*?[3-4]', nameinfo)
@@ -222,7 +225,6 @@ def clean_x4(Xdata):
                 type = 'att' + list(filter(lambda ch: ch in '0123456789', type))[0]
                 if mem_type == '0':
                     mem_type = 'usb'
-
 
         elif brand == 'kingston':
             if mem_type == '0':
@@ -305,8 +307,10 @@ def clean_x4(Xdata):
                         mem_type = 'microsd'
             if mem_type == 'usb' and model == '0':
                 model_model = re.search(r'ex[\s-]?ii', nameinfo)
+                if model_model is None:
+                    model_model = re.search(r'osus', nameinfo)
                 if model_model is not None:
-                    model = model_model.group()[:2]
+                    model = 'ex'
             if 'transmemory' in nameinfo:
                 if mem_type == '0':
                     mem_type = 'usb'
@@ -326,23 +330,20 @@ def clean_x4(Xdata):
                 if 'hayaqa' in nameinfo or 'hayabusa' in nameinfo:
                     model = 'u202'
             if mem_type == 'sd' and model == '0':
-                model_model = re.search(r'toshiba sdhc exceria pro [0-9]+g[ob], silber', nameinfo)
+                model_model = re.search(r'silber', nameinfo)
                 if model_model is not None:
                     model = 'n401'
-            if mem_type == 'sd' and model == '0':
+            if mem_type == 'sd' and model == '0' and type == '0':
                 model_model = re.search(
-                    r'toshiba [0-9]+ ?gb ((exceria pro )|(sd[hx]c ))([0-9]+ ?gb )?sd[hx]c uhs clas[se] 3 memor(y|(ia)) ((card)|(flash))',
+                    r'sd[hx]c uhs clas[se] 3 memor(y|(ia)) ((card)|(flash))',
                     nameinfo)
                 if model_model is not None:
-                    model = 'n101'
                     type = 'xpro'
-            if mem_type == 'sd' and model == '0':
-                model_model = re.search(
-                    r'toshiba exceria( pro)? - carte mémoire flash - [0-9]{2,3} go - sd[xh]c uhs-ii', nameinfo)
-                if model_model is not None:
-                    model = 'n101'
+            if mem_type == 'sd' and model == '0' and type == '0':
+                if 'uhs-ii' in nameinfo and ('carte mémoire flash' in nameinfo):
+                    type = 'xpro'
             if mem_type != 'usb':
-                speed_model = re.search(r'[1-9][0-9]{1,2}[\s]?mb/s', nameinfo)
+                speed_model = re.search(r'[1-9][0-9]{1,2}[\s]?m[bo]/s', nameinfo)
                 if speed_model is not None:
                     speed = re.search(r'[0-9]{2,3}', speed_model.group()).group()
                     if (speed == '260' or speed == '270'):
@@ -351,10 +352,15 @@ def clean_x4(Xdata):
                     if speed == '90' and type == 'x':
                         if model == '0':
                             model = 'n302'
+            if 'gb uhs-i (u3 - up to 95mb/s read) flash memory card' in nameinfo:
+                mem_type = 'microsd'
+                type = 'x'
+            if 'toshiba pendrive usb high-speed' in nameinfo:
+                model = 'u202'
+            if 'en fnac.es' in nameinfo and 'toshiba usb 3.0' in nameinfo and 'pendrive / memoria usb' in nameinfo:
+                model = 'ex'
             if model == 'n101':
                 model = '0'
-            # print(type, model, '    ', nameinfo)
-
 
         elif brand == 'transcend':
             pass

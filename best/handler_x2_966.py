@@ -96,6 +96,24 @@ def handle_x2(dataset: pd.DataFrame, STATE='Test'):
                     u['identification'] = s['identification']
                     solved_spec.append(u)
 
+    for i in unsolved_spec:
+        if i in solved_spec:
+            continue
+        for j in unsolved_spec:
+            if j in solved_spec:
+                continue
+            if i['id'] == j['id']:
+                continue
+            if i['brand'] == j['brand'] and i['capacity'] == j['capacity'] and \
+               i['cpu_core'] == j['cpu_core'] and i['cpu_model'] == j['cpu_model'] and \
+               i['pc_name'] == j['pc_name']:
+                i['identification'] = i['brand'] + i['capacity'] + i['cpu_core'] + i['cpu_model'] + i['pc_name']
+                j['identification'] = i['identification']
+                if i not in solved_spec:
+                    solved_spec.append(i)
+                if j not in solved_spec:
+                    solved_spec.append(j)
+
     clusters = dict()
 
     for s in solved_spec:
