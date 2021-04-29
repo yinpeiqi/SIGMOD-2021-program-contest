@@ -143,7 +143,7 @@ def clean_x4(Xdata):
                     type = 'ca'
                 type_model = re.search(r'(serie[s]?[\s-]?[a-z]{1,2}[\s])|([\s][a-z]{1,2}[\-]?serie[s]?)', nameinfo)
                 if type_model is not None:
-                    type = type_model.group().strip().replace('-', '').replace('g', '')
+                    type = type_model.group().replace(' ', '').replace('-', '').replace('g', '')
                     type = type.replace('series', '').replace('serie', '')
         # 1024: 1 TB
         # 256: ssd
