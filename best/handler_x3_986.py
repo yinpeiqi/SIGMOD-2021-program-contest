@@ -55,7 +55,6 @@ def handle_x3(dataset:pd.DataFrame, STATE='Test'):
         title = row['title']
         pc = {}
 
-
         if pc_name in pc_aliases.keys():
             pc_name = pc_aliases[pc_name]
 
@@ -74,6 +73,11 @@ def handle_x3(dataset:pd.DataFrame, STATE='Test'):
 
         pc['id'] = instance_id
         pc['title'] = title
+        pc['brand'] = brand
+        pc['pc_name'] = pc_name
+        pc['cpu_model'] = cpu_model
+        pc['capacity'] = capacity
+        pc['cpu_core'] = cpu_core
 
         if (pc_name=="8460p") and (cpu_model=="2450m"):
             pc['identification'] = pc_name + ' ' + cpu_model
@@ -117,10 +121,11 @@ def handle_x3(dataset:pd.DataFrame, STATE='Test'):
             clusters.update({s['identification']: [s['id']]})
 
     for u in unsolved_spec:
-        if u['title'] in clusters.keys():
-            clusters[u['title']].append(u['id'])
+        identification = u['brand'] + ' ' + u['pc_name'] + ' ' + u['cpu_model'] + ' ' + u['capacity'] + ' ' + u['cpu_core']
+        if identification in clusters.keys():
+            clusters[identification].append(u['id'])
         else:
-            clusters.update({u['title']: [u['id']]})
+            clusters.update({identification: [u['id']]})
 
     couples = set()
     for c in clusters.keys():
