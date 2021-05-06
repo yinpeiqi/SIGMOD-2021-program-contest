@@ -8,7 +8,7 @@ cpu_brands = ['intel', 'amd']
 intel_cores = [' i3', ' i5', ' i7', '2 duo', 'celeron', 'pentium', 'centrino']
 amd_cores = ['e-series', 'a8', 'radeon', 'athlon', 'turion', 'phenom']
 
-familys = {
+families = {
     'hp': [r'elitebook', r'compaq', r'folio', r'pavilion'],
     'lenovo': [r' x[0-9]{3}[t]?', r'x1 carbon'],
     'dell': [r'inspiron'],
@@ -18,17 +18,16 @@ familys = {
 }
 
 
-def clean_x2(Xdata):
-    instance_ids = Xdata.filter(items=['instance_id'], axis=1)
-    titles = Xdata.filter(items=['title'], axis=1)
-    information = Xdata.drop(['instance_id'], axis=1)
+def clean_x2(data):
+    instance_ids = data.filter(items=['instance_id'], axis=1)
+    titles = data.filter(items=['title'], axis=1)
+    information = data.drop(['instance_id'], axis=1)
     information = information.fillna('')
     instance_ids = instance_ids.values.tolist()
     information = information.values.tolist()
     titles = titles.values.tolist()
 
     result = []
-    totz = 0
     for row in range(len(instance_ids)):
         information[row].sort(key=lambda i: len(i), reverse=True)
         rowinfo = titles[row][0]
@@ -49,13 +48,7 @@ def clean_x2(Xdata):
         item = rowinfo
         lower_item = item.lower()
 
-        rest_info = re.split(r'\s[:\\/-]\s', titles[row][0])
-        # print(instance_ids[row],titles[row][0])
         name_info = item
-        # useless = ['amazon', 'other laptops', 'miniprice']
-        # for name in useless:
-        #     if name in rest_info[0].lower():
-        #         name_info = rest_info[1]
 
         for b in brands:
             if b in lower_item:
@@ -123,7 +116,6 @@ def clean_x2(Xdata):
         if cpu_brand == 'intel':
             item_curr = item.replace(name_number, '').replace(name_number.upper(), '')
             result_model = re.search(r'[\- ][0-9]{4}[Qq]?[MmUu](?![Hh][Zz])', item_curr)
-            # result_model = re.search(r'(?<![0-9]{2})[\- ][0-9]?[0-9]{2}[0-9L][MmUu](?![Hh][Zz])', item)
             if result_model is None:
                 result_model = re.search('[\- ][0-9]{3}[Qq]?[Mm]', item_curr)
             if result_model is None:
@@ -188,7 +180,7 @@ def clean_x2(Xdata):
         if result_display_size is not None and display_size == '0':
             display_size = result_display_size.group().replace("\'", " ").strip().replace(' ', '.')
 
-        for pattern in familys[brand]:
+        for pattern in families[brand]:
             result_name_family = re.search(pattern, lower_item)
             if result_name_family is not None:
                 name_family = result_name_family.group().strip()

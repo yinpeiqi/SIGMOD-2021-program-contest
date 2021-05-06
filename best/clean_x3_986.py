@@ -1,7 +1,5 @@
-from joblib import load, dump
 import pandas as pd
 import re
-import numpy
 
 brands = ['dell', 'lenovo', 'acer', 'asus', 'hp']
 
@@ -10,7 +8,7 @@ cpu_brands = ['intel', 'amd']
 intel_cores = [' i3', ' i5', ' i7', '2 duo', 'celeron', 'pentium', 'centrino']
 amd_cores = ['e-series', 'a8', 'radeon', 'athlon', 'turion', 'phenom']
 
-familys = {
+families = {
     'hp': [r'elitebook', r'compaq', r'folio', r'pavilion'],
     'lenovo': [r' x[0-9]{3}[t]?', r'x1 carbon'],
     'dell': [r'inspiron'],
@@ -20,23 +18,22 @@ familys = {
 }
 
 
-def clean_x3(Xdata):
-    instance_ids = Xdata.filter(items=['instance_id'], axis=1)
-    titles = Xdata.filter(items=['title'], axis=1)
-    information = Xdata.drop(['instance_id'], axis=1)
+def clean_x3(data):
+    instance_ids = data.filter(items=['instance_id'], axis=1)
+    titles = data.filter(items=['title'], axis=1)
+    information = data.drop(['instance_id'], axis=1)
     information = information.fillna('')
     instance_ids = instance_ids.values.tolist()
     information = information.values.tolist()
     titles = titles.values.tolist()
 
     result = []
-    totz = 0
     for row in range(len(instance_ids)):
         information[row].sort(key=lambda i: len(i), reverse=True)
-        rowinfo = titles[row][0]
+        row_info = titles[row][0]
         for mess in information[row]:
-            if mess not in rowinfo:
-                rowinfo = rowinfo + ' - ' + mess
+            if mess not in row_info:
+                row_info = row_info + ' - ' + mess
 
         brand = '0'
         cpu_brand = '0'
@@ -48,7 +45,7 @@ def clean_x3(Xdata):
         name_number = '0'
         name_family = '0'
 
-        item = rowinfo
+        item = row_info
         lower_item = item.lower()
 
         rest_info = re.split(r'\s[:\\/-]\s', titles[row][0])
@@ -82,7 +79,6 @@ def clean_x3(Xdata):
 
         if cpu_brand == 'intel':
             result_model = re.search(r'[\- ][0-9]{4}[Qq]?[MmUu](?![Hh][Zz])', item)
-            # result_model = re.search(r'(?<![0-9]{2})[\- ][0-9]?[0-9]{2}[0-9L][MmUu](?![Hh][Zz])', item)
             if result_model is None:
                 result_model = re.search('[\- ][0-9]{3}[Qq]?[Mm]', item)
             if result_model is None:
@@ -118,8 +114,6 @@ def clean_x3(Xdata):
                 if result_model is not None:
                     cpu_model = result_model.group().lower().replace('-', '').replace(' ', '')
 
-
-
         result_frequency = re.search(r'[123][ .][0-9]?[0-9]?[ ]?[Gg][Hh][Zz]', item)
         if result_frequency is not None:
             result_frequency = re.split(r'[GgHhZz]', result_frequency.group())[0].strip().replace(' ', '.')
@@ -139,7 +133,6 @@ def clean_x3(Xdata):
             ram_capacity = result_ram_capacity.group().lower()\
                 .replace('-', ' ').replace('b', '').replace('r', '').replace('a', '').replace('m', '').replace(' ', '')
 
-
         result_display_size = re.search(r'1[0-9]([. ][0-9])?\"', item)
         if result_display_size is not None:
             display_size = result_display_size.group().replace(" ", ".")[:-1]
@@ -151,12 +144,6 @@ def clean_x3(Xdata):
             result_display_size = re.search(r'(?<!x)[ ]1[0-9][. ][0-9]([ ]|(\'\'))(?!x)', item)
         if result_display_size is not None and display_size == '0':
             display_size = result_display_size.group().replace("\'", " ").strip().replace(' ', '.')
-        # print(item)
-        # print(display_size)
-        if display_size == '0':
-            totz += 1
-        # print(item)
-        # print(display_size)
 
         if brand == 'lenovo':
             result_name_number = re.search(r'[\- ][0-9]{4}[0-9a-zA-Z]{3}(?![0-9a-zA-Z])', name_info)
@@ -199,21 +186,12 @@ def clean_x3(Xdata):
             if result_name_number is not None:
                 name_number = result_name_number.group().lower().replace(' ', '-').replace('-', '')
 
-        for pattern in familys[brand]:
+        for pattern in families[brand]:
             result_name_family = re.search(pattern, lower_item)
             if result_name_family is not None:
                 name_family = result_name_family.group().strip()
                 break
 
-        # print(item)
-        # print(brand,
-        #     cpu_brand,
-        #     cpu_core,
-        #     cpu_model,
-        #     cpu_frequency,
-        #     ram_capacity,
-        #     display_size,
-        #     name_number)
         result.append([
             instance_ids[row][0],
             brand,
@@ -227,18 +205,6 @@ def clean_x3(Xdata):
             name_family,
             titles[row][0].lower()
         ])
-    # print(totz)
-    # for col in range(1, len(result[0])):
-    #     mp = {}
-    #     cnt = 0
-    #     for i in range(len(result)):
-    #         if result[i][col] == '0':
-    #             continue
-    #         if result[i][col] not in mp:
-    #             cnt += 1
-    #             mp[result[i][col]] = cnt
-    #         result[i][col] = mp[result[i][col]]
-
 
     result = pd.DataFrame(result)
     name = [

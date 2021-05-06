@@ -190,22 +190,22 @@ def handle_x4(dataset: pd.DataFrame, STATE='Test'):
             continue
         for s in solved_spec_cp:
             if u['brand'] != '0' and u['capacity'] != '0' and u['mem_type'] != '0' and u['type'] != '0':
-                if u['brand'] == s['brand'] and u['capacity'] == s['capacity'] and u['mem_type'] == s['mem_type'] and u[
-                    'type'] == s['type']:
+                if u['brand'] == s['brand'] and u['capacity'] == s['capacity'] and u['mem_type'] == s['mem_type'] and \
+                        u['type'] == s['type']:
                     u['identification'] = s['identification']
                     solved_spec.append(u)
                     unsolved_spec.remove(u)
                     break
             elif u['brand'] != '0' and u['capacity'] != '0' and u['mem_type'] != '0' and u['model'] != '0':
-                if u['brand'] == s['brand'] and u['capacity'] == s['capacity'] and u['mem_type'] == s['mem_type'] and u[
-                    'model'] == s['model']:
+                if u['brand'] == s['brand'] and u['capacity'] == s['capacity'] and u['mem_type'] == s['mem_type'] and \
+                        u['model'] == s['model']:
                     u['identification'] = s['identification']
                     solved_spec.append(u)
                     unsolved_spec.remove(u)
                     break
             elif u['brand'] != '0' and u['capacity'] != '0' and u['type'] != '0' and u['model'] != '0':
-                if u['brand'] == s['brand'] and u['capacity'] == s['capacity'] and u['type'] == s['type'] and u[
-                    'model'] == s['model']:
+                if u['brand'] == s['brand'] and u['capacity'] == s['capacity'] and u['type'] == s['type'] and \
+                        u['model'] == s['model']:
                     u['identification'] = s['identification']
                     solved_spec.append(u)
                     unsolved_spec.remove(u)
@@ -222,29 +222,6 @@ def handle_x4(dataset: pd.DataFrame, STATE='Test'):
                     solved_spec.append(u)
                     unsolved_spec.remove(u)
                     break
-
-    # clusters = dict()
-    # for s in solved_spec:
-    #     if s['identification'] in clusters.keys():
-    #         clusters[s['identification']].append(s)
-    #     else:
-    #         clusters.update({s['identification']: [s]})
-    #
-    # for u in unsolved_spec:
-    #     if u['title'] in clusters.keys():
-    #         clusters[u['title']].append(u)
-    #     else:
-    #         clusters.update({u['title']: [u]})
-    #
-    # key = sorted(clusters)
-    # for c in key:
-    #     for i in clusters[c]:
-    #         if 'identification' in i:
-    #             print(i['brand'], i['capacity'], i['mem_type'], i['model'], i['type'], '[', i['identification'], ']', i['title'])
-    #         else:
-    #             print(i['brand'], i['capacity'], i['mem_type'], i['model'], i['type'], '[ Unsolved ]')
-    #     print()
-    # print(len(unsolved_spec))
 
     clusters = dict()
 

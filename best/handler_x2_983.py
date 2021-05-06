@@ -79,52 +79,59 @@ def handle_x2(dataset: pd.DataFrame, STATE='Test'):
 
     for u in unsolved_spec.copy():
         for s in solved_spec.copy():
-            if u['brand'] != '0' and u['pc_name'] != '0' and u['capacity'] != '0' and u['cpu_model']!='0':
-                if u['brand'] == s['brand'] and u['pc_name'] == s['pc_name'] and u['capacity'] == s['capacity'] and u['cpu_model'] == s['cpu_model']:
+            if u['brand'] != '0' and u['pc_name'] != '0' and u['capacity'] != '0' and u['cpu_model'] != '0':
+                if u['brand'] == s['brand'] and u['pc_name'] == s['pc_name'] and u['capacity'] == s['capacity'] and \
+                        u['cpu_model'] == s['cpu_model']:
                     if u['family'] == '0' or s['family'] == '0' or u['family'] == s['family']:
                         u['identification'] = s['identification']
                         solved_spec.append(u)
                         unsolved_spec.remove(u)
                         break
-            elif u['brand'] != '0' and u['pc_name'] != '0' and u['cpu_core'] != '0' and u['cpu_model']!='0':
-                if u['brand'] == s['brand'] and u['pc_name'] == s['pc_name'] and u['cpu_model'] == s['cpu_model'] and u['cpu_core'] == s['cpu_core']:
+            elif u['brand'] != '0' and u['pc_name'] != '0' and u['cpu_core'] != '0' and u['cpu_model'] != '0':
+                if u['brand'] == s['brand'] and u['pc_name'] == s['pc_name'] and u['cpu_model'] == s['cpu_model'] and \
+                        u['cpu_core'] == s['cpu_core']:
                     if u['family'] == '0' or s['family'] == '0' or u['family'] == s['family']:
                         u['identification'] = s['identification']
                         solved_spec.append(u)
                         unsolved_spec.remove(u)
                         break
-            elif u['brand'] != '0' and u['capacity'] != '0' and u['cpu_core'] != '0' and u['pc_name']!='0':
-                if u['brand'] == s['brand'] and u['pc_name'] == s['pc_name'] and u['cpu_core'] == s['cpu_core'] and u['capacity'] == s['capacity']:
+            elif u['brand'] != '0' and u['capacity'] != '0' and u['cpu_core'] != '0' and u['pc_name'] != '0':
+                if u['brand'] == s['brand'] and u['pc_name'] == s['pc_name'] and u['cpu_core'] == s['cpu_core'] and \
+                        u['capacity'] == s['capacity']:
                     if u['family'] == '0' or s['family'] == '0' or u['family'] == s['family']:
                         u['identification'] = s['identification']
                         solved_spec.append(u)
                         unsolved_spec.remove(u)
                         break
-            elif u['brand'] != '0' and u['capacity'] != '0' and u['cpu_core'] != '0' and u['cpu_model']!='0':
-                if u['brand'] == s['brand'] and u['capacity'] == s['capacity'] and u['cpu_core'] == s['cpu_core'] and u['cpu_model'] == s['cpu_model']:
+            elif u['brand'] != '0' and u['capacity'] != '0' and u['cpu_core'] != '0' and u['cpu_model'] != '0':
+                if u['brand'] == s['brand'] and u['capacity'] == s['capacity'] and u['cpu_core'] == s['cpu_core'] and \
+                        u['cpu_model'] == s['cpu_model']:
                     if u['family'] == '0' or s['family'] == '0' or u['family'] == s['family']:
                         u['identification'] = s['identification']
                         solved_spec.append(u)
                         unsolved_spec.remove(u)
                         break
-            elif u['brand'] != '0' and u['cpu_model']!='0' and u['pc_name']!='0':
+            elif u['brand'] != '0' and u['cpu_model'] != '0' and u['pc_name'] != '0':
                 if u['brand'] == s['brand'] and u['pc_name'] == s['pc_name'] and u['cpu_model'] == s['cpu_model']:
                     if u['family'] == '0' or s['family'] == '0' or u['family'] == s['family']:
                         u['identification'] = s['identification']
                         solved_spec.append(u)
                         unsolved_spec.remove(u)
                         break
-            elif u['brand'] != '0' and u['capacity'] != '0' and u['cpu_model'] != '0' and u['display_size'] != '0' and u['cpu_frequency'] != '0':
-                if u['brand'] == s['brand'] and u['capacity'] == s['capacity'] and u['cpu_model'] == s['cpu_model'] and u[
-                    'display_size'] == s['display_size'] and u['cpu_frequency'] == s['cpu_frequency']:
+            elif u['brand'] != '0' and u['capacity'] != '0' and u['cpu_model'] != '0' and u['display_size'] != '0' and \
+                    u['cpu_frequency'] != '0':
+                if u['brand'] == s['brand'] and u['capacity'] == s['capacity'] and \
+                        u['cpu_model'] == s['cpu_model'] and u['display_size'] == s['display_size'] and \
+                        u['cpu_frequency'] == s['cpu_frequency']:
                     if u['family'] == '0' or s['family'] == '0' or u['family'] == s['family']:
                         u['identification'] = s['identification']
                         solved_spec.append(u)
                         unsolved_spec.remove(u)
                         break
-            elif u['brand'] != '0' and u['capacity'] != '0' and u['pc_name'] != '0' and u['display_size'] != '0' and u['cpu_frequency'] != '0':
-                if u['brand'] == s['brand'] and u['capacity'] == s['capacity'] and u['pc_name'] == s['pc_name'] and u[
-                    'display_size'] == s['display_size'] and u['cpu_frequency'] == s['cpu_frequency']:
+            elif u['brand'] != '0' and u['capacity'] != '0' and u['pc_name'] != '0' and u['display_size'] != '0' and \
+                    u['cpu_frequency'] != '0':
+                if u['brand'] == s['brand'] and u['capacity'] == s['capacity'] and u['pc_name'] == s['pc_name'] and \
+                        u['display_size'] == s['display_size'] and u['cpu_frequency'] == s['cpu_frequency']:
                     if u['family'] == '0' or s['family'] == '0' or u['family'] == s['family']:
                         u['identification'] = s['identification']
                         solved_spec.append(u)
@@ -148,29 +155,6 @@ def handle_x2(dataset: pd.DataFrame, STATE='Test'):
                     solved_spec.append(i)
                 if j not in solved_spec:
                     solved_spec.append(j)
-
-    # clusters = dict()
-    # for s in solved_spec:
-    #     if s['identification'] in clusters.keys():
-    #         clusters[s['identification']].append(s)
-    #     else:
-    #         clusters.update({s['identification']: [s]})
-    #
-    # for u in unsolved_spec:
-    #     if u['title'] in clusters.keys():
-    #         clusters[u['title']].append(u)
-    #     else:
-    #         clusters.update({u['title']: [u]})
-    #
-    # key = sorted(clusters)
-    # for c in key:
-    #     for i in clusters[c]:
-    #         if 'identification' in i:
-    #             print(i['brand'], i['capacity'], i['cpu_model'], i['cpu_core'], i['pc_name'], i['display_size'], i['family'], i['cpu_frequency'], i['identification'], ']', i['title'])
-    #         else:
-    #             print(i['brand'], i['capacity'], i['mem_type'], i['model'], i['type'], i['display_size'], i['family'], i['cpu_frequency'], '[ Unsolved ]')
-    #     print()
-    # print(len(unsolved_spec))
 
     clusters = dict()
 

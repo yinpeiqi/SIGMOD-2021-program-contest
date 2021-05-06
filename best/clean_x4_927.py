@@ -14,12 +14,12 @@ colors = ['midnight black', 'prism white', 'prism black', 'prism green', 'prism 
           'brown', 'orange', 'coral', 'pink']
 
 
-def clean_x4(Xdata):
-    names = Xdata.filter(items=['name'], axis=1).fillna('')
-    prices = Xdata.filter(items=['price'], axis=1).fillna('')
-    sizes = Xdata.filter(items=['size'], axis=1).fillna('')
-    brands = Xdata.filter(items=['brand'], axis=1).fillna('')
-    instance_ids = Xdata.filter(items=['instance_id'], axis=1)
+def clean_x4(data):
+    names = data.filter(items=['name'], axis=1).fillna('')
+    prices = data.filter(items=['price'], axis=1).fillna('')
+    sizes = data.filter(items=['size'], axis=1).fillna('')
+    brands = data.filter(items=['brand'], axis=1).fillna('')
+    instance_ids = data.filter(items=['instance_id'], axis=1)
     names = names.values.tolist()
     prices = prices.values.tolist()
     sizes = sizes.values.tolist()
@@ -118,13 +118,12 @@ def clean_x4(Xdata):
                     mem_type = 'usb'
             if 'lexar 8gb jumpdrive v10 8gb usb 2.0 tipo-a blu unità flash usb' in nameinfo:
                 type = 'c20c'
-        # judge type and model
 
         elif brand == 'sony':
             if mem_type == '0':
                 if ('ux' in nameinfo) or ('uy' in nameinfo) or ('sr' in nameinfo):
                     mem_type = 'microsd'
-                elif ('uf' in nameinfo):
+                elif 'uf' in nameinfo:
                     mem_type = 'sd'
                 elif ('usm' in nameinfo) or size == '1tb':
                     mem_type = 'usb'
@@ -146,21 +145,6 @@ def clean_x4(Xdata):
                 if type_model is not None:
                     type = type_model.group().replace(' ', '').replace('-', '').replace('g', '')
                     type = type.replace('series', '').replace('serie', '')
-        # 1024: 1 TB
-        # 256: ssd
-        # 128: usmqx usb
-        # 128: microsd
-        # 64: usb
-        # 32: usmqx
-        # 32: sd | microsd
-        # 32: usmr & usb | usb
-        # 16: sd
-        # 16: usb
-        # 8: sd
-        # 8: microsd
-        # 8: usmqx usb
-        # 4: usmr
-        # 4: usmmp | usb
 
         elif brand == 'sandisk':
             model_model = re.search(r'ext.*(\s)?((plus)|(pro)|\+)', nameinfo)
@@ -230,7 +214,7 @@ def clean_x4(Xdata):
             if mem_type == '0':
                 if ('savage' in nameinfo) or ('hx' in nameinfo) or ('hyperx' in nameinfo):
                     mem_type = 'usb'
-                elif ('ultimate' in nameinfo):
+                elif 'ultimate' in nameinfo:
                     mem_type = 'sd'
             model_model = re.search(r'(dt[i1]0?1?)|(data[ ]?t?travel?ler)', nameinfo)
             if model_model is not None:
@@ -245,11 +229,6 @@ def clean_x4(Xdata):
                     model = 'data traveler'
             if model == 'data traveler' and mem_type == '0':
                 mem_type = 'usb'
-        # 512, 256, 128: judge by memtype
-        # 64: g2, g4
-        # 32: g2
-        # 16: microsd, sd, usb ????
-        # 8: microsd, usb
 
         elif brand == 'samsung':
             if 'lte' in nameinfo:
@@ -289,9 +268,6 @@ def clean_x4(Xdata):
                 if c in nameinfo:
                     type = c
                     break
-        # LTE: color(type), gb, model
-        # TV: color(type), inch(model)
-        # others: gb
 
         elif brand == 'toshiba':
             model_model = re.search(r'[\s\-n][umn][0-9]{3}', nameinfo)
@@ -346,7 +322,7 @@ def clean_x4(Xdata):
                 speed_model = re.search(r'[1-9][0-9]{1,2}[\s]?m[bo]/s', nameinfo)
                 if speed_model is not None:
                     speed = re.search(r'[0-9]{2,3}', speed_model.group()).group()
-                    if (speed == '260' or speed == '270'):
+                    if speed == '260' or speed == '270':
                         if type == '0':
                             type = 'xpro'
                     if speed == '90' and type == 'x':

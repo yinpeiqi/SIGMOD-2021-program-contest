@@ -6,8 +6,8 @@ pc_aliases = {
 
 cpu_model_aliases = {
     "hp": {"1st gen": "620m", "3540m": "3520m", "2nd gen": "2520m", "q720": "2800m", "m520": "520m",
-           "3rd gen": "620m", "m640": "620m", "m620":"620m", "q820":"620m", "720qm":"620m", "640m":"620m",
-           "880m":"620m"},
+           "3rd gen": "620m", "m640": "620m", "m620": "620m", "q820": "620m", "720qm": "620m", "640m": "620m",
+           "880m": "620m"},
     "acer": {"1005m": "2020m"},
     "lenovo": {"e-300": "hd-6310", "3rd gen": "3320m", "sl9400": "l9400"},
     "asus": {},
@@ -40,7 +40,8 @@ unsolved_spec = []
 
 instance_list = set()
 
-def handle_x3(dataset:pd.DataFrame, STATE='Test'):
+
+def handle_x3(dataset: pd.DataFrame, STATE='Test'):
     dataset = clean_x3(dataset)
 
     for index, row in dataset.iterrows():
@@ -68,7 +69,6 @@ def handle_x3(dataset:pd.DataFrame, STATE='Test'):
             if cpu_model in cpu_model_aliases[brand].keys():
                 cpu_model = cpu_model_aliases[brand][cpu_model]
 
-
         instance_list.add(instance_id)
 
         pc['id'] = instance_id
@@ -79,25 +79,25 @@ def handle_x3(dataset:pd.DataFrame, STATE='Test'):
         pc['capacity'] = capacity
         pc['cpu_core'] = cpu_core
 
-        if (pc_name=="8460p") and (cpu_model=="2450m"):
+        if pc_name == "8460p" and cpu_model == "2450m":
             pc['identification'] = pc_name + ' ' + cpu_model
             solved_spec.append(pc)
-        elif (pc_name in pc_single) or (pc_name in family_single):
+        elif pc_name in pc_single or pc_name in family_single:
             pc['identification'] = pc_name
             solved_spec.append(pc)
-        elif (pc_name in pc_capacity) and capacity != '0':
+        elif pc_name in pc_capacity and capacity != '0':
             pc['identification'] = pc_name + ' ' + capacity
             solved_spec.append(pc)
-        elif (cpu_model in model_single):
+        elif cpu_model in model_single:
             pc['identification'] = cpu_model
             solved_spec.append(pc)
-        elif (pc_name in pc_core) and cpu_core != '0':
+        elif pc_name in pc_core and cpu_core != '0':
             pc['identification'] = pc_name + ' ' + cpu_core
             solved_spec.append(pc)
-        elif (family in family_capacity) and capacity != '0':
+        elif family in family_capacity and capacity != '0':
             pc['identification'] = family + ' ' + capacity
             solved_spec.append(pc)
-        elif (pc_name in pc_core_capacity) and (cpu_core != '0') and (capacity != '0'):
+        elif pc_name in pc_core_capacity and cpu_core != '0' and capacity != '0':
             pc['identification'] = pc_name + ' ' + cpu_core + ' ' + capacity
             solved_spec.append(pc)
         elif pc_name != '0' and cpu_model != '0':
@@ -121,7 +121,8 @@ def handle_x3(dataset:pd.DataFrame, STATE='Test'):
             clusters.update({s['identification']: [s['id']]})
 
     for u in unsolved_spec:
-        identification = u['brand'] + ' ' + u['pc_name'] + ' ' + u['cpu_model'] + ' ' + u['capacity'] + ' ' + u['cpu_core']
+        identification = u['brand'] + ' ' + u['pc_name'] + ' ' + u['cpu_model'] + ' ' + u['capacity'] + ' ' + \
+                         u['cpu_core']
         if identification in clusters.keys():
             clusters[identification].append(u['id'])
         else:
