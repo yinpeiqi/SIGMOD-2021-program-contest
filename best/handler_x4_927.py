@@ -87,8 +87,8 @@ def handle_x4(dataset: pd.DataFrame, STATE='Test'):
                 unsolved_spec.append(pc)
 
         elif brand == 'pny':
-            if capacity != '0' and mem_type != '0' and type != '0':
-                pc['identification'] = brand + capacity + mem_type + type
+            if capacity != '0' and mem_type != '0':
+                pc['identification'] = brand + capacity + mem_type
                 solved_spec.append(pc)
             else:
                 unsolved_spec.append(pc)

@@ -1,7 +1,5 @@
-from joblib import load, dump
 import pandas as pd
 import re
-import numpy
 
 brands = ['dell', 'lenovo', 'acer', 'asus', 'hp']
 
@@ -81,81 +79,8 @@ def clean_x2(Xdata):
                     cpu_brand = 'intel'
                     break
 
-        if cpu_brand == 'intel':
-            result_model = re.search(r'[\- ][0-9]{4}[Qq]?[MmUu](?![Hh][Zz])', item)
-            # result_model = re.search(r'(?<![0-9]{2})[\- ][0-9]?[0-9]{2}[0-9L][MmUu](?![Hh][Zz])', item)
-            if result_model is None:
-                result_model = re.search('[\- ][0-9]{3}[Qq]?[Mm]', item)
-            if result_model is None:
-                result_model = re.search('[\- ][MmQq][0-9]{3}', item)
-            if result_model is None:
-                result_model = re.search('[\- ][PpNnTt][0-9]{4}', item)
-            if result_model is None:
-                result_model = re.search('[\- ][0-9]{4}[Yy]', item)
-            if result_model is None:
-                result_model = re.search('[\- ][Ss]?[Ll][0-9]{4}', item)
-            if result_model is None:
-                result_model = re.search('[\- ]867', item)
-            if result_model is None:
-                result_model = re.search('[\- ]((1st)|(2nd)|(3rd)|([4-9]st))[ ][Gg]en', item)
-            if result_model is not None:
-                cpu_model = result_model.group()[1:].lower()
-        elif cpu_brand == 'amd':
-            if cpu_core == 'a8':
-                cpu_core = 'a-series'
-            result_model = re.search(r'([AaEe][0-9][\- ][0-9]{4})', item)
-            if result_model is None:
-                result_model = re.search('[\- ]HD[\- ][0-9]{4}', item)
-            if result_model is None:
-                result_model = re.search('[\- ][AaEe][\- ][0-9]{3}', item)
-            if result_model is not None:
-                cpu_core = result_model.group()[:1].lower() + '-series'
-                cpu_model = result_model.group()[1:].lower().replace(' ', '-')
-            if cpu_core in ('radeon', 'athlon', 'turion', 'phenom'):
-                if result_model is None:
-                    result_model = re.search('[\- ][NnPp][0-9]{3}', item)
-                if result_model is None:
-                    result_model = re.search('[\- ](64[ ]?[Xx]2)|([Nn][Ee][Oo])', item)
-                if result_model is not None:
-                    cpu_model = result_model.group().lower().replace('-', '').replace(' ', '')
-
-
-
-        result_frequency = re.search(r'[123][ .][0-9]?[0-9]?[ ]?[Gg][Hh][Zz]', item)
-        if result_frequency is not None:
-            result_frequency = re.split(r'[GgHhZz]', result_frequency.group())[0].strip().replace(' ', '.')
-            if len(result_frequency) == 3:
-                result_frequency = result_frequency + '0'
-            if len(result_frequency) == 1:
-                result_frequency = result_frequency + '.00'
-            result_frequency = result_frequency
-            cpu_frequency = result_frequency
-
-        result_ram_capacity = re.search(
-            r'[1-9][\s]?[Gg][Bb][\s]?((S[Dd][Rr][Aa][Mm])|(D[Dd][Rr]3)|([Rr][Aa][Mm])|(Memory))', item)
-        if result_ram_capacity is not None:
-            ram_capacity = result_ram_capacity.group()[:1]
-
-        result_display_size = re.search(r'1[0-9]([. ][0-9])?\"', item)
-        if result_display_size is not None:
-            display_size = result_display_size.group().replace(" ", ".")[:-1]
-        else:
-            result_display_size = re.search(r'1[0-9]([. ][0-9])?[- ][Ii]nch(?!es)', item)
-        if result_display_size is not None and display_size == '0':
-            display_size = result_display_size.group().replace(" ", ".")[:-5]
-        elif result_display_size is None:
-            result_display_size = re.search(r'(?<!x)[ ]1[0-9][. ][0-9]([ ]|(\'\'))(?!x)', item)
-        if result_display_size is not None and display_size == '0':
-            display_size = result_display_size.group().replace("\'", " ").strip().replace(' ', '.')
-        # print(item)
-        # print(display_size)
-        if display_size == '0':
-            totz += 1
-        # print(item)
-        # print(display_size)
-
         if brand == 'lenovo':
-            result_name_number = re.search(r'[\- ][0-9]{4}[0-9a-zA-Z]{3}(?![0-9a-zA-Z])', name_info)
+            result_name_number = re.search(r'[\- ][0-9]{4}[0-9a-zA-Z]{2}[0-9a-yA-Y](?![0-9a-zA-Z])', name_info)
             if result_name_number is None:
                 result_name_number = re.search(r'[\- ][0-9]{4}(?![0-9a-zA-Z])', name_info)
             if result_name_number is not None:
@@ -195,21 +120,80 @@ def clean_x2(Xdata):
             if result_name_number is not None:
                 name_number = result_name_number.group().lower().replace(' ', '-').replace('-', '')
 
+        if cpu_brand == 'intel':
+            item_curr = item.replace(name_number, '').replace(name_number.upper(), '')
+            result_model = re.search(r'[\- ][0-9]{4}[Qq]?[MmUu](?![Hh][Zz])', item_curr)
+            # result_model = re.search(r'(?<![0-9]{2})[\- ][0-9]?[0-9]{2}[0-9L][MmUu](?![Hh][Zz])', item)
+            if result_model is None:
+                result_model = re.search('[\- ][0-9]{3}[Qq]?[Mm]', item_curr)
+            if result_model is None:
+                result_model = re.search('[\- ][MmQq][0-9]{3}', item_curr)
+            if result_model is None:
+                result_model = re.search('[\- ][PpNnTt][0-9]{4}', item_curr)
+            if result_model is None:
+                result_model = re.search('[\- ][0-9]{4}[Yy]', item_curr)
+            if result_model is None:
+                result_model = re.search('[\- ][Ss]?[Ll][0-9]{4}', item_curr)
+            if result_model is None:
+                result_model = re.search('[\- ]867', item_curr)
+            if result_model is None:
+                result_model = re.search('[\- ]((1st)|(2nd)|(3rd)|([4-9]st))[ ][Gg]en', item_curr)
+            if result_model is not None:
+                cpu_model = result_model.group()[1:].lower()
+        elif cpu_brand == 'amd':
+            item_curr = item.replace(name_number, '').replace(name_number.upper(), '')
+            if cpu_core == 'a8':
+                cpu_core = 'a-series'
+            result_model = re.search(r'([AaEe][0-9][\- ][0-9]{4})', item_curr)
+            if result_model is None:
+                result_model = re.search('[\- ]HD[\- ][0-9]{4}', item_curr)
+            if result_model is None:
+                result_model = re.search('[\- ][AaEe][\- ][0-9]{3}', item_curr)
+            if result_model is not None:
+                cpu_core = result_model.group().replace('-', '').replace(' ', '')[:1].lower() + '-series'
+                cpu_model = result_model.group()[1:].lower().replace(' ', '-')
+            if cpu_core in ('radeon', 'athlon', 'turion', 'phenom'):
+                if result_model is None:
+                    result_model = re.search('[\- ][NnPp][0-9]{3}', item_curr)
+                if result_model is None:
+                    result_model = re.search('[\- ](64[ ]?[Xx]2)|([Nn][Ee][Oo])', item_curr)
+                if result_model is not None:
+                    cpu_model = result_model.group().lower().replace('-', '').replace(' ', '')
+
+
+        result_frequency = re.search(r'[123][ .][0-9]?[0-9]?[ ]?[Gg][Hh][Zz]', item)
+        if result_frequency is not None:
+            result_frequency = re.split(r'[GgHhZz]', result_frequency.group())[0].strip().replace(' ', '.')
+            if len(result_frequency) == 3:
+                result_frequency = result_frequency + '0'
+            if len(result_frequency) == 1:
+                result_frequency = result_frequency + '.00'
+            result_frequency = result_frequency
+            cpu_frequency = result_frequency
+
+        result_ram_capacity = re.search(
+            r'[1-9][\s]?[Gg][Bb][\s]?((S[Dd][Rr][Aa][Mm])|(D[Dd][Rr]3)|([Rr][Aa][Mm])|(Memory))', item)
+        if result_ram_capacity is not None:
+            ram_capacity = result_ram_capacity.group()[:1]
+
+        result_display_size = re.search(r'1[0-9]([. ][0-9])?\"', item)
+        if result_display_size is not None:
+            display_size = result_display_size.group().replace(" ", ".")[:-1]
+        else:
+            result_display_size = re.search(r'1[0-9]([. ][0-9])?[- ][Ii]nch(?!es)', item)
+        if result_display_size is not None and display_size == '0':
+            display_size = result_display_size.group().replace(" ", ".")[:-5]
+        elif result_display_size is None:
+            result_display_size = re.search(r'(?<!x)[ ]1[0-9][. ][0-9]([ ]|(\'\'))(?!x)', item)
+        if result_display_size is not None and display_size == '0':
+            display_size = result_display_size.group().replace("\'", " ").strip().replace(' ', '.')
+
         for pattern in familys[brand]:
             result_name_family = re.search(pattern, lower_item)
             if result_name_family is not None:
                 name_family = result_name_family.group().strip()
                 break
 
-        # print(item)
-        # print(brand,
-        #     cpu_brand,
-        #     cpu_core,
-        #     cpu_model,
-        #     cpu_frequency,
-        #     ram_capacity,
-        #     display_size,
-        #     name_number)
         result.append([
             instance_ids[row][0],
             brand,
@@ -223,18 +207,6 @@ def clean_x2(Xdata):
             name_family,
             titles[row][0].lower()
         ])
-    # print(totz)
-    # for col in range(1, len(result[0])):
-    #     mp = {}
-    #     cnt = 0
-    #     for i in range(len(result)):
-    #         if result[i][col] == '0':
-    #             continue
-    #         if result[i][col] not in mp:
-    #             cnt += 1
-    #             mp[result[i][col]] = cnt
-    #         result[i][col] = mp[result[i][col]]
-
 
     result = pd.DataFrame(result)
     name = [
