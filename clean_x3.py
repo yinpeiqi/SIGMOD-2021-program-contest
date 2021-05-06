@@ -19,6 +19,27 @@ families = {
 
 
 def clean_x3(data):
+    """Clean X3.csv data to a readable format.
+
+    :param data: X3.csv
+
+    :return:
+        A DataFrame which contains following columns:
+        {instance_id: instance_id of items;
+         brand: computer's brand, range in: {'dell', 'lenovo', 'acer', 'asus', 'hp'};
+         cpu_brand: cpu's brand, range in: {'intel', 'amd'};
+         cpu_core: cpu extra information, relative to cpu_brand;
+         cpu_model: cpu model, relative to cpu_brand;
+         cpu_frequency: cpu's frequency, unit in Hz;
+         ram_capacity: capacity of RAM, unit in GB;
+         display_size: size of computer;
+         pc_name: name information extract from title;
+         name_family: family name of computer;
+         title: title information of instance}
+
+         it the value can't extract from the information given, '0' will be filled.
+    """
+
     instance_ids = data.filter(items=['instance_id'], axis=1)
     titles = data.filter(items=['title'], axis=1)
     information = data.drop(['instance_id'], axis=1)

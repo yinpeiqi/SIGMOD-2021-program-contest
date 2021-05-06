@@ -24,6 +24,25 @@ colors = ['midnight black', 'prism white', 'prism black', 'prism green', 'prism 
 
 
 def clean_x4(data):
+    """Clean X4.csv data to a readable format.
+
+    :param data: X4.csv
+
+    :return:
+        A DataFrame which contains following columns:
+        {instance_id: instance_id of items;
+         brand: item's brand, for example: {'intenso', 'pny', 'lexar'}
+         capacity: usb/sd card's capacity, unit in GB
+         price: price of the item
+         mem_type: memory type, for example: {'ssd', 'sd', 'microsd', 'usb'}
+         type: type information, relative to brand
+         model: model information, relative to brand
+         item_code: the unique item code
+         title: title information of instance}
+
+         it the value can't extract from the information given, '0' will be filled.
+    """
+
     names = data.filter(items=['name'], axis=1).fillna('')
     prices = data.filter(items=['price'], axis=1).fillna('')
     sizes = data.filter(items=['size'], axis=1).fillna('')
