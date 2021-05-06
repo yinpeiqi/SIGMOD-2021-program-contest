@@ -41,7 +41,7 @@ unsolved_spec = []
 instance_list = set()
 
 
-def handle_x3(dataset: pd.DataFrame, STATE='Test'):
+def handle_x3(dataset: pd.DataFrame):
     dataset = clean_x3(dataset)
 
     for index, row in dataset.iterrows():
@@ -138,30 +138,13 @@ def handle_x3(dataset: pd.DataFrame, STATE='Test'):
                     if i > j:
                         couples.add((j, i, 1))
 
-    singles = set()
-    for i in instance_list:
-        for j in instance_list:
-            if i < j and (i, j, 1) not in couples:
-                singles.add((i, j, 0))
-            if i > j and (j, i, 1) not in couples:
-                singles.add((j, i, 0))
-
-    if STATE == 'Val':
-        output = couples.union(singles)
-        output = pd.DataFrame(
-            output,
-            columns=[
-                'left_instance_id',
-                'right_instance_id',
-                'label'])
-    else:
-        output = couples
-        output = pd.DataFrame(
-            output,
-            columns=[
-                'left_instance_id',
-                'right_instance_id',
-                'label'])
-        output.drop(columns=['label'], inplace=True)
+    output = couples
+    output = pd.DataFrame(
+        output,
+        columns=[
+            'left_instance_id',
+            'right_instance_id',
+            'label'])
+    output.drop(columns=['label'], inplace=True)
 
     return output
