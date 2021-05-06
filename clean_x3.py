@@ -78,21 +78,23 @@ def clean_x3(data):
                     break
 
         if cpu_brand == 'intel':
-            result_model = re.search(r'[\- ][0-9]{4}[Qq]?[MmUu](?![Hh][Zz])', item)
+            result_model = re.search(
+                r'[\- ][0-9]{4}[Qq]?[MmUu](?![Hh][Zz])', item)
             if result_model is None:
-                result_model = re.search('[\- ][0-9]{3}[Qq]?[Mm]', item)
+                result_model = re.search('[\\- ][0-9]{3}[Qq]?[Mm]', item)
             if result_model is None:
-                result_model = re.search('[\- ][MmQq][0-9]{3}', item)
+                result_model = re.search('[\\- ][MmQq][0-9]{3}', item)
             if result_model is None:
-                result_model = re.search('[\- ][PpNnTt][0-9]{4}', item)
+                result_model = re.search('[\\- ][PpNnTt][0-9]{4}', item)
             if result_model is None:
-                result_model = re.search('[\- ][0-9]{4}[Yy]', item)
+                result_model = re.search('[\\- ][0-9]{4}[Yy]', item)
             if result_model is None:
-                result_model = re.search('[\- ][Ss]?[Ll][0-9]{4}', item)
+                result_model = re.search('[\\- ][Ss]?[Ll][0-9]{4}', item)
             if result_model is None:
-                result_model = re.search('[\- ]867', item)
+                result_model = re.search('[\\- ]867', item)
             if result_model is None:
-                result_model = re.search('[\- ]((1st)|(2nd)|(3rd)|([4-9]st))[ ][Gg]en', item)
+                result_model = re.search(
+                    '[\\- ]((1st)|(2nd)|(3rd)|([4-9]st))[ ][Gg]en', item)
             if result_model is not None:
                 cpu_model = result_model.group()[1:].lower()
         elif cpu_brand == 'amd':
@@ -100,23 +102,26 @@ def clean_x3(data):
                 cpu_core = 'a-series'
             result_model = re.search(r'([AaEe][0-9][\- ][0-9]{4})', item)
             if result_model is None:
-                result_model = re.search('[\- ]HD[\- ][0-9]{4}', item)
+                result_model = re.search('[\\- ]HD[\\- ][0-9]{4}', item)
             if result_model is None:
-                result_model = re.search('[\- ][AaEe][\- ][0-9]{3}', item)
+                result_model = re.search('[\\- ][AaEe][\\- ][0-9]{3}', item)
             if result_model is not None:
                 cpu_core = result_model.group()[:1].lower() + '-series'
                 cpu_model = result_model.group()[1:].lower().replace(' ', '-')
             if cpu_core in ('radeon', 'athlon', 'turion', 'phenom'):
                 if result_model is None:
-                    result_model = re.search('[\- ][NnPp][0-9]{3}', item)
+                    result_model = re.search('[\\- ][NnPp][0-9]{3}', item)
                 if result_model is None:
-                    result_model = re.search('[\- ](64[ ]?[Xx]2)|([Nn][Ee][Oo])', item)
+                    result_model = re.search(
+                        '[\\- ](64[ ]?[Xx]2)|([Nn][Ee][Oo])', item)
                 if result_model is not None:
                     cpu_model = result_model.group().lower().replace('-', '').replace(' ', '')
 
-        result_frequency = re.search(r'[123][ .][0-9]?[0-9]?[ ]?[Gg][Hh][Zz]', item)
+        result_frequency = re.search(
+            r'[123][ .][0-9]?[0-9]?[ ]?[Gg][Hh][Zz]', item)
         if result_frequency is not None:
-            result_frequency = re.split(r'[GgHhZz]', result_frequency.group())[0].strip().replace(' ', '.')
+            result_frequency = re.split(r'[GgHhZz]', result_frequency.group())[
+                0].strip().replace(' ', '.')
             if len(result_frequency) == 3:
                 result_frequency = result_frequency + '0'
             if len(result_frequency) == 1:
@@ -137,52 +142,66 @@ def clean_x3(data):
         if result_display_size is not None:
             display_size = result_display_size.group().replace(" ", ".")[:-1]
         else:
-            result_display_size = re.search(r'1[0-9]([. ][0-9])?[- ][Ii]nch(?!es)', item)
+            result_display_size = re.search(
+                r'1[0-9]([. ][0-9])?[- ][Ii]nch(?!es)', item)
         if result_display_size is not None and display_size == '0':
             display_size = result_display_size.group().replace(" ", ".")[:-5]
         elif result_display_size is None:
-            result_display_size = re.search(r'(?<!x)[ ]1[0-9][. ][0-9]([ ]|(\'\'))(?!x)', item)
+            result_display_size = re.search(
+                r'(?<!x)[ ]1[0-9][. ][0-9]([ ]|(\'\'))(?!x)', item)
         if result_display_size is not None and display_size == '0':
-            display_size = result_display_size.group().replace("\'", " ").strip().replace(' ', '.')
+            display_size = result_display_size.group().replace(
+                "\'", " ").strip().replace(' ', '.')
 
         if brand == 'lenovo':
-            result_name_number = re.search(r'[\- ][0-9]{4}[0-9a-zA-Z]{3}(?![0-9a-zA-Z])', name_info)
+            result_name_number = re.search(
+                r'[\- ][0-9]{4}[0-9a-zA-Z]{3}(?![0-9a-zA-Z])', name_info)
             if result_name_number is None:
-                result_name_number = re.search(r'[\- ][0-9]{4}(?![0-9a-zA-Z])', name_info)
+                result_name_number = re.search(
+                    r'[\- ][0-9]{4}(?![0-9a-zA-Z])', name_info)
             if result_name_number is not None:
-                name_number = result_name_number.group().replace('-', '').strip().lower()[:4]
+                name_number = result_name_number.group().replace(
+                    '-', '').strip().lower()[:4]
         elif brand == 'hp':
             result_name_number = re.search(r'[0-9]{4}[pPwW]', name_info)
             if result_name_number is None:
-                result_name_number = re.search(r'15[\- ][a-zA-Z][0-9]{3}[a-zA-Z]{2}', name_info)
+                result_name_number = re.search(
+                    r'15[\- ][a-zA-Z][0-9]{3}[a-zA-Z]{2}', name_info)
             if result_name_number is None:
                 result_name_number = re.search(r'[\s]810[\s](G2)?', name_info)
             if result_name_number is None:
                 result_name_number = re.search(r'[0-9]{4}[mM]', name_info)
             if result_name_number is None:
-                result_name_number = re.search(r'((DV)|(NC))[0-9]{4}', name_info)
+                result_name_number = re.search(
+                    r'((DV)|(NC))[0-9]{4}', name_info)
             if result_name_number is None:
                 result_name_number = re.search(r'[0-9]{4}DX', name_info)
             if result_name_number is not None:
                 name_number = result_name_number.group().lower().replace('-', '').replace(' ', '')
         elif brand == 'dell':
-            result_name_number = re.search(r'1[57][Rr]?[\s]?([0-9]{4})?[\s]([iI])?[0-9]{4}', name_info)
+            result_name_number = re.search(
+                r'1[57][Rr]?[\s]?([0-9]{4})?[\s]([iI])?[0-9]{4}', name_info)
             if result_name_number is None:
-                result_name_number = re.search(r'[\s][A-Za-z][0-9]{3}[A-Za-z][\s]', name_info)
+                result_name_number = re.search(
+                    r'[\s][A-Za-z][0-9]{3}[A-Za-z][\s]', name_info)
             if result_name_number is not None:
-                name_number = result_name_number.group().lower().replace('-', '').replace('i', '').strip().split(' ')[-1]
+                name_number = result_name_number.group().lower().replace(
+                    '-', '').replace('i', '').strip().split(' ')[-1]
         elif brand == 'acer':
-            result_name_number = re.search(r'[A-Za-z][0-9][\- ][0-9]{3}', name_info)
+            result_name_number = re.search(
+                r'[A-Za-z][0-9][\- ][0-9]{3}', name_info)
             if result_name_number is None:
                 result_name_number = re.search(r'AS[0-9]{4}', name_info)
             if result_name_number is None:
-                result_name_number = re.search(r'[0-9]{4}[- ][0-9]{4}', name_info)
+                result_name_number = re.search(
+                    r'[0-9]{4}[- ][0-9]{4}', name_info)
             if result_name_number is not None:
                 name_number = result_name_number.group().lower().replace(' ', '-').replace('-', '')
                 if len(name_number) == 8:
                     name_number = name_number[:4]
         elif brand == 'asus':
-            result_name_number = re.search(r'[A-Za-z]{2}[0-9]?[0-9]{2}[A-Za-z]?[A-Za-z]', name_info)
+            result_name_number = re.search(
+                r'[A-Za-z]{2}[0-9]?[0-9]{2}[A-Za-z]?[A-Za-z]', name_info)
             if result_name_number is not None:
                 name_number = result_name_number.group().lower().replace(' ', '-').replace('-', '')
 

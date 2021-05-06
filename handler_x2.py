@@ -72,7 +72,8 @@ def handle_x2(dataset: pd.DataFrame, STATE='Test'):
         pc['display_size'] = display_size
 
         if pc_name != '0' and cpu_model != '0' and capacity != '0' and cpu_core != '0':
-            pc['identification'] = brand + ' ' + pc_name + ' ' + cpu_model + ' ' + capacity + ' ' + cpu_core
+            pc['identification'] = brand + ' ' + pc_name + \
+                ' ' + cpu_model + ' ' + capacity + ' ' + cpu_core
             solved_spec.append(pc)
         else:
             unsolved_spec.append(pc)
@@ -149,7 +150,8 @@ def handle_x2(dataset: pd.DataFrame, STATE='Test'):
             if i['brand'] == j['brand'] and i['capacity'] == j['capacity'] and \
                i['cpu_core'] == j['cpu_core'] and i['cpu_model'] == j['cpu_model'] and \
                i['pc_name'] == j['pc_name']:
-                i['identification'] = i['brand'] + i['capacity'] + i['cpu_core'] + i['cpu_model'] + i['pc_name']
+                i['identification'] = i['brand'] + i['capacity'] + \
+                    i['cpu_core'] + i['cpu_model'] + i['pc_name']
                 j['identification'] = i['identification']
                 if i not in solved_spec:
                     solved_spec.append(i)
@@ -183,17 +185,27 @@ def handle_x2(dataset: pd.DataFrame, STATE='Test'):
     singles = set()
     for i in instance_list:
         for j in instance_list:
-            if (i < j) and ((i, j, 1) not in couples):
+            if i < j and (i, j, 1) not in couples:
                 singles.add((i, j, 0))
-            if (i > j) and ((j, i, 1) not in couples):
+            if i > j and (j, i, 1) not in couples:
                 singles.add((j, i, 0))
 
     if STATE == 'Val':
         output = couples.union(singles)
-        output = pd.DataFrame(output, columns=['left_instance_id', 'right_instance_id', 'label'])
+        output = pd.DataFrame(
+            output,
+            columns=[
+                'left_instance_id',
+                'right_instance_id',
+                'label'])
     else:
         output = couples
-        output = pd.DataFrame(output, columns=['left_instance_id', 'right_instance_id', 'label'])
+        output = pd.DataFrame(
+            output,
+            columns=[
+                'left_instance_id',
+                'right_instance_id',
+                'label'])
         output.drop(columns=['label'], inplace=True)
 
     return output

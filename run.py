@@ -9,7 +9,8 @@ if __name__ == '__main__':
     for file_name in ['X2.csv', 'X3.csv', 'X4.csv']:
         data = pd.read_csv(file_name)
         if 'name' not in data.columns:
-            if 'source' not in data.filter(['instance_id']).sample(1).values[0][0]:
+            if 'source' not in data.filter(
+                    ['instance_id']).sample(1).values[0][0]:
                 output = handle_x2(data)
             else:
                 output = handle_x3(data)
@@ -20,4 +21,10 @@ if __name__ == '__main__':
             output.to_csv("output.csv", sep=',', encoding='utf-8', index=False)
             Flag = False
         else:
-            output.to_csv("output.csv", mode='a', sep=',', encoding='utf-8', index=False, header=None)
+            output.to_csv(
+                "output.csv",
+                mode='a',
+                sep=',',
+                encoding='utf-8',
+                index=False,
+                header=None)

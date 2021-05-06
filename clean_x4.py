@@ -1,7 +1,16 @@
 import pandas as pd
 import re
 
-brand_list = ["intenso", "pny", "lexar", "sony", "sandisk", "kingston", "samsung", "toshiba", "transcend"]
+brand_list = [
+    "intenso",
+    "pny",
+    "lexar",
+    "sony",
+    "sandisk",
+    "kingston",
+    "samsung",
+    "toshiba",
+    "transcend"]
 
 intenso_type = ["basic", "rainbow", "high speed", "speed", "premium", "alu", "business", "micro",
                 "imobile", "cmobile", "mini", "ultra", "slim", "flash", "mobile"]
@@ -103,7 +112,8 @@ def clean_x4(data):
                         break
 
         elif brand == "lexar":
-            type_model = re.search(r'((jd)|[\s])[a-wy-z][0-9]{2}[a-z]?', nameinfo)
+            type_model = re.search(
+                r'((jd)|[\s])[a-wy-z][0-9]{2}[a-z]?', nameinfo)
             if type_model is None:
                 type_model = re.search(r'[\s][0-9]+x(?![a-z0-9])', nameinfo)
             if type_model is None:
@@ -121,11 +131,11 @@ def clean_x4(data):
 
         elif brand == 'sony':
             if mem_type == '0':
-                if ('ux' in nameinfo) or ('uy' in nameinfo) or ('sr' in nameinfo):
+                if 'ux' in nameinfo or 'uy' in nameinfo or 'sr' in nameinfo:
                     mem_type = 'microsd'
                 elif 'uf' in nameinfo:
                     mem_type = 'sd'
-                elif ('usm' in nameinfo) or size == '1tb':
+                elif 'usm' in nameinfo or size == '1tb':
                     mem_type = 'usb'
 
             type_model = re.search(r'((sf)|(usm))[-]?[0-9a-z]{1,6}', nameinfo)
@@ -141,9 +151,16 @@ def clean_x4(data):
                     type = 'qx'
                 elif 'type-c' in nameinfo or 'type c' in nameinfo:
                     type = 'ca'
-                type_model = re.search(r'(serie[s]?[\s-]?[a-z]{1,2}[\s])|([\s][a-z]{1,2}[\-]?serie[s]?)', nameinfo)
+                type_model = re.search(
+                    r'(serie[s]?[\s-]?[a-z]{1,2}[\s])|([\s][a-z]{1,2}[\-]?serie[s]?)', nameinfo)
                 if type_model is not None:
-                    type = type_model.group().replace(' ', '').replace('-', '').replace('g', '')
+                    type = type_model.group().replace(
+                        ' ',
+                        '').replace(
+                        '-',
+                        '').replace(
+                        'g',
+                        '')
                     type = type.replace('series', '').replace('serie', '')
 
         elif brand == 'sandisk':
@@ -163,13 +180,15 @@ def clean_x4(data):
                     if model_model is not None:
                         model = model_model.group()
                     else:
-                        model_model = re.search(r'ultra(\s)?((plus)|(pro)|\+|(performance)|(android))', nameinfo)
+                        model_model = re.search(
+                            r'ultra(\s)?((plus)|(pro)|\+|(performance)|(android))', nameinfo)
                         if model_model is None:
                             model_model = re.search(
                                 r'sandisk 8gb ultra sdhc memory card, class 10, read speed up to 80 mb/s \+ sd adapter',
                                 nameinfo)
                         if model_model is None:
-                            model_model = re.search(r'sandisk sdhc [0-9]+gb 80mb/s cl10\\n', nameinfo)
+                            model_model = re.search(
+                                r'sandisk sdhc [0-9]+gb 80mb/s cl10\\n', nameinfo)
                         if model_model is not None:
                             model = 'ultra+'
                         else:
@@ -179,7 +198,8 @@ def clean_x4(data):
                             else:
                                 model_model = re.search(r'dual', nameinfo)
                                 if model_model is None:
-                                    model_model = re.search(r'double connect.*', nameinfo)
+                                    model_model = re.search(
+                                        r'double connect.*', nameinfo)
                                 if model_model is not None:
                                     model = 'ultra'
 
@@ -206,24 +226,27 @@ def clean_x4(data):
             type_model = re.search(r'att.*?[3-4]', nameinfo)
             if type_model is not None:
                 type = type_model.group().replace(' ', '').replace('-', '')
-                type = 'att' + list(filter(lambda ch: ch in '0123456789', type))[0]
+                type = 'att' + \
+                    list(filter(lambda ch: ch in '0123456789', type))[0]
                 if mem_type == '0':
                     mem_type = 'usb'
 
         elif brand == 'kingston':
             if mem_type == '0':
-                if ('savage' in nameinfo) or ('hx' in nameinfo) or ('hyperx' in nameinfo):
+                if 'savage' in nameinfo or 'hx' in nameinfo or 'hyperx' in nameinfo:
                     mem_type = 'usb'
                 elif 'ultimate' in nameinfo:
                     mem_type = 'sd'
-            model_model = re.search(r'(dt[i1]0?1?)|(data[ ]?t?travel?ler)', nameinfo)
+            model_model = re.search(
+                r'(dt[i1]0?1?)|(data[ ]?t?travel?ler)', nameinfo)
             if model_model is not None:
                 model = 'data traveler'
                 type_model = re.search(r'(g[234])|(gen[ ]?[234])', nameinfo)
                 if type_model is not None:
                     type = type_model.group()[-1:]
             else:
-                type_model = re.search(r'[\s]((g[234])|(gen[ ]?[234]))[\s]', nameinfo)
+                type_model = re.search(
+                    r'[\s]((g[234])|(gen[ ]?[234]))[\s]', nameinfo)
                 if type_model is not None:
                     type = type_model.group().strip()[-1:]
                     model = 'data traveler'
@@ -232,9 +255,11 @@ def clean_x4(data):
 
         elif brand == 'samsung':
             if 'lte' in nameinfo:
-                model_model = re.search(r'[\s][a-z][0-9]{1,2}[a-z]?[\s]((plus)|\+)?', nameinfo)
+                model_model = re.search(
+                    r'[\s][a-z][0-9]{1,2}[a-z]?[\s]((plus)|\+)?', nameinfo)
                 if model_model is None:
-                    model_model = re.search(r'[\s]note[\s]?[0-9]{1,2}\+?[\s]?(ultra)?', nameinfo)
+                    model_model = re.search(
+                        r'[\s]note[\s]?[0-9]{1,2}\+?[\s]?(ultra)?', nameinfo)
                 if model_model is None:
                     model_model = re.search(r'prime[ ]?((plus)|\+)?', nameinfo)
                 if model_model is not None:
@@ -291,13 +316,16 @@ def clean_x4(data):
                 if mem_type == '0':
                     mem_type = 'usb'
             if mem_type != 'usb':
-                type_model = re.search(r'exceria[ ]?((high)|(plus)|(pro))?', nameinfo)
+                type_model = re.search(
+                    r'exceria[ ]?((high)|(plus)|(pro))?', nameinfo)
                 if type_model is not None:
                     type = type_model.group().replace(' ', '').replace('exceria', 'x')
                 elif size != '0':
-                    type_model = re.search(r'x[ ]?((high)|(plus)|(pro))?' + size[:-2], nameinfo)
+                    type_model = re.search(
+                        r'x[ ]?((high)|(plus)|(pro))?' + size[:-2], nameinfo)
                     if type_model is not None:
-                        type = type_model.group().replace(' ', '')[:-(len(size) - 2)]
+                        type = type_model.group().replace(' ', '')[
+                            :-(len(size) - 2)]
                 if type == 'xpro' and mem_type == '0':
                     mem_type = 'sd'
                 if type == 'xhigh' and mem_type == '0':
@@ -316,12 +344,14 @@ def clean_x4(data):
                 if model_model is not None:
                     type = 'xpro'
             if mem_type == 'sd' and model == '0' and type == '0':
-                if 'uhs-ii' in nameinfo and ('carte mémoire flash' in nameinfo):
+                if 'uhs-ii' in nameinfo and 'carte mémoire flash' in nameinfo:
                     type = 'xpro'
             if mem_type != 'usb':
-                speed_model = re.search(r'[1-9][0-9]{1,2}[\s]?m[bo]/s', nameinfo)
+                speed_model = re.search(
+                    r'[1-9][0-9]{1,2}[\s]?m[bo]/s', nameinfo)
                 if speed_model is not None:
-                    speed = re.search(r'[0-9]{2,3}', speed_model.group()).group()
+                    speed = re.search(
+                        r'[0-9]{2,3}', speed_model.group()).group()
                     if speed == '260' or speed == '270':
                         if type == '0':
                             type = 'xpro'
@@ -355,7 +385,16 @@ def clean_x4(data):
 
     result = pd.DataFrame(result)
 
-    name = ['instance_id', 'brand', 'capacity', 'price', 'mem_type', 'type', 'model', 'item_code', 'title']
+    name = [
+        'instance_id',
+        'brand',
+        'capacity',
+        'price',
+        'mem_type',
+        'type',
+        'model',
+        'item_code',
+        'title']
     for i in range(len(name)):
         result.rename({i: name[i]}, inplace=True, axis=1)
 
