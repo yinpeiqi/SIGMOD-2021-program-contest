@@ -24,7 +24,7 @@ if __name__ == '__main__':
     for i in range(len(data)):
         set[data[i:i+1]['instance_id'].values[0]] = get_title(data[i:i+1].values.tolist()[0])
 
-    map_table = pd.read_csv("Y4.csv")
+    map_table = pd.read_csv("../Y4.csv")
     for i in set:
         father[i] = i
     for i in range(len(map_table)):
