@@ -45,9 +45,9 @@ In this part, we reorganize and clean the given csv files row by row. Cleaned re
 
 #### Entity Matching
 
-In this part, we give each record an identification according to its key field values and do entity resolution for records according to their identification values. Codes for  `X2.csv`, `X3.csv` and `X4.csv` are provided in `handler_x2.py`, `handler_x3.py`, and `handler_x4.py` respectively. The input for `handler_x2.py` is the output of `clean_x2.py` and so forth. The detailed steps are given as follows.
+In this part, we give each record an identification according to its key field values and do entity resolution for records according to their identification values. Codes for  `X2.csv`, `X3.csv` and `X4.csv` are provided in `handler_x2.py`, `handler_x3.py`, and `handler_x4.py` respectively. Note that `clean_x2.py` is called by `handler_x2.py` and so forth. The detailed steps are given as follows.
 
-Significant fields are picked out. If there is no missing value among these fields of a record, they are used as the unique identification for this record and we add this record to list `solved_spec`.  Otherwise, we do not give the record an identification and add it to list `unsolved_spec`. Note that we can classify all the records into several groups and use different fields as the identification for records in different groups.
+Original csv file is turned into cleaned dataframe and significant fields are picked out. If there is no missing value among these fields of a record, they are used as the unique identification for this record and we add this record to list `solved_spec`.  Otherwise, we do not give the record an identification and add it to list `unsolved_spec`. Note that we can classify all the records into several groups and use different fields as the identification for records in different groups.
 
 For records in `unsolved_spec`, we try to match them to items in `solved_spec`.  Since at least one important filed value is missing for records in `unsolved_spec`, we use their secondary key values. We give several combinations of secondary key values based on observation of real data. The identification of items in `solved_spec` is assigned to identification of items in `unsolved_spec` while we move items in `unsolved_spec` to `solved_spec` if they obtain the same nonzero secondary key values under one combination.
 
@@ -56,3 +56,8 @@ For records still in `unsolved_spec`,  we also give them a general identificatio
 **Return:** Lastly, we regard items with the same identification values as the same entities in real world and match them. The matched items are saved as our output in `output.csv`.
 
 ## Result
+| ---- | ---- | ---- | ---- |
+| Dataset | Recall | Precision | F-score |
+| X2.csv |  |  |  |
+| X3.csv |  |  |  |
+| X4.csv |  |  |  |
