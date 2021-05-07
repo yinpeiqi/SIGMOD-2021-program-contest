@@ -31,7 +31,7 @@ F-score
 
 The architecture of our work can be divided into two parts, data cleaning and entity matching.
 
-#### Data Cleaning
+### Data Cleaning
 
 In this part, we reorganize and clean the given csv files row by row. Cleaned results with only key field values for each row are returned. Codes for  `X2.csv`, `X3.csv` and `X4.csv` are provided in `clean_x2.py`, `clean_x3.py`, and `clean_x4.py` respectively. The detailed steps are described as follows.
 
@@ -43,7 +43,7 @@ In this part, we reorganize and clean the given csv files row by row. Cleaned re
 
 **Return:** Key field values are organized into a dataframe and returned.
 
-#### Entity Matching
+### Entity Matching
 
 In this part, we give each record an identification according to its key field values and do entity resolution for records according to their identification values. Codes for  `X2.csv`, `X3.csv` and `X4.csv` are provided in `handler_x2.py`, `handler_x3.py`, and `handler_x4.py` respectively. Note that `clean_x2.py` is called by `handler_x2.py` and so forth. The detailed steps are given as follows.
 
