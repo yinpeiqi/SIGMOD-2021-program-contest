@@ -32,6 +32,19 @@ sony_capacity_memtype_type = ["32gb", "4gb"]
 
 
 def handle_x4(dataset: pd.DataFrame):
+    """ Call clean_x4.py;
+
+    Give an identification for each record according to their cleaned field values
+    and match records based on their identification
+
+    :param dataset: X4.csv
+
+    :return:
+            A DataFrame of matched pairs which contains following columns:
+            {left_instance_id: the left instance of a matched pair
+             left_instance_id: the right instance of a matched pair}
+    """
+
     dataset = clean_x4(dataset)
     for index, row in dataset.iterrows():
         instance_id = row['instance_id']

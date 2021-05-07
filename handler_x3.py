@@ -42,6 +42,19 @@ instance_list = set()
 
 
 def handle_x3(dataset: pd.DataFrame):
+    """ Call clean_x3.py;
+
+    Give an identification for each record according to their cleaned field values
+    and match records based on their identification
+
+    :param dataset: X3.csv
+
+    :return:
+            A DataFrame of matched pairs which contains following columns:
+            {left_instance_id: the left instance of a matched pair
+             left_instance_id: the right instance of a matched pair}
+    """
+
     dataset = clean_x3(dataset)
 
     for index, row in dataset.iterrows():
