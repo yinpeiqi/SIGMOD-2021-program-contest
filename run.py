@@ -6,7 +6,7 @@ from handler_x4 import handle_x4
 Flag = True
 
 if __name__ == '__main__':
-    for file_name in ['X2.csv', 'X3.csv', 'X4.csv']:
+    for file_name in ['data/X2.csv', 'data/X3.csv', 'data/X4.csv']:
         data = pd.read_csv(file_name)
         if 'name' not in data.columns:
             if 'source' not in data.filter(
