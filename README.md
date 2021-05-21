@@ -1,4 +1,4 @@
-# 2021 SIGMOD Programming Contest
+# [2021 SIGMOD Programming Contest](https://dbgroup.ing.unimo.it/sigmod21contest/index.shtml)
 
 ## The Team
 
