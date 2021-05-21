@@ -1,6 +1,12 @@
 # 2021 SIGMOD Programming Contest
 
-### DBGroup@SUSTech
+## The Team
+
+SUSTech_DBGroup (Southern University of Science and Technology)
+
+Team member: [Weibao FU](https://github.com/Fu188), [Peiqi YIN](https://github.com/yinpeiqi), [Lan LU](https://github.com/loulankxh)
+
+Supervisor: [Prof. Bo TANG](https://acm.sustech.edu.cn/btang/), [Prof. Xiao YAN](http://cse.sustech.edu.cn/faculty/~yanx/)
 
 ## Contest Overview
 
