@@ -1,4 +1,4 @@
-# 2021 SIGMOD Programming Contest
+# 2021 SIGMOD Programming Contest [[Poster]](poster.pdf)
 
 ## The Team
 
